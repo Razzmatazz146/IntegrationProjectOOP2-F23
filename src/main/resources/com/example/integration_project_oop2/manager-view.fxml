@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.MovieEdit">
+   <children>
+      <ListView layoutX="35.0" layoutY="34.0" prefHeight="335.0" prefWidth="200.0" />
+      <Label layoutX="261.0" layoutY="89.0" text="Duration:" />
+      <Label layoutX="272.0" layoutY="122.0" text="Rating:" />
+      <Label layoutX="254.0" layoutY="157.0" text="Description:" />
+      <Label layoutX="272.0" layoutY="192.0" text="Label" />
+      <Label layoutX="255.0" layoutY="54.0" text="Movie Title:" />
+      <TextField layoutX="330.0" layoutY="50.0" />
+      <TextField layoutX="331.0" layoutY="85.0" />
+      <TextField layoutX="331.0" layoutY="118.0" />
+      <TextField layoutX="331.0" layoutY="153.0" />
+      <TextField layoutX="331.0" layoutY="188.0" />
+      <Button layoutX="481.0" layoutY="321.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="522.0" layoutY="22.0" mnemonicParsing="false" text="Log Out" />
+   </children>
+</AnchorPane>
