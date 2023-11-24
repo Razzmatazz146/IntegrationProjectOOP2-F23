@@ -6,7 +6,7 @@ package com.example.integration_project_oop2.Classes;
  * Has methods to get and set Username, Password, First Name, Last Name, Email and Phone Number, as
  * well as a @User constructor.
  */
-public class User {
+abstract class User {
     private String aUsername;
     private String aPassword;
     private String aFirstName;
@@ -24,12 +24,12 @@ public class User {
      * @param pPhoneNumber User phone number.
      */
     public User(String pUsername, String pPassword, String pFirstName, String pLastName, String pEmail, String pPhoneNumber) {
-        this.aUsername = pUsername;
-        this.aPassword = pPassword;
-        this.aFirstName = pFirstName;
-        this.aLastName = pLastName;
-        this.aEmail = pEmail;
-        this.aPhoneNumber = pPhoneNumber;
+        this.setUsername(pUsername);
+        this.setPassword(pPassword);
+        this.setFirstName(pFirstName);
+        this.setLastName(pLastName);
+        this.setEmail(pEmail);
+        this.setPhoneNumber(pPhoneNumber);
     }
 
     public String getUsername() {

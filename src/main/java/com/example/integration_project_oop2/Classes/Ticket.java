@@ -14,7 +14,7 @@ public class Ticket {
     /**
      * Instance of the Showtimes class.
      */
-    private Showtimes aShowtime;
+    private Showtime aShowtime;
     private boolean aAdult;
     private int aTicketNumber;
     private LocalDate aPurchaseDate;
@@ -26,19 +26,19 @@ public class Ticket {
      * @param pTicketNumber Ticket's ID number.
      * @param pPurchaseDate Ticket's purchase date.
      */
-    public Ticket(Showtimes pShowtime, boolean pAdult, int pTicketNumber, LocalDate pPurchaseDate) {
-        this.aShowtime = pShowtime;
-        this.aAdult = pAdult;
-        this.aTicketNumber = pTicketNumber;
-        this.aPurchaseDate = pPurchaseDate;
+    public Ticket(Showtime pShowtime, boolean pAdult, int pTicketNumber, LocalDate pPurchaseDate) {
+        this.setAdult(pAdult);
+        this.setShowtime(pShowtime);
+        this.setTicketNumber(pTicketNumber);
+        this.setPurchaseDate(pPurchaseDate);
     }
 
-    public Showtimes getShowtime(){ return aShowtime; }
+    public Showtime getShowtime(){ return aShowtime; }
     public boolean getAdult(){ return aAdult; }
     public int getTicketNumber(){ return aTicketNumber; }
     public LocalDate getPurchaseDate(){ return aPurchaseDate; }
 
-    public void setShowtime(Showtimes pShowtime){ this.aShowtime = pShowtime; }
+    public void setShowtime(Showtime pShowtime){ this.aShowtime = pShowtime; }
     public void setAdult(boolean pAdult){ this.aAdult = pAdult; }
     public void setTicketNumber(int pTicketNumber){ this.aTicketNumber = pTicketNumber; }
     public void setPurchaseDate(LocalDate pPurchaseDate){ this.aPurchaseDate = pPurchaseDate; }
