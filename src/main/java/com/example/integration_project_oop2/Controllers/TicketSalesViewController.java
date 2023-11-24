@@ -11,4 +11,5 @@ public class TicketSalesViewController {
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
+    }
 }
