@@ -40,8 +40,9 @@ public class SignupController {
     }
 
     @FXML
-    protected void onBackButtonClick() {
-         System.exit(0);
+    protected void onBackButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 
 }
