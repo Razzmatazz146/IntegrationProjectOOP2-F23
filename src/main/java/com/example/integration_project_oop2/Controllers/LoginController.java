@@ -22,6 +22,7 @@ public class LoginController {
     public Button managementButton;
     public Button userButton;
     public TextField usernameTextField;
+    public Button exitButton;
 
 
     private String checkManager(){
@@ -34,6 +35,11 @@ public class LoginController {
             selectedView = "manager-view.fxml";
         }
         return selectedView;
+    }
+
+    @FXML
+    protected void onExitButtonClick() {
+        System.exit(0);
     }
 
     @FXML
