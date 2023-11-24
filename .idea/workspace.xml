@@ -5,35 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9163443b-5bcc-4f25-9af8-f88b42f0b368" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerMovie-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerShowtime-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/MovieTheaterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ClientView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ManagerView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/MovieList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/MovieListEditor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Movies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showrooms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showtimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showtimes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ClientLoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ManagerLoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/MovieInfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ShowtimesListController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/TicketManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowroomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowroomList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesListEditor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketSale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketSales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketSalesView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Interfaces/MovieManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Interfaces/ShowtimeManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/client-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/client-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/manager-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/manager-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/ticket-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/ticket-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,6 +62,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -79,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700827568394</updated>
-      <workItem from="1700827569716" duration="8367000" />
+      <workItem from="1700827569716" duration="11690000" />
     </task>
     <servers />
   </component>

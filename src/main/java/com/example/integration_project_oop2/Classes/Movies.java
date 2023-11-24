@@ -41,4 +41,5 @@ public class Movies {
     public String getMovieGenre() {
         return aMovieGenre;
     }
+
 }

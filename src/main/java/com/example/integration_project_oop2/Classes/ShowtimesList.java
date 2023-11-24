@@ -1,32 +1,24 @@
 package com.example.integration_project_oop2.Classes;
 
-import com.example.integration_project_oop2.Interfaces.ShowtimeManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowtimesList implements ShowtimeManager {
+public class ShowtimesList {
+    
+    private List<Showtimes> aShowtimesList;
 
-    private List<Showtimes> showtimes;
-    @Override
-    public void scheduleShowtime(Showtimes showtime) {
+    public ShowtimesList() { this.aShowtimesList = new ArrayList<>(); }
 
+    public void addShowtime(Showtimes showtime) { this.aShowtimesList.add(showtime); }
+
+    public void removeShowtime(Showtimes showtime) { this.aShowtimesList.remove(showtime); }
+
+    public void editShowtime(Showtimes oldShowtime, Showtimes newShowtime) {
+        if (aShowtimesList.contains(oldShowtime)) {
+            int index = aShowtimesList.indexOf(oldShowtime);
+            aShowtimesList.set(index, newShowtime);
+        }
     }
 
-    @Override
-    public void cancelShowtime(Showtimes showtime) {
-
-    }
-
-    @Override
-    public List<Showtimes> getAllShowtimes() {
-        return showtimes;
-    }
-
-    /**
-     * Constructor
-     */
-    public void ShowtimesList(){
-        this.showtimes = new ArrayList<>();
-    }
+    public List<Showtimes> getAllShowtimes() { return new ArrayList<>(aShowtimesList); }
 }
