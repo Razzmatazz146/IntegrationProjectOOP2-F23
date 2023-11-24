@@ -17,9 +17,9 @@ public class Movies {
      * @param pMovieDuration Movie duration.
      */
     public Movies(String pMovieTitle, String pMovieGenre, int pMovieDuration) {
-        this.aMovieTitle = pMovieTitle;
-        this.aMovieGenre = pMovieGenre;
-        this.aMovieDuration = pMovieDuration;
+        this.setMovieTitle(pMovieTitle);
+        this.setMovieGenre(pMovieGenre);
+        this.setMovieDuration(pMovieDuration);
     }
 
     public void setMovieTitle(String pMovieTitle) {

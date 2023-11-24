@@ -5,20 +5,20 @@ import java.util.List;
 
 public class ShowtimesList {
     
-    private List<Showtimes> aShowtimesList;
+    private List<Showtime> aShowtimeList;
 
-    public ShowtimesList() { this.aShowtimesList = new ArrayList<>(); }
+    public ShowtimesList() { this.aShowtimeList = new ArrayList<>(); }
 
-    public void addShowtime(Showtimes showtime) { this.aShowtimesList.add(showtime); }
+    public void addShowtime(Showtime showtime) { this.aShowtimeList.add(showtime); }
 
-    public void removeShowtime(Showtimes showtime) { this.aShowtimesList.remove(showtime); }
+    public void removeShowtime(Showtime showtime) { this.aShowtimeList.remove(showtime); }
 
-    public void editShowtime(Showtimes oldShowtime, Showtimes newShowtime) {
-        if (aShowtimesList.contains(oldShowtime)) {
-            int index = aShowtimesList.indexOf(oldShowtime);
-            aShowtimesList.set(index, newShowtime);
+    public void editShowtime(Showtime oldShowtime, Showtime newShowtime) {
+        if (aShowtimeList.contains(oldShowtime)) {
+            int index = aShowtimeList.indexOf(oldShowtime);
+            aShowtimeList.set(index, newShowtime);
         }
     }
 
-    public List<Showtimes> getAllShowtimes() { return new ArrayList<>(aShowtimesList); }
+    public List<Showtime> getAllShowtimes() { return new ArrayList<>(aShowtimeList); }
 }

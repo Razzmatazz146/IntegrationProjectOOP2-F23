@@ -9,13 +9,14 @@ import java.time.LocalDate;
  * a @Showtimes constructor. The instance of Movies has attributes for the assigned movie's title, genre
  * and duration.
  */
-public class Showtimes {
+public class Showtime {
     /**
      * Instance of the Movies class.
      */
     private Movies aMovie;
     private LocalDate aStartTime;
     private LocalDate aEndTime;
+
     private double aShowtimeAdultPrice;
     private double aShowtimeChildPrice;
 
@@ -24,17 +25,21 @@ public class Showtimes {
      * @param pStartTime Showtime start time.
      * @param pEndTime Showtime end time.
      * @param pMovie Assigned movie.
-     * @param pShowTimeAdultPrice Showtime price per adult.
+     * @param pShowtimeAdultPrice Showtime price per adult.
      * @param pShowtimeChildPrice Showtime price per child.
      */
-    public Showtimes(LocalDate pStartTime, LocalDate pEndTime, Movies pMovie, double pShowTimeAdultPrice, double pShowtimeChildPrice){
-        this.aMovie = pMovie;
-        this.aStartTime = pStartTime;
-        this.aEndTime = pEndTime;
-        this.aShowtimeAdultPrice = pShowTimeAdultPrice;
-        this. aShowtimeChildPrice = pShowtimeChildPrice;
+    public Showtime(LocalDate pStartTime, LocalDate pEndTime, Movies pMovie, double pShowtimeAdultPrice, double pShowtimeChildPrice){
+        this.setMovie(pMovie);
+        this.setStartTime(pStartTime);
+        this.setEndTime(pEndTime);
+        this.setShowtimeAdultPrice(pShowtimeAdultPrice);
+        this.setShowtimeChildPrice(pShowtimeChildPrice);
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getStartTime(){ return aStartTime; }
     public LocalDate getEndTime(){ return aEndTime; }
     public Movies getMovie() { return aMovie; }
@@ -44,6 +49,8 @@ public class Showtimes {
     public void setStartTime(LocalDate pStartTime){ this.aStartTime = pStartTime; }
     public void setEndTime(LocalDate pEndTime){ this.aEndTime = pEndTime; }
     public void setMovie(Movies pMovie) { this.aMovie = pMovie; }
-    public void setShowtimePrice(int pShowtimeAdultPrice){ this.aShowtimeAdultPrice = pShowtimeAdultPrice; }
-    public void setShowtimeChildPrice(int pShowtimeChildPrice){ this.aShowtimeChildPrice = pShowtimeChildPrice; }
+    public void setShowtimeAdultPrice(double aShowtimeAdultPrice) { this.aShowtimeAdultPrice = aShowtimeAdultPrice; }
+    public void setShowtimeChildPrice(double aShowtimeChildPrice) {
+        this.aShowtimeChildPrice = aShowtimeChildPrice;
+    }
 }

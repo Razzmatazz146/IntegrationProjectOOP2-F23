@@ -15,8 +15,8 @@ public class Showrooms {
      * @param pRoomCapacity Room capacity.
      */
     public Showrooms(int pRoomNumber, int pRoomCapacity){
-        this.aRoomNumber = pRoomNumber;
-        this.aRoomCapacity = pRoomCapacity;
+        this.setRoomCapacity(pRoomCapacity);
+        this.setRoomNumber(pRoomNumber);
     }
 
     public int getRoomNumber() { return aRoomNumber; }
