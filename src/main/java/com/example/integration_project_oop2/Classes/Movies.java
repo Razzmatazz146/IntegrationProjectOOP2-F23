@@ -1,42 +1,44 @@
 package com.example.integration_project_oop2.Classes;
 
-import com.example.integration_project_oop2.Interfaces.MovieManager;
+/**
+ * Represents the theater's available Movies' Title, Genre, and Duration.
+ *
+ * Has methods to get and set Title, Genre and Duration, as well as a @Movies constructor.
+ */
+public class Movies {
+    String aMovieTitle;
+    String aMovieGenre;
+    int aMovieDuration;
 
-import java.util.List;
-
-public class Movies implements MovieManager {
-    String movieTitle;
-    String movieGenre;
-    int movieDuration;
-    int moviePrice;
-
-    public Movies(String movieTitle, String movieGenre, int movieDuration, int moviePrice){
-        this.movieTitle = movieTitle;
-        this.movieGenre = movieGenre;
-        this.movieDuration = movieDuration;
-        this.moviePrice = moviePrice;
-    }
-    public void setMovieTitle(String movieTitle){ this.movieTitle = movieTitle;}
-    public String getMovieTitle(){ return movieTitle; }
-    public void setMovieGenre(String movieGenre){ this.movieGenre = movieGenre; }
-    public String getMovieGenre(){ return movieGenre; }
-    public void setMovieDuration(int movieDuration){ this.movieDuration = movieDuration; }
-    public int getMovieDuration(){ return movieDuration; }
-    public void setMoviePrice(int moviePrice){ this.moviePrice = moviePrice; }
-    public int getMoviePrice(){ return moviePrice; }
-
-    @Override
-    public void addMovie(Movies movie) {
-
+    /**
+     * Movies constructor.
+     * @param pMovieTitle Movie title.
+     * @param pMovieGenre Movie genre.
+     * @param pMovieDuration Movie duration.
+     */
+    public Movies(String pMovieTitle, String pMovieGenre, int pMovieDuration) {
+        this.aMovieTitle = pMovieTitle;
+        this.aMovieGenre = pMovieGenre;
+        this.aMovieDuration = pMovieDuration;
     }
 
-    @Override
-    public void removeMovie(Movies movie) {
-
+    public void setMovieTitle(String pMovieTitle) {
+        this.aMovieTitle = pMovieTitle;
+    }
+    public void setMovieDuration(int pMovieDuration) {
+        this.aMovieDuration = pMovieDuration;
+    }
+    public void setMovieGenre(String pMovieGenre) {
+        this.aMovieGenre = pMovieGenre;
     }
 
-    @Override
-    public List<Movies> getAllMovies() {
-        return null;
+    public String getMovieTitle() {
+        return aMovieTitle;
+    }
+    public int getMovieDuration() {
+        return aMovieDuration;
+    }
+    public String getMovieGenre() {
+        return aMovieGenre;
     }
 }

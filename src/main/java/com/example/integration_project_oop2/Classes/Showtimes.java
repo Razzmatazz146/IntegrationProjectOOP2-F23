@@ -1,67 +1,49 @@
 package com.example.integration_project_oop2.Classes;
 
-import com.example.integration_project_oop2.Interfaces.ShowtimeManager;
-
 import java.time.LocalDate;
-import java.util.List;
 
-public class Showtimes implements ShowtimeManager {
-    private Movies movie;
-    private LocalDate startTime;
-    private LocalDate endTime;
-    @Override
-    public void scheduleShowtime(Showtimes showtime) {
-
-    }
-
-    @Override
-    public void cancelShowtime(Showtimes showtime) {
-
-    }
-
-    @Override
-    public List<Showtimes> getAllShowtimes() {
-        return null;
-    }
+/**
+ * Represents theater showtimes' assigned movie, start time, end time, price per adult and price per child.
+ *
+ * Has methods to get and set the showtime Start Time, End Time, Adult Price and Child price as well as
+ * a @Showtimes constructor. The instance of Movies has attributes for the assigned movie's title, genre
+ * and duration.
+ */
+public class Showtimes {
+    /**
+     * Instance of the Movies class.
+     */
+    private Movies aMovie;
+    private LocalDate aStartTime;
+    private LocalDate aEndTime;
+    private double aShowtimeAdultPrice;
+    private double aShowtimeChildPrice;
 
     /**
-     * Constructor for selected movie showtime
-     * @param startTime Movie's start time
-     * @param endTime Movie's end time
-     * @param movie Selected Movie
+     * Showtime constructor
+     * @param pStartTime Showtime start time.
+     * @param pEndTime Showtime end time.
+     * @param pMovie Assigned movie.
+     * @param pShowTimeAdultPrice Showtime price per adult.
+     * @param pShowtimeChildPrice Showtime price per child.
      */
-    public Showtimes(LocalDate startTime, LocalDate endTime, Movies movie){
-        this.movie = movie;
-        this.startTime = startTime;
-        this.endTime = endTime;
+    public Showtimes(LocalDate pStartTime, LocalDate pEndTime, Movies pMovie, double pShowTimeAdultPrice, double pShowtimeChildPrice){
+        this.aMovie = pMovie;
+        this.aStartTime = pStartTime;
+        this.aEndTime = pEndTime;
+        this.aShowtimeAdultPrice = pShowTimeAdultPrice;
+        this. aShowtimeChildPrice = pShowtimeChildPrice;
     }
 
+    public LocalDate getStartTime(){ return aStartTime; }
+    public LocalDate getEndTime(){ return aEndTime; }
+    public Movies getMovie() { return aMovie; }
+    public double getShowtimePrice(){ return aShowtimeAdultPrice; }
+    public double getShowtimeChildPrice() { return aShowtimeChildPrice; }
 
-    /**
-     * Get selected movie's start time
-     * @return start time
-     */
-    public LocalDate getStartTime(){ return startTime; }
-
-    /**
-     * Set selected movie's start time
-     * @param startTime
-     */
-    public void setStartTime(LocalDate startTime){
-        this.startTime = startTime;
-    }
-
-    /**
-     * Get selected movie's end time
-     * @return end time
-     */
-    public LocalDate getEndTime(){ return endTime; }
-
-    /**
-     * Sets selected movie's end time.
-     * @param endTime
-     */
-    public void setEndTime(LocalDate endTime){
-        this.endTime = endTime;
-    }
+    public void setStartTime(LocalDate pStartTime){ this.aStartTime = pStartTime; }
+    public void setEndTime(LocalDate pEndTime){ this.aEndTime = pEndTime; }
+    public void setMovie(Movies pMovie) { this.aMovie = pMovie; }
+    public void setShowtimePrice(int pShowtimeAdultPrice){ this.aShowtimeAdultPrice = pShowtimeAdultPrice; }
+    public void setShowtimeChildPrice(int pShowtimeChildPrice){ this.aShowtimeChildPrice = pShowtimeChildPrice; }
 }
