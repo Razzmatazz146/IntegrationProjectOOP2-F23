@@ -28,7 +28,7 @@ public class SignupController {
 
     @FXML
     protected void onSignUpButtonClick(ActionEvent pEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource("user-signup.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource("user-login.fxml"));
         Parent view = fxmlLoader.load();
         Scene nextScene = new Scene(view);
         Stage nextStage = new Stage();
@@ -40,8 +40,8 @@ public class SignupController {
     }
 
     @FXML
-    protected void onBackButtonClick(ActionEvent pEvent) throws IOException {
-
+    protected void onBackButtonClick() {
+         System.exit(0);
     }
 
 }
