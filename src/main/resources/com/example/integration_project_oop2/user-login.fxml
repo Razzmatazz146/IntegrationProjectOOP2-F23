@@ -8,9 +8,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.Controllers.LoginController">
    <children>
-      <Button fx:id="managementButton" layoutX="19.0" layoutY="193.0" mnemonicParsing="false" text="Management" />
-      <Button fx:id="signupButton" layoutX="307.0" layoutY="181.0" mnemonicParsing="false" text="Sign Up" />
-      <Button fx:id="loginButton" layoutX="372.0" layoutY="181.0" mnemonicParsing="false" text="Log In" />
+      <Button fx:id="managementButton" layoutX="19.0" layoutY="193.0" mnemonicParsing="false" text="Management"/>
+      <Button fx:id="signupButton" layoutX="307.0" layoutY="181.0" mnemonicParsing="false" text="Sign Up"
+              onAction="#onSignUpButtonClick"/>
+      <Button fx:id="loginButton" layoutX="372.0" layoutY="181.0" mnemonicParsing="false" text="Log In"
+              onAction="#onLoginButtonClick"/>
       <TextField fx:id="usernameTextField" layoutX="248.0" layoutY="37.0" />
       <PasswordField fx:id="passwordTextField" layoutX="248.0" layoutY="80.0" />
       <Label layoutX="78.0" layoutY="41.0" text="Username:" />
