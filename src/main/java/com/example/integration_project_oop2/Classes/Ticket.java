@@ -33,13 +33,59 @@ public class Ticket {
         this.setPurchaseDate(pPurchaseDate);
     }
 
+    /**
+     * Gets the showtime associated with the ticket.
+     *
+     * @return The associated showtime.
+     */
     public Showtime getShowtime(){ return aShowtime; }
+
+    /**
+     * Checks if the ticket is for an adult.
+     *
+     * @return True if the ticket is for an adult, false otherwise.
+     */
     public boolean getAdult(){ return aAdult; }
+
+    /**
+     * Gets the ticket number.
+     *
+     * @return The ticket number.
+     */
     public int getTicketNumber(){ return aTicketNumber; }
+
+    /**
+     * Gets the purchase date of the ticket.
+     *
+     * @return The purchase date.
+     */
     public LocalDate getPurchaseDate(){ return aPurchaseDate; }
 
+    /**
+     * Sets the showtime associated with the ticket.
+     *
+     * @param pShowtime The new associated showtime.
+     */
     public void setShowtime(Showtime pShowtime){ this.aShowtime = pShowtime; }
+
+    /**
+     * Sets whether the ticket is for an adult.
+     *
+     * @param pAdult True if the ticket is for an adult, false otherwise.
+     */
     public void setAdult(boolean pAdult){ this.aAdult = pAdult; }
+
+    /**
+     * Sets the ticket number.
+     *
+     * @param pTicketNumber The new ticket number.
+     */
     public void setTicketNumber(int pTicketNumber){ this.aTicketNumber = pTicketNumber; }
+
+    /**
+     * Sets the purchase date of the ticket.
+     *
+     * @param pPurchaseDate The new purchase date.
+     */
     public void setPurchaseDate(LocalDate pPurchaseDate){ this.aPurchaseDate = pPurchaseDate; }
 }

@@ -32,40 +32,110 @@ abstract class User {
         this.setPhoneNumber(pPhoneNumber);
     }
 
+    /**
+     * Gets the username of the user.
+     *
+     * @return The username.
+     */
     public String getUsername() {
         return aUsername;
     }
+
+    /**
+     * Gets the password of the user.
+     *
+     * @return The password.
+     */
     public String getPassword() {
         return aPassword;
     }
+
+    /**
+     * Gets the first name of the user.
+     *
+     * @return The first name.
+     */
     public String getFirstName() {
         return aFirstName;
     }
+
+    /**
+     * Gets the last name of the user.
+     *
+     * @return The last name.
+     */
     public String getLastName() {
         return aLastName;
     }
+
+    /**
+     * Gets the email address of the user.
+     *
+     * @return The email address.
+     */
     public String getEmail() {
         return aEmail;
     }
+
+    /**
+     * Gets the phone number of the user.
+     *
+     * @return The phone number.
+     */
     public String getPhoneNumber() {
         return aPhoneNumber;
     }
 
+    /**
+     * Sets the username of the user.
+     *
+     * @param pUsername The new username.
+     */
     public void setUsername(String pUsername) {
         this.aUsername = pUsername;
     }
+
+    /**
+     * Sets the password of the user.
+     *
+     * @param pPassword The new password.
+     */
     public void setPassword(String pPassword) {
         this.aPassword = pPassword;
     }
+
+    /**
+     * Sets the first name of the user.
+     *
+     * @param pFirstName The new first name.
+     */
     public void setFirstName(String pFirstName) {
         this.aFirstName = pFirstName;
     }
+
+    /**
+     * Sets the last name of the user.
+     *
+     * @param pLastName The new last name.
+     */
     public void setLastName(String pLastName) {
         this.aLastName = pLastName;
     }
+
+    /**
+     * Sets the email address of the user.
+     *
+     * @param pEmail The new email address.
+     */
     public void setEmail(String pEmail) {
         this.aEmail = pEmail;
     }
+
+    /**
+     * Sets the phone number of the user.
+     *
+     * @param pPhoneNumber The new phone number.
+     */
     public void setPhoneNumber(String pPhoneNumber) {
         this.aPhoneNumber = pPhoneNumber;
     }

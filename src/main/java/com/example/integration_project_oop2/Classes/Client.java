@@ -32,27 +32,56 @@ public class Client extends User{
         this.aPaymentInfo = pPaymentInfo;
     }
 
+    /**
+     * Gets the sign-up date of the user's account.
+     *
+     * @return The sign-up date.
+     */
     public LocalDate getSignUpDate() {
         return aSignUpDate;
     }
 
+    /**
+     * Gets the purchase history of the user's account.
+     *
+     * @return The purchase history.
+     */
     public double getPurchaseHistory() {
         return aPurchaseHistory;
     }
 
+    /**
+     * Gets the payment information associated with the user's account.
+     *
+     * @return The payment information.
+     */
     public int getPaymentInfo() {
         return aPaymentInfo;
     }
 
-
+    /**
+     * Sets the sign-up date of the user's account.
+     *
+     * @param pSignUpDate The new sign-up date.
+     */
     public void setSignUpDate(LocalDate pSignUpDate) {
         this.aSignUpDate = pSignUpDate;
     }
 
+    /**
+     * Sets the purchase history of the user's account.
+     *
+     * @param pPurchaseHistory The new purchase history.
+     */
     public void setPurchaseHistory(double pPurchaseHistory) {
         this.aPurchaseHistory = pPurchaseHistory;
     }
 
+    /**
+     * Sets the payment information associated with the user's account.
+     *
+     * @param pPaymentInfo The new payment information.
+     */
     public void setPaymentInfo(int pPaymentInfo) {
         this.aPaymentInfo = pPaymentInfo;
     }

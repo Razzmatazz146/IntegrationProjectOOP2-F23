@@ -19,10 +19,32 @@ public class Showrooms {
         this.setRoomNumber(pRoomNumber);
     }
 
+    /**
+     * Gets the room number.
+     *
+     * @return The room number.
+     */
     public int getRoomNumber() { return aRoomNumber; }
+
+    /**
+     * Gets the capacity of the room.
+     *
+     * @return The room capacity.
+     */
     public int getRoomCapacity() { return aRoomCapacity; }
 
+    /**
+     * Sets the room number.
+     *
+     * @param pRoomNumber The new room number.
+     */
     public void setRoomNumber(int pRoomNumber) { this.aRoomNumber = pRoomNumber; }
+
+    /**
+     * Sets the capacity of the room.
+     *
+     * @param pRoomCapacity The new room capacity.
+     */
     public void setRoomCapacity(int pRoomCapacity) { this.aRoomCapacity = pRoomCapacity; }
 
 }

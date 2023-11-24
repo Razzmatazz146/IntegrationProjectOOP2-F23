@@ -21,23 +21,56 @@ public class Movies {
         this.setMovieGenre(pMovieGenre);
         this.setMovieDuration(pMovieDuration);
     }
-
+    /**
+     * Sets the title of the movie.
+     *
+     * @param pMovieTitle The new movie title.
+     */
     public void setMovieTitle(String pMovieTitle) {
         this.aMovieTitle = pMovieTitle;
     }
+
+    /**
+     * Sets the duration of the movie.
+     *
+     * @param pMovieDuration The new movie duration.
+     */
     public void setMovieDuration(int pMovieDuration) {
         this.aMovieDuration = pMovieDuration;
     }
+
+    /**
+     * Sets the genre of the movie.
+     *
+     * @param pMovieGenre The new movie genre.
+     */
     public void setMovieGenre(String pMovieGenre) {
         this.aMovieGenre = pMovieGenre;
     }
 
+    /**
+     * Gets the title of the movie.
+     *
+     * @return The movie title.
+     */
     public String getMovieTitle() {
         return aMovieTitle;
     }
+
+    /**
+     * Gets the duration of the movie.
+     *
+     * @return The movie duration.
+     */
     public int getMovieDuration() {
         return aMovieDuration;
     }
+
+    /**
+     * Gets the genre of the movie.
+     *
+     * @return The movie genre.
+     */
     public String getMovieGenre() {
         return aMovieGenre;
     }
