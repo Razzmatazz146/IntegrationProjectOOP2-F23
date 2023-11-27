@@ -1,4 +1,4 @@
-package com.example.integration_project_oop2;
+package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.MovieTheaterApplication;
 import javafx.event.ActionEvent;
@@ -7,14 +7,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-import javafx.scene.control.Alert;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public interface WindowInterface {
-    default void newWindow(ActionEvent pEvent, String windowName, String windowTitle){
+public class WindowController {
+    public static void newWindow(ActionEvent pEvent, String windowName, String windowTitle){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource(windowName));
             Parent view = fxmlLoader.load();

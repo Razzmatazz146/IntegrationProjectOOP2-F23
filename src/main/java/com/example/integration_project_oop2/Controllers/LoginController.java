@@ -1,6 +1,5 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.WindowInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -8,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginController implements WindowInterface {
+public class LoginController extends WindowController {
     public PasswordField passwordTextField;
     public Button loginButton;
     public Button signupButton;

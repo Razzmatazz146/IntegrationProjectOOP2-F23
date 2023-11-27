@@ -1,13 +1,12 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.WindowInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class ManagerViewController implements WindowInterface {
+public class ManagerViewController extends WindowController {
 
 
     public Button editMovieButton;
