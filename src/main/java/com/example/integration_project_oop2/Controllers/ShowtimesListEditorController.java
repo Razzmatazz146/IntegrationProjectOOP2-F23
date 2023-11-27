@@ -47,11 +47,7 @@ public class ShowtimesListEditorController {
 
         //TODO Add code to add new movie using fields.
 
-        if (adultPriceTextField.getText().isEmpty()){
-            //TODO Finalize this check to see if the same showtime exists
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "A showtime price and time has to be set.");
-            viewAlert.showAndWait();
-        } else if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)){
+        if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)){
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "This showtime already exists.");
             viewAlert.showAndWait();
         } else {
@@ -64,10 +60,8 @@ public class ShowtimesListEditorController {
     }
 
     public void onUpdateButtonClick() {
-        if (adultPriceTextField.getText().isEmpty()) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "A showtime adult price must be set.");
-            viewAlert.showAndWait();
-        } else if(showtimesListView.getSelectionModel().isEmpty()) {
+
+        if(showtimesListView.getSelectionModel().isEmpty()) {
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a showtime.");
             viewAlert.showAndWait();
         } else {

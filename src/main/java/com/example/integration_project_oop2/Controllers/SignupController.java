@@ -26,11 +26,7 @@ public class SignupController extends WindowController {
 
         // TODO Add code to add new user to database.
 
-        if (usernameTextField.getText().isEmpty() || firstNameTextField.getText().isEmpty() || lastNameTextField.getText().isEmpty()
-        || emailTextField.getText().isEmpty() || passwordTextField.getText().isEmpty()) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "All fields must not be empty.");
-            viewAlert.showAndWait();
-        } else if(usernameTextField.getText().equals(realExistingUser)){
+        if(usernameTextField.getText().equals(realExistingUser)){
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Username already exists.");
             viewAlert.showAndWait();
         } else {

@@ -45,13 +45,8 @@ public class LoginController extends WindowController {
      */
     @FXML
     protected void onLoginButtonClick(ActionEvent event){
-        if (usernameTextField.getText().isEmpty() || passwordTextField.getText().isEmpty()){
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Please enter a valid username and password.");
-            viewAlert.showAndWait();
-        } else {
-            String[] result = checkManager();
-            newWindow(event, result[0], result[1]);
-        }
+        String[] result = checkManager();
+        newWindow(event, result[0], result[1]);
     }
 
     /**

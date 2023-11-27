@@ -33,10 +33,7 @@ public class MovieListEditorController {
 
         //TODO Add code to add new movie using fields.
 
-        if(titleTextField.getText().isEmpty() || durationTextField.getText().isEmpty() || genreTextField.getText().isEmpty()){
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "All fields must not be empty.");
-            viewAlert.showAndWait();
-        } else if (titleTextField.getText().equals(realMovie)) {
+        if (titleTextField.getText().equals(realMovie)) {
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Movie already exists.");
             viewAlert.showAndWait();
         } else {
@@ -49,9 +46,6 @@ public class MovieListEditorController {
     public void onUpdateButtonClick() {
         if(movieListView.getSelectionModel().isEmpty()) {
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a movie to update.");
-            viewAlert.showAndWait();
-        } else if(titleTextField.getText().isEmpty() || durationTextField.getText().isEmpty() || genreTextField.getText().isEmpty()){
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "All fields must not be empty.");
             viewAlert.showAndWait();
         } else {
 
