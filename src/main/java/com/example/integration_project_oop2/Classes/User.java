@@ -1,5 +1,7 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.time.LocalDate;
+
 /**
  * Represents the theater's Users. This is a Parent of Manager and Client.
  *
@@ -13,6 +15,7 @@ abstract class User {
     private String aLastName;
     private String aEmail;
     private String aPhoneNumber;
+    private boolean aIsManager;
 
     /**
      * User constructor.
@@ -23,13 +26,14 @@ abstract class User {
      * @param pEmail User e-mail address.
      * @param pPhoneNumber User phone number.
      */
-    public User(String pUsername, String pPassword, String pFirstName, String pLastName, String pEmail, String pPhoneNumber) {
+    public User(String pUsername, String pPassword, String pFirstName, String pLastName, String pEmail, String pPhoneNumber, boolean pIsManager) {
         this.setUsername(pUsername);
         this.setPassword(pPassword);
         this.setFirstName(pFirstName);
         this.setLastName(pLastName);
         this.setEmail(pEmail);
         this.setPhoneNumber(pPhoneNumber);
+        this.isManager(pIsManager);
     }
 
     /**
@@ -86,12 +90,16 @@ abstract class User {
         return aPhoneNumber;
     }
 
+    public boolean isManager(boolean pIsManager) { return aIsManager; }
+
     /**
      * Sets the username of the user.
      *
      * @param pUsername The new username.
      */
     public void setUsername(String pUsername) {
+        if (pUsername == null)
+            throw new IllegalArgumentException("Username cannot be null");
         this.aUsername = pUsername;
     }
 
@@ -101,6 +109,8 @@ abstract class User {
      * @param pPassword The new password.
      */
     public void setPassword(String pPassword) {
+        if (pPassword == null)
+            throw new IllegalArgumentException("Password cannot be null");
         this.aPassword = pPassword;
     }
 
@@ -110,6 +120,8 @@ abstract class User {
      * @param pFirstName The new first name.
      */
     public void setFirstName(String pFirstName) {
+        if (pFirstName == null)
+            throw new IllegalArgumentException("Username cannot be null");
         this.aFirstName = pFirstName;
     }
 
@@ -119,6 +131,8 @@ abstract class User {
      * @param pLastName The new last name.
      */
     public void setLastName(String pLastName) {
+        if (pLastName == null)
+            throw new IllegalArgumentException("Username cannot be null");
         this.aLastName = pLastName;
     }
 
@@ -128,6 +142,8 @@ abstract class User {
      * @param pEmail The new email address.
      */
     public void setEmail(String pEmail) {
+        if (pEmail == null)
+            throw new IllegalArgumentException("Email cannot be null");
         this.aEmail = pEmail;
     }
 
@@ -137,6 +153,8 @@ abstract class User {
      * @param pPhoneNumber The new phone number.
      */
     public void setPhoneNumber(String pPhoneNumber) {
+        if (pPhoneNumber == null)
+            throw new IllegalArgumentException("Phone number cannot be null");
         this.aPhoneNumber = pPhoneNumber;
     }
 }

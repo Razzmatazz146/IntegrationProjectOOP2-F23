@@ -25,8 +25,8 @@ public class Client extends User{
      * @param pPurchaseHistory User purchase history.
      * @param pPaymentInfo User payment info.
      */
-    public Client(String pUsername, String pPassword, String pFirstName, String pLastName, String pEmail, String pPhoneNumber, LocalDate pSignUpDate, double pPurchaseHistory, int pPaymentInfo) {
-        super(pUsername, pPassword, pFirstName, pLastName, pEmail, pPhoneNumber);
+    public Client(String pUsername, String pPassword, String pFirstName, String pLastName, String pEmail, String pPhoneNumber, LocalDate pSignUpDate, double pPurchaseHistory, int pPaymentInfo, boolean pIsManager) {
+        super(pUsername, pPassword, pFirstName, pLastName, pEmail, pPhoneNumber, !pIsManager);
         this.setSignUpDate(pSignUpDate);
         this.setPurchaseHistory(pPurchaseHistory);
         this.setPaymentInfo(pPaymentInfo);
@@ -65,10 +65,6 @@ public class Client extends User{
      * @param pSignUpDate The new sign-up date.
      */
     public void setSignUpDate(LocalDate pSignUpDate) {
-        if (pSignUpDate == null)
-            throw new IllegalArgumentException("SignUpDate cannot be null");
-        if (pSignUpDate.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("SignUpDate cannot be in the future");
         this.aSignUpDate = pSignUpDate;
     }
 

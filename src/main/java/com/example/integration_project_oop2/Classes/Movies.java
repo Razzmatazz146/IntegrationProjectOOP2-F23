@@ -27,6 +27,8 @@ public class Movies {
      * @param pMovieTitle The new movie title.
      */
     public void setMovieTitle(String pMovieTitle) {
+        if (pMovieTitle == null)
+            throw new IllegalArgumentException("Movie title cannot be null");
         this.aMovieTitle = pMovieTitle;
     }
 
@@ -36,6 +38,8 @@ public class Movies {
      * @param pMovieDuration The new movie duration.
      */
     public void setMovieDuration(int pMovieDuration) {
+        if (pMovieDuration < 0)
+            throw new IllegalArgumentException("Movie duration cannot be less than 0");
         this.aMovieDuration = pMovieDuration;
     }
 
@@ -45,6 +49,8 @@ public class Movies {
      * @param pMovieGenre The new movie genre.
      */
     public void setMovieGenre(String pMovieGenre) {
+        if (pMovieGenre == null)
+            throw new IllegalArgumentException("Movie genre cannot be null");
         this.aMovieGenre = pMovieGenre;
     }
 

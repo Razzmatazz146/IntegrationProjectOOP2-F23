@@ -1,6 +1,6 @@
 package com.example.integration_project_oop2.Classes;
 
-import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * Represents theater showtimes' assigned movie, start time, end time, price per adult and price per child.
@@ -14,8 +14,8 @@ public class Showtime {
      * Instance of the Movies class.
      */
     private Movies aMovie;
-    private LocalDate aStartTime;
-    private LocalDate aEndTime;
+    private LocalTime aStartTime;
+    private LocalTime aEndTime;
 
     private double aShowtimeAdultPrice;
     private double aShowtimeChildPrice;
@@ -28,7 +28,7 @@ public class Showtime {
      * @param pShowtimeAdultPrice Showtime price per adult.
      * @param pShowtimeChildPrice Showtime price per child.
      */
-    public Showtime(LocalDate pStartTime, LocalDate pEndTime, Movies pMovie, double pShowtimeAdultPrice, double pShowtimeChildPrice){
+    public Showtime(LocalTime pStartTime, LocalTime pEndTime, Movies pMovie, double pShowtimeAdultPrice, double pShowtimeChildPrice){
         this.setMovie(pMovie);
         this.setStartTime(pStartTime);
         this.setEndTime(pEndTime);
@@ -41,14 +41,14 @@ public class Showtime {
      *
      * @return The start time.
      */
-    public LocalDate getStartTime(){ return aStartTime; }
+    public LocalTime getStartTime(){ return aStartTime; }
 
     /**
      * Gets the end time of the showtime.
      *
      * @return The end time.
      */
-    public LocalDate getEndTime(){ return aEndTime; }
+    public LocalTime getEndTime(){ return aEndTime; }
 
     /**
      * Gets the associated movie for the showtime.
@@ -76,35 +76,49 @@ public class Showtime {
      *
      * @param pStartTime The new start time.
      */
-    public void setStartTime(LocalDate pStartTime){ this.aStartTime = pStartTime; }
+    public void setStartTime(LocalTime pStartTime){
+        if (pStartTime == null)
+            throw new IllegalArgumentException("Start time cannot be null");
+        this.aStartTime = pStartTime; }
 
     /**
      * Sets the end time of the showtime.
      *
      * @param pEndTime The new end time.
      */
-    public void setEndTime(LocalDate pEndTime){ this.aEndTime = pEndTime; }
+    public void setEndTime(LocalTime pEndTime){
+        if (pEndTime == null)
+            throw new IllegalArgumentException("End time cannot be null");
+        this.aEndTime = pEndTime;
+    }
 
     /**
      * Sets the associated movie for the showtime.
      *
      * @param pMovie The new associated movie.
      */
-    public void setMovie(Movies pMovie) { this.aMovie = pMovie; }
+    public void setMovie(Movies pMovie) {
+        if (pMovie == null)
+            throw new IllegalArgumentException("Movie cannot be null");
+        this.aMovie = pMovie;
+    }
 
     /**
      * Sets the adult ticket price for the showtime.
      *
-     * @param aShowtimeAdultPrice The new adult ticket price.
+     * @param pShowtimeAdultPrice The new adult ticket price.
      */
-    public void setShowtimeAdultPrice(double aShowtimeAdultPrice) { this.aShowtimeAdultPrice = aShowtimeAdultPrice; }
+    public void setShowtimeAdultPrice(double pShowtimeAdultPrice) {
+        if (pShowtimeAdultPrice < 0)
+            throw new IllegalArgumentException("Price cannot be 0");
+        this.aShowtimeAdultPrice = pShowtimeAdultPrice; }
 
     /**
      * Sets the child ticket price for the showtime.
      *
-     * @param aShowtimeChildPrice The new child ticket price.
+     * @param pShowtimeChildPrice The new child ticket price.
      */
-    public void setShowtimeChildPrice(double aShowtimeChildPrice) {
-        this.aShowtimeChildPrice = aShowtimeChildPrice;
+    public void setShowtimeChildPrice(double pShowtimeChildPrice) {
+        this.aShowtimeChildPrice = pShowtimeChildPrice;
     }
 }

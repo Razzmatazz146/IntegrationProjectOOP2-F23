@@ -15,7 +15,7 @@ public class Ticket {
      * Instance of the Showtimes class.
      */
     private Showtime aShowtime;
-    private boolean aAdult;
+    private boolean aIsAdult;
     private int aTicketNumber;
     private LocalDate aPurchaseDate;
 
@@ -27,7 +27,7 @@ public class Ticket {
      * @param pPurchaseDate Ticket's purchase date.
      */
     public Ticket(Showtime pShowtime, boolean pAdult, int pTicketNumber, LocalDate pPurchaseDate) {
-        this.setAdult(pAdult);
+        this.setIsAdult(pAdult);
         this.setShowtime(pShowtime);
         this.setTicketNumber(pTicketNumber);
         this.setPurchaseDate(pPurchaseDate);
@@ -45,7 +45,7 @@ public class Ticket {
      *
      * @return True if the ticket is for an adult, false otherwise.
      */
-    public boolean getAdult(){ return aAdult; }
+    public boolean getIsAdult(){ return aIsAdult; }
 
     /**
      * Gets the ticket number.
@@ -66,26 +66,38 @@ public class Ticket {
      *
      * @param pShowtime The new associated showtime.
      */
-    public void setShowtime(Showtime pShowtime){ this.aShowtime = pShowtime; }
+    public void setShowtime(Showtime pShowtime){
+        if (pShowtime == null)
+            throw new IllegalArgumentException("Showtime cannot be null");
+        this.aShowtime = pShowtime; }
 
     /**
      * Sets whether the ticket is for an adult.
      *
-     * @param pAdult True if the ticket is for an adult, false otherwise.
+     * @param pIsAdult True if the ticket is for an adult, false otherwise.
      */
-    public void setAdult(boolean pAdult){ this.aAdult = pAdult; }
+    public void setIsAdult(boolean pIsAdult){
+        this.aIsAdult = pIsAdult; }
 
     /**
      * Sets the ticket number.
      *
      * @param pTicketNumber The new ticket number.
      */
-    public void setTicketNumber(int pTicketNumber){ this.aTicketNumber = pTicketNumber; }
+    public void setTicketNumber(int pTicketNumber){
+        if (pTicketNumber < 0)
+            throw new IllegalArgumentException("Ticket number cannot be less than 0");
+        this.aTicketNumber = pTicketNumber; }
 
     /**
      * Sets the purchase date of the ticket.
      *
      * @param pPurchaseDate The new purchase date.
      */
-    public void setPurchaseDate(LocalDate pPurchaseDate){ this.aPurchaseDate = pPurchaseDate; }
+    public void setPurchaseDate(LocalDate pPurchaseDate){
+        if (pPurchaseDate == null)
+            throw new IllegalArgumentException("Purchase date cannot be null");
+        if (pPurchaseDate.isAfter(LocalDate.now()))
+            throw new IllegalArgumentException("Purchase dat cannot be in the future");
+        this.aPurchaseDate = pPurchaseDate; }
 }
