@@ -41,7 +41,7 @@ public class MovieListEditorController {
             viewAlert.showAndWait();
         } else {
             movieListView.getItems().add(titleTextField.getText());
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, realMovie + "has been added!");
+            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + "has been added!");
             viewAlert.showAndWait();
         }
     }
@@ -71,9 +71,9 @@ public class MovieListEditorController {
 
             // TODO Add code to remove item from ListView and database list.
 
-            movieListView.getItems().remove(getSelectedMovie());
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + " has been removed.");
             viewAlert.showAndWait();
+            movieListView.getItems().remove(getSelectedMovie());
         }
     }
 }
