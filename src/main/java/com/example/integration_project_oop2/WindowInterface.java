@@ -1,4 +1,4 @@
-package com.example.integration_project_oop2.Classes;
+package com.example.integration_project_oop2;
 
 import com.example.integration_project_oop2.MovieTheaterApplication;
 import javafx.event.ActionEvent;
@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.scene.control.Alert;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 

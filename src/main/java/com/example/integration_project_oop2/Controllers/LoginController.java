@@ -1,6 +1,6 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.WindowInterface;
+import com.example.integration_project_oop2.WindowInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -23,7 +23,7 @@ public class LoginController implements WindowInterface {
 
     /**
      * Check to see if username is of manager or client.
-     * @return
+     * @return selected view and name of new window.
      */
     private String[] checkManager(){
         String realManager = "manager1";
@@ -40,10 +40,12 @@ public class LoginController implements WindowInterface {
         }
         return new String[]{selectedView, viewName};
     }
+
+    /**
+     * Checks if user is Manager or Client and opens the appropriate window when Log In is clicked.
+     */
     @FXML
     protected void onLoginButtonClick(ActionEvent event){
-
-
         if (usernameTextField.getText().isEmpty() || passwordTextField.getText().isEmpty()){
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Please enter a valid username and password.");
             viewAlert.showAndWait();
@@ -52,6 +54,10 @@ public class LoginController implements WindowInterface {
             newWindow(event, result[0], result[1]);
         }
     }
+
+    /**
+     * Opens the Sign-Up window on button click.
+     */
     @FXML
     protected void onSignUpButtonClick(ActionEvent event) {
         newWindow(event, "user-signup.fxml", "Sign Up");

@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9163443b-5bcc-4f25-9af8-f88b42f0b368" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/WindowInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/WindowInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/WindowInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ManagerViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ManagerViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/manager-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/manager-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/ticket-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerLists-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/MovieListEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/MovieListEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ShowtimesListEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ShowtimesListEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/SignupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/TicketSaleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerMovie-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerMovie-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerShowtime-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerShowtime-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +67,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.integration_project_oop2" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700827568394</updated>
       <workItem from="1700827569716" duration="11690000" />
-      <workItem from="1701034817582" duration="7809000" />
+      <workItem from="1701034817582" duration="15022000" />
     </task>
     <servers />
   </component>
