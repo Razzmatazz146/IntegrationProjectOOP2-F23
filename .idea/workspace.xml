@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9163443b-5bcc-4f25-9af8-f88b42f0b368" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/WindowInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Movies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showrooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showrooms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showtimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showtime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ManagerViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/ManagerViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/manager-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/manager-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/ticket-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/managerLists-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/integration_project_oop2/user-signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -74,6 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700827568394</updated>
       <workItem from="1700827569716" duration="11690000" />
+      <workItem from="1701034817582" duration="7809000" />
     </task>
     <servers />
   </component>
