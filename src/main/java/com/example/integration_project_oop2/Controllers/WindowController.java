@@ -12,8 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class WindowController {
-    public static void newWindow(ActionEvent pEvent, String windowName, String windowTitle){
+abstract class WindowController {
+    protected static void newWindow(ActionEvent pEvent, String windowName, String windowTitle){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource(windowName));
             Parent view = fxmlLoader.load();

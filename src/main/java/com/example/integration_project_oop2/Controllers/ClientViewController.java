@@ -3,9 +3,18 @@ package com.example.integration_project_oop2.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class ClientViewController {
+
+    public Label titleLabel;
+    public Label durationLabel;
+    public Label genreLabel;
+    public ChoiceBox showtimesDropdown;
+    public Button backButton;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
