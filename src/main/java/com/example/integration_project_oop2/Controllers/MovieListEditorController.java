@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.Movies;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -28,6 +29,10 @@ public class MovieListEditorController {
 
     private String getSelectedMovie(){ return (String) movieListView.getSelectionModel().getSelectedItem(); }
 
+    @FXML
+    private void initialize(){
+        movieListView.getItems().add("Test");
+    }
     public void onAddButtonClick() {
         String realMovie = "It";
 
