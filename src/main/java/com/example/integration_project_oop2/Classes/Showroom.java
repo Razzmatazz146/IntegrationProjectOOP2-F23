@@ -5,7 +5,7 @@ package com.example.integration_project_oop2.Classes;
  *
  * Has methods to get and set Room Number and Room Capacity, as well as a @Showrooms constructor.
  */
-public class Showrooms {
+public class Showroom {
     private int aRoomNumber;
     private int aRoomCapacity;
 
@@ -14,7 +14,7 @@ public class Showrooms {
      * @param pRoomNumber Room number.
      * @param pRoomCapacity Room capacity.
      */
-    public Showrooms(int pRoomNumber, int pRoomCapacity){
+    public Showroom(int pRoomNumber, int pRoomCapacity){
         this.setRoomCapacity(pRoomCapacity);
         this.setRoomNumber(pRoomNumber);
     }

@@ -19,6 +19,7 @@ public class Showtime {
 
     private double aShowtimeAdultPrice;
     private double aShowtimeChildPrice;
+    private Showroom aShowroom;
 
     /**
      * Showtime constructor
@@ -28,12 +29,20 @@ public class Showtime {
      * @param pShowtimeAdultPrice Showtime price per adult.
      * @param pShowtimeChildPrice Showtime price per child.
      */
-    public Showtime(LocalTime pStartTime, LocalTime pEndTime, Movies pMovie, double pShowtimeAdultPrice, double pShowtimeChildPrice){
+    public Showtime(LocalTime pStartTime, LocalTime pEndTime, Movies pMovie, Showroom pShowroom, double pShowtimeAdultPrice, double pShowtimeChildPrice){
         this.setMovie(pMovie);
+        this.setShowroom(pShowroom);
         this.setStartTime(pStartTime);
         this.setEndTime(pEndTime);
         this.setShowtimeAdultPrice(pShowtimeAdultPrice);
         this.setShowtimeChildPrice(pShowtimeChildPrice);
+    }
+
+    private void setShowroom(Showroom pShowroom) {
+        this.aShowroom = pShowroom;
+    }
+    public Showroom getShowroom(){
+        return aShowroom;
     }
 
     /**

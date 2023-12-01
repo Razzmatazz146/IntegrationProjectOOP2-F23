@@ -13,9 +13,10 @@ public class ManagerViewController extends WindowController {
     public Button clientListButton;
     public Button clientViewButton;
     public Button editShowtimesButton;
-    public Button ticketSalesButton;
     public Button staffListButton;
     public Button logoutButton;
+    public Button salesMovieButton;
+    public Button salesShowtimeButton;
 
     @FXML
     protected void onLogOutButtonClick(ActionEvent actionEvent) {
@@ -38,11 +39,15 @@ public class ManagerViewController extends WindowController {
         newWindow(event, "managerShowtime-view.fxml", "Edit Showtimes");
     }
 
-    public void onTicketSalesButtonClick(ActionEvent event) {
+    public void onStaffListButtonClick(ActionEvent event) {
+        newWindow(event, "managerLists-view.fxml", "Staff List");
+    }
+
+    public void onShowtimesSalesButton(ActionEvent event) {
         newWindow(event, "managerLists-view.fxml", "Ticket Sales");
     }
 
-    public void onStaffListButtonClick(ActionEvent event) {
-        newWindow(event, "managerLists-view.fxml", "Staff List");
+    public void onSalesMovieButton(ActionEvent event) {
+        newWindow(event, "managerLists-view.fxml", "Ticket Sales");
     }
 }
