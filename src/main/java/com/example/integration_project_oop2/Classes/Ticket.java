@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -10,7 +11,7 @@ import java.time.LocalDate;
  * a @Ticket constructor. The instance of showtime has attributes for the movie's information,
  * room number and start/end time for the assigned movie.
  */
-public class Ticket {
+public class Ticket implements Serializable {
     /**
      * Instance of the Showtimes class.
      */
@@ -27,8 +28,8 @@ public class Ticket {
      * @param pPurchaseDate Ticket's purchase date.
      */
     public Ticket(Showtime pShowtime, boolean pAdult, int pTicketNumber, LocalDate pPurchaseDate) {
-        this.setIsAdult(pAdult);
         this.setShowtime(pShowtime);
+        this.setIsAdult(pAdult);
         this.setTicketNumber(pTicketNumber);
         this.setPurchaseDate(pPurchaseDate);
     }

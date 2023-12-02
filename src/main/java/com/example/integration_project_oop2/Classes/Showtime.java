@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
 /**
@@ -9,17 +10,18 @@ import java.time.LocalTime;
  * a @Showtimes constructor. The instance of Movies has attributes for the assigned movie's title, genre
  * and duration.
  */
-public class Showtime {
+public class Showtime implements Serializable {
     /**
      * Instance of the Movies class.
      */
-    private Movies aMovie;
+    private Movie aMovie;
     private LocalTime aStartTime;
     private LocalTime aEndTime;
 
     private double aShowtimeAdultPrice;
     private double aShowtimeChildPrice;
     private Showroom aShowroom;
+    private int aDaySales;
 
     /**
      * Showtime constructor
@@ -29,13 +31,14 @@ public class Showtime {
      * @param pShowtimeAdultPrice Showtime price per adult.
      * @param pShowtimeChildPrice Showtime price per child.
      */
-    public Showtime(LocalTime pStartTime, LocalTime pEndTime, Movies pMovie, Showroom pShowroom, double pShowtimeAdultPrice, double pShowtimeChildPrice){
+    public Showtime(LocalTime pStartTime, LocalTime pEndTime, Movie pMovie, Showroom pShowroom, double pShowtimeAdultPrice, double pShowtimeChildPrice, int pDaySales){
         this.setMovie(pMovie);
         this.setShowroom(pShowroom);
         this.setStartTime(pStartTime);
         this.setEndTime(pEndTime);
         this.setShowtimeAdultPrice(pShowtimeAdultPrice);
         this.setShowtimeChildPrice(pShowtimeChildPrice);
+        this.setDaySales(pDaySales);
     }
 
     private void setShowroom(Showroom pShowroom) {
@@ -64,7 +67,7 @@ public class Showtime {
      *
      * @return The associated movie.
      */
-    public Movies getMovie() { return aMovie; }
+    public Movie getMovie() { return aMovie; }
 
     /**
      * Gets the adult ticket price for the showtime.
@@ -106,7 +109,7 @@ public class Showtime {
      *
      * @param pMovie The new associated movie.
      */
-    public void setMovie(Movies pMovie) {
+    public void setMovie(Movie pMovie) {
         if (pMovie == null)
             throw new IllegalArgumentException("Movie cannot be null");
         this.aMovie = pMovie;
@@ -129,5 +132,13 @@ public class Showtime {
      */
     public void setShowtimeChildPrice(double pShowtimeChildPrice) {
         this.aShowtimeChildPrice = pShowtimeChildPrice;
+    }
+
+    public int getDaySales() {
+        return aDaySales;
+    }
+
+    public void setDaySales(int pDaySales) {
+        this.aDaySales = pDaySales;
     }
 }

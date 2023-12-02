@@ -1,19 +1,33 @@
 package com.example.integration_project_oop2;
 
 import com.example.integration_project_oop2.Classes.*;
+import com.example.integration_project_oop2.Serialization.BinReader;
+import com.example.integration_project_oop2.Serialization.BinWriter;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class MovieTheaterApplication extends Application {
+    private ClientList clientList;
+    private ManagerList managerList;
+    private MovieList movieList;
+    private ShowroomList showroomList;
+    private ShowtimesList showtimesList;
+    private TicketSales ticketSales;
 
     @Override
     public void start(Stage stage) throws IOException {
+
+        clientList = BinReader.deserialize("client.bin", ClientList.class);
+        managerList = BinReader.deserialize("manager.bin", ManagerList.class);
+        movieList = BinReader.deserialize("movie.bin", MovieList.class);
+        showroomList = BinReader.deserialize("showroom.bin", ShowroomList.class);
+        showtimesList = BinReader.deserialize("showtime.bin", ShowtimesList.class);
+        ticketSales = BinReader.deserialize("tickets.bin", TicketSales.class);
+
         FXMLLoader movieTheaterApplicationLoader = new FXMLLoader(getClass().getResource("user-login.fxml"));
         Scene scene = new Scene(movieTheaterApplicationLoader.load());
         stage.setTitle("Movie Theater Login");
@@ -22,25 +36,19 @@ public class MovieTheaterApplication extends Application {
         stage.show();
     }
 
+    @Override
+    public void stop() {
+        BinWriter.serialize(clientList, "client.bin");
+        BinWriter.serialize(managerList, "manager.bin");
+        BinWriter.serialize(movieList, "movie.bin");
+        BinWriter.serialize(showroomList, "showroom.bin");
+        BinWriter.serialize(showtimesList, "showtime.bin");
+        BinWriter.serialize(ticketSales, "tickets.bin");
+
+        System.out.println("Application is closing. Data has been saved.");
+    }
+
     public static void main(String[] args) {
         launch();
-
-        ClientList clientList = new ClientList();
-        clientList.addClient(new Client("jdoe", "johndoe@example.com", "John", "Doe", "johndoe@exmaple.com", "555-5555", LocalDate.now(), 120, 123123, true));
-        clientList.addClient(new Client("jsmith", "janesmith@example.com", "Jane", "Smith", "janesmith@exmaple.com", "555-5445", LocalDate.now(), 85, 4561651, false));
-
-        MovieList movieList = new MovieList();
-        movieList.addMovie(new Movies("Interstellar", "Sci-Fi", 169));
-        movieList.addMovie(new Movies("Shrek 2", "Slice of Life", 120));
-
-        ShowroomList showroomList = new ShowroomList();
-        showroomList.addShowroom(new Showroom(1, 20));
-        showroomList.addShowroom(new Showroom(2, 35));
-
-        ShowtimesList showtimesList = new ShowtimesList();
-        showtimesList.addShowtime(new Showtime(LocalTime.now(), LocalTime.now().plusHours(2), movieList.getAllMovies().get(0), showroomList.getShowroomsList().get(0),10, 6));
-        showtimesList.addShowtime(new Showtime(LocalTime.now(), LocalTime.now().plusHours(2), movieList.getAllMovies().get(1), showroomList.getShowroomsList().get(1), 10, 6));
-
-
     }
 }

@@ -1,11 +1,13 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
+
 /**
  * Represents the theater's showrooms' Room Number and Capacity.
  *
  * Has methods to get and set Room Number and Room Capacity, as well as a @Showrooms constructor.
  */
-public class Showroom {
+public class Showroom implements Serializable {
     private int aRoomNumber;
     private int aRoomCapacity;
 

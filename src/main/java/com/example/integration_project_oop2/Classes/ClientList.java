@@ -1,9 +1,10 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientList {
+public class ClientList implements Serializable {
     private List<Client> aClientList;
 
     public ClientList() { this.aClientList = new ArrayList<>(); }

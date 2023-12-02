@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -8,10 +9,10 @@ import java.time.LocalDate;
  * Has methods to get and set Signup Date, Purchase History and Payment info as well as a @Client constructor.
  * Extends the User class to get username, password, first name, last name, e-mail address and phone number.
  */
-public class Client extends User{
+public class Client extends User implements Serializable {
     private LocalDate aSignUpDate;
     private double aPurchaseHistory;
-    private int aPaymentInfo;
+    private String aPaymentInfo;
 
     /**
      * Client constructor
@@ -25,7 +26,7 @@ public class Client extends User{
      * @param pPurchaseHistory User purchase history.
      * @param pPaymentInfo User payment info.
      */
-    public Client(String pUsername, String pPassword, String pFirstName, String pLastName, String pEmail, String pPhoneNumber, LocalDate pSignUpDate, double pPurchaseHistory, int pPaymentInfo, boolean pIsManager) {
+    public Client(String pUsername, String pPassword, String pFirstName, String pLastName, String pEmail, String pPhoneNumber, LocalDate pSignUpDate, double pPurchaseHistory, String pPaymentInfo, boolean pIsManager) {
         super(pUsername, pPassword, pFirstName, pLastName, pEmail, pPhoneNumber, !pIsManager);
         this.setSignUpDate(pSignUpDate);
         this.setPurchaseHistory(pPurchaseHistory);
@@ -55,7 +56,7 @@ public class Client extends User{
      *
      * @return The payment information.
      */
-    public int getPaymentInfo() {
+    public String getPaymentInfo() {
         return aPaymentInfo;
     }
 
@@ -82,7 +83,7 @@ public class Client extends User{
      *
      * @param pPaymentInfo The new payment information.
      */
-    public void setPaymentInfo(int pPaymentInfo) {
+    public void setPaymentInfo(String pPaymentInfo) {
         this.aPaymentInfo = pPaymentInfo;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -8,7 +9,7 @@ import java.time.LocalDate;
  * Has methods to get and set Username, Password, First Name, Last Name, Email and Phone Number, as
  * well as a @User constructor.
  */
-abstract class User {
+abstract class User implements Serializable {
     private String aUsername;
     private String aPassword;
     private String aFirstName;
@@ -33,7 +34,7 @@ abstract class User {
         this.setLastName(pLastName);
         this.setEmail(pEmail);
         this.setPhoneNumber(pPhoneNumber);
-        this.isManager(pIsManager);
+        this.setIsManager(pIsManager);
     }
 
     /**
@@ -90,7 +91,7 @@ abstract class User {
         return aPhoneNumber;
     }
 
-    public boolean isManager(boolean pIsManager) { return aIsManager; }
+    public boolean getIsManager() { return aIsManager; }
 
     /**
      * Sets the username of the user.
@@ -156,5 +157,9 @@ abstract class User {
         if (pPhoneNumber == null)
             throw new IllegalArgumentException("Phone number cannot be null");
         this.aPhoneNumber = pPhoneNumber;
+    }
+
+    public void setIsManager(boolean pIsManager) {
+        this.aIsManager = pIsManager;
     }
 }

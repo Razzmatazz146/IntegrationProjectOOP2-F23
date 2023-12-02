@@ -1,12 +1,14 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
+
 /**
  * Represents the theater's Manager and Staff's Employee ID, job position, hours per week and permissions.
  *
  * Has methods to get and set Employee ID, Position, House and Permissions, as well as a @Manager constructor.
  * Extends the User class to get username, password, first name, last name, e-mail address and phone number.
  */
-public class Manager extends User{
+public class Manager extends User implements Serializable {
 
     /**
      * Manager constructor.

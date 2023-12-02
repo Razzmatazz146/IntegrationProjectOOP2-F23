@@ -1,0 +1,11 @@
+﻿username,password,firstName,lastName,email,phoneNumber,signUpDate,purchaseHistory,paymentInfo,isManager
+user1,1234,John,Doe,johndoe@example.com,555-1234,2023-01-15,16,411111*********1234,FALSE
+user2,1234,Jane,Smith,janesmith@example.com,555-5678,2022-11-28,24,511111*********5678,FALSE
+user3,1234,Robert,Johnson,robertjohnson@example.com,555-9876,2023-03-07,32,611111*********9876,FALSE
+user4,1234,Alice,Williams,alicewilliams@example.com,555-4321,2022-08-12,40,711111*********4321,FALSE
+user5,1234,Michael,Brown,michaelbrown@example.com,555-8765,2022-05-03,8,811111*********8765,FALSE
+user6,1234,Emily,Jones,emilyjones@example.com,555-2345,2023-02-19,16,911111*********2345,FALSE
+user7,1234,David,Miller,davidmiller@example.com,555-6789,2022-09-30,24,101111*********6789,FALSE
+user8,1234,Susan,Davis,susandavis@example.com,555-3456,2022-06-14,32,111111*********3456,FALSE
+user9,1234,Brian,Anderson,briananderson@example.com,555-7890,2023-04-25,40,121111*********7890,FALSE
+user10,1234,Linda,Thomas,lindathomas@example.com,555-4567,2022-12-09,8,131111*********4567,FALSE

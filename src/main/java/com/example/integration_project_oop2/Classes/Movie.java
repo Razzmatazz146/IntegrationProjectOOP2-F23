@@ -1,14 +1,18 @@
 package com.example.integration_project_oop2.Classes;
 
+import java.io.Serializable;
+
 /**
  * Represents the theater's available Movies' Title, Genre, and Duration.
  *
  * Has methods to get and set Title, Genre and Duration, as well as a @Movies constructor.
  */
-public class Movies {
-    String aMovieTitle;
-    String aMovieGenre;
-    int aMovieDuration;
+public class Movie implements Serializable {
+    private String aMovieTitle;
+    private String aMovieGenre;
+    private int aMovieDuration;
+    private String aAgeRating;
+    private int aReleaseYear;
 
     /**
      * Movies constructor.
@@ -16,10 +20,12 @@ public class Movies {
      * @param pMovieGenre Movie genre.
      * @param pMovieDuration Movie duration.
      */
-    public Movies(String pMovieTitle, String pMovieGenre, int pMovieDuration) {
+    public Movie(String pMovieTitle, String pMovieGenre, int pMovieDuration, int pReleaseYear, String pAgeRating) {
         this.setMovieTitle(pMovieTitle);
         this.setMovieGenre(pMovieGenre);
         this.setMovieDuration(pMovieDuration);
+        this.setReleaseYear(pReleaseYear);
+        this.setAgeRating(pAgeRating);
     }
     /**
      * Sets the title of the movie.
@@ -81,4 +87,23 @@ public class Movies {
         return aMovieGenre;
     }
 
+    public String getAgeRating() {
+        return aAgeRating;
+    }
+
+    public void setAgeRating(String pAgeRating) {
+        if (pAgeRating == null)
+            throw new IllegalArgumentException("Movie must have an age rating.");
+        this.aAgeRating = pAgeRating;
+    }
+
+    public int getReleaseYear() {
+        return aReleaseYear;
+    }
+
+    public void setReleaseYear(int pReleaseYear) {
+        if (pReleaseYear == 0)
+            throw new IllegalArgumentException("Movie must have a release year.");
+        this.aReleaseYear = pReleaseYear;
+    }
 }
