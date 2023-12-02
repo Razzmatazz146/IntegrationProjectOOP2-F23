@@ -1,7 +1,6 @@
 package com.example.integration_project_oop2.Serialization;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class BinReader {
 

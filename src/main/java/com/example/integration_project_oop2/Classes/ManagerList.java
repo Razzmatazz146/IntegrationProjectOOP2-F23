@@ -19,4 +19,5 @@ public class ManagerList implements Serializable {
             aManagerList.set(index, newManager);
         }
     }
+    public List<Manager> getAllManagers() { return new ArrayList<>(aManagerList); }
 }

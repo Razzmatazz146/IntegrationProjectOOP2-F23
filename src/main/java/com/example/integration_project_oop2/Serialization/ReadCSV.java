@@ -1,27 +1,19 @@
 //package com.example.integration_project_oop2.Serialization;
-//import com.example.integration_project_oop2.Classes.*;
+//
+//import com.example.integration_project_oop2.Classes.Client;
 //
 //import java.io.*;
 //import java.time.LocalDate;
-//import java.time.LocalTime;
-//import java.time.format.DateTimeFormatter;
 //import java.util.ArrayList;
 //
-//public class ReadCSV implements Serializable{
+//public class ReadCSV {
 //    public static void main(String[] args) {
-//        String ticketCsvFilePath = "ticket.csv";
-//        String ticketBinFilePath = "ticket.bin";
-//        ArrayList<Showtime> showtimes = BinReader.deserialize("showtime.bin");
+//        String clientCsvFilePath = "client.csv";
+//        String clientBinFilePath = "client.bin";
 //
-//// Ensure showtimes are not null
-//        if (showtimes == null) {
-//            System.out.println("Failed to load showtimes from showtime.bin.");
-//            return;
-//        }
+//        ArrayList<Client> clients = new ArrayList<>();
 //
-//        ArrayList<Ticket> tickets = new ArrayList<>();
-//
-//        try (BufferedReader br = new BufferedReader(new FileReader(ticketCsvFilePath))) {
+//        try (BufferedReader br = new BufferedReader(new FileReader(clientCsvFilePath))) {
 //            String line;
 //            br.readLine(); // Skip the header line
 //            while ((line = br.readLine()) != null) {
@@ -30,22 +22,28 @@
 //                }
 //
 //                String[] values = line.split(",");
-//                Showtime showtime = showtimes.get(Integer.parseInt(values[0])); // Get Showtime by index
-//                boolean isAdult = "TRUE".equalsIgnoreCase(values[1].trim());
-//                int ticketNumber = Integer.parseInt(values[2]);
-//                LocalDate purchaseDate = LocalDate.parse(values[3]);
+//                String username = values[0].trim();
+//                String password = values[1].trim();
+//                String firstName = values[2].trim();
+//                String lastName = values[3].trim();
+//                String email = values[4].trim();
+//                String phoneNumber = values[5].trim();
+//                LocalDate signUpDate = LocalDate.parse(values[6].trim());
+//                int purchaseHistory = Integer.parseInt(values[7].trim());
+//                String paymentInfo = values[8].trim();
+//                boolean isManager = Boolean.parseBoolean(values[9].trim());
 //
-//                Ticket ticket = new Ticket(showtime, isAdult, ticketNumber, purchaseDate);
-//                tickets.add(ticket);
+//                Client client = new Client(username, password, firstName, lastName, email, phoneNumber, signUpDate, purchaseHistory, paymentInfo, isManager);
+//                clients.add(client);
 //            }
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //            return;
 //        }
 //
-//        // Serialize the ArrayList<Ticket> to a .bin file
-//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ticketBinFilePath))) {
-//            oos.writeObject(tickets);
+//        // Serialize the ArrayList<Client> to a .bin file
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(clientBinFilePath))) {
+//            oos.writeObject(clients);
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }

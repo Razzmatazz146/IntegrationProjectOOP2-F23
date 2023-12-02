@@ -13,6 +13,7 @@ public class Client extends User implements Serializable {
     private LocalDate aSignUpDate;
     private double aPurchaseHistory;
     private String aPaymentInfo;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Client constructor

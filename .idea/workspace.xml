@@ -5,42 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9163443b-5bcc-4f25-9af8-f88b42f0b368" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvs/client.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvs/manager.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvs/movie.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvs/showroom.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvs/showtime.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvs/ticket.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movie.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/showroom.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/showtime.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ManagerList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/BinReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/BinWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/ReadCSV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/ReadExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/WriteExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movie.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showroom.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showtime.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/SingletonLists.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/ReadBinTester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tickets.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.bin" beforeDir="false" afterPath="$PROJECT_DIR$/client.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csvs/manager.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csvs/manager.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager.bin" beforeDir="false" afterPath="$PROJECT_DIR$/manager.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie.bin" beforeDir="false" afterPath="$PROJECT_DIR$/movie.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showroom.bin" beforeDir="false" afterPath="$PROJECT_DIR$/showroom.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showtime.bin" beforeDir="false" afterPath="$PROJECT_DIR$/showtime.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ClientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ClientList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/MovieList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showroom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowroomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowroomList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showtime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Showtime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketSales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/MovieListEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/MovieListEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ManagerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ManagerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/MovieTheaterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/MovieTheaterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/BinReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/BinReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/ReadCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/ReadCSV.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +102,7 @@
       <workItem from="1701265554822" duration="3335000" />
       <workItem from="1701367931201" duration="268000" />
       <workItem from="1701457407406" duration="4918000" />
-      <workItem from="1701525342213" duration="11728000" />
+      <workItem from="1701525342213" duration="22350000" />
     </task>
     <servers />
   </component>

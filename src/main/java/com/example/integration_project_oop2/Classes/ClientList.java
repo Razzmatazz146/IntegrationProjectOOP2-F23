@@ -19,5 +19,7 @@ public class ClientList implements Serializable {
             aClientList.set(index, newClient);
         }
     }
+    public List<Client> getAllClients() { return new ArrayList<>(aClientList); }
+
 
 }

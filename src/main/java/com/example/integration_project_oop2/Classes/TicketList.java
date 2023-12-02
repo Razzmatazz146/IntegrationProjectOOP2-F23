@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TicketSales implements Serializable {
+public class TicketList implements Serializable {
     private List<Ticket> aTicketSales;
 
-    public TicketSales() { this.aTicketSales = new ArrayList<>(); }
+    public TicketList() { this.aTicketSales = new ArrayList<>(); }
 
     public void addTicket(Ticket ticket) { this.aTicketSales.add(ticket); }
 

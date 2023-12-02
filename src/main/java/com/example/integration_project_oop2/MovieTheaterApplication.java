@@ -11,39 +11,53 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MovieTheaterApplication extends Application {
-    private ClientList clientList;
-    private ManagerList managerList;
-    private MovieList movieList;
-    private ShowroomList showroomList;
-    private ShowtimesList showtimesList;
-    private TicketSales ticketSales;
-
     @Override
     public void start(Stage stage) throws IOException {
+        SingletonLists lists = SingletonLists.getInstance();
 
-        clientList = BinReader.deserialize("client.bin", ClientList.class);
-        managerList = BinReader.deserialize("manager.bin", ManagerList.class);
-        movieList = BinReader.deserialize("movie.bin", MovieList.class);
-        showroomList = BinReader.deserialize("showroom.bin", ShowroomList.class);
-        showtimesList = BinReader.deserialize("showtime.bin", ShowtimesList.class);
-        ticketSales = BinReader.deserialize("tickets.bin", TicketSales.class);
-
+        lists.setClientList(BinReader.deserialize("client.bin", ClientList.class));
+        lists.setManagerList(BinReader.deserialize("manager.bin", ManagerList.class));
+        lists.setMovieList(BinReader.deserialize("movie.bin", MovieList.class));
+        lists.setShowroomList(BinReader.deserialize("showroom.bin", ShowroomList.class));
+        lists.setShowtimeList(BinReader.deserialize("showtime.bin", ShowtimeList.class));
+        lists.setTicketList(BinReader.deserialize("tickets.bin", TicketList.class));
+        System.out.println(lists.getManagerList());
         FXMLLoader movieTheaterApplicationLoader = new FXMLLoader(getClass().getResource("user-login.fxml"));
         Scene scene = new Scene(movieTheaterApplicationLoader.load());
         stage.setTitle("Movie Theater Login");
         stage.setScene(scene);
+        System.out.println("Managers:");
+        for (Manager manager : lists.getManagerList().getAllManagers()) {
+            System.out.println("Username: " + manager.getUsername());
+            System.out.println("First Name: " + manager.getFirstName());
+            System.out.println("Last Name: " + manager.getLastName());
+            // Add more fields as needed
+            System.out.println(); // Separate each manager's information
+        }
+
+        // Print the client information
+        System.out.println("Clients:");
+        for (Client client : lists.getClientList().getAllClients()) {
+            System.out.println("Username: " + client.getUsername());
+            System.out.println("First Name: " + client.getFirstName());
+            System.out.println("Last Name: " + client.getLastName());
+            // Add more fields as needed
+            System.out.println(); // Separate each client's information
+        }
 
         stage.show();
     }
 
     @Override
     public void stop() {
-        BinWriter.serialize(clientList, "client.bin");
-        BinWriter.serialize(managerList, "manager.bin");
-        BinWriter.serialize(movieList, "movie.bin");
-        BinWriter.serialize(showroomList, "showroom.bin");
-        BinWriter.serialize(showtimesList, "showtime.bin");
-        BinWriter.serialize(ticketSales, "tickets.bin");
+        SingletonLists lists = SingletonLists.getInstance();
+
+        BinWriter.serialize(lists.getClientList(), "client.bin");
+        BinWriter.serialize(lists.getManagerList(), "manager.bin");
+        BinWriter.serialize(lists.getMovieList(), "movie.bin");
+        BinWriter.serialize(lists.getShowroomList(), "showroom.bin");
+        BinWriter.serialize(lists.getShowtimeList(), "showtime.bin");
+        BinWriter.serialize(lists.getTicketList(), "tickets.bin");
 
         System.out.println("Application is closing. Data has been saved.");
     }

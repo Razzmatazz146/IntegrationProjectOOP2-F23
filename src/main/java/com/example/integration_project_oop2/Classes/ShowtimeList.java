@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowtimesList implements Serializable {
+public class ShowtimeList implements Serializable {
     
     private List<Showtime> aShowtimeList;
 
-    public ShowtimesList() { this.aShowtimeList = new ArrayList<>(); }
+    public ShowtimeList() { this.aShowtimeList = new ArrayList<>(); }
 
     public void addShowtime(Showtime showtime) { this.aShowtimeList.add(showtime); }
 
