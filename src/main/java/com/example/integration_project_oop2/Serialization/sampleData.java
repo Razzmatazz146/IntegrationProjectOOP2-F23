@@ -1,4 +1,4 @@
-
+//
 //    ClientList clientList = new ClientList();
 //        clientList.addClient(new Client("jdoe", "johndoe@example.com", "John", "Doe", "johndoe@exmaple.com", "555-5555",LocalDate.now(), 120, "123123", false));
 //        clientList.addClient(new Client("jsmith", "janesmith@example.com", "Jane", "Smith", "janesmith@exmaple.com", "555-5445", LocalDate.now(), 85, "4561651", false));
@@ -44,4 +44,4 @@
 //        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), false, 37, LocalDate.of(2023, 12, 02)));
 //        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(2), true, 8, LocalDate.of(2023, 11, 22)));
 //        lists.setTicketList(ticketList);
-
+//

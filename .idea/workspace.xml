@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9163443b-5bcc-4f25-9af8-f88b42f0b368" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ClientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ClientList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.backup-bin/client.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.backup-bin/client.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.backup-bin/manager.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.backup-bin/manager.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.backup-bin/showroom.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.backup-bin/showroom.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.backup-bin/showtime.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.backup-bin/showtime.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showroom.bin" beforeDir="false" afterPath="$PROJECT_DIR$/showroom.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showtime.bin" beforeDir="false" afterPath="$PROJECT_DIR$/showtime.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/MovieTheaterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/MovieTheaterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/sampleData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Serialization/sampleData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tickets.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "bugfixing",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
