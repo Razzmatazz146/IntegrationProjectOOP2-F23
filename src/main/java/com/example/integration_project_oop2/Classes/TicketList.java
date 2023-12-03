@@ -2,9 +2,10 @@ package com.example.integration_project_oop2.Classes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class TicketList implements Serializable {
+public class TicketList implements Serializable, Iterable<Ticket> {
     private List<Ticket> aTicketList;
 
     public TicketList() { this.aTicketList = new ArrayList<>(); }
@@ -24,8 +25,11 @@ public class TicketList implements Serializable {
         if (index >= 0 && index < aTicketList.size()) {
             return aTicketList.get(index);
         }
-        return null; // Return null if the index is out of bounds
+        return null;
     }
 
-    public List<Ticket> getAllTickets() { return new ArrayList<>(aTicketList); }
+    @Override
+    public Iterator<Ticket> iterator() {
+        return aTicketList.iterator();
+    }
 }

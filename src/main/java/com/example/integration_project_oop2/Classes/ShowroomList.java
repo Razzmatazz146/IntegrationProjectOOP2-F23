@@ -2,9 +2,10 @@ package com.example.integration_project_oop2.Classes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class ShowroomList implements Serializable {
+public class ShowroomList implements Serializable, Iterable<Showroom> {
     private List<Showroom> aShowroomList;
 
     public ShowroomList() { this.aShowroomList = new ArrayList<>(); }
@@ -25,6 +26,11 @@ public class ShowroomList implements Serializable {
         if (index >= 0 && index < aShowroomList.size()) {
             return aShowroomList.get(index);
         }
-        return null; // Return null if the index is out of bounds
+        return null;
+    }
+
+    @Override
+    public Iterator<Showroom> iterator() {
+        return aShowroomList.iterator();
     }
 }

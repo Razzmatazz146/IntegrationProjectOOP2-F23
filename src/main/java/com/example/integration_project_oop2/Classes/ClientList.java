@@ -32,7 +32,7 @@ public class ClientList implements Serializable, Iterable<Client> {
         if (index >= 0 && index < aClientList.size()) {
             return aClientList.get(index);
         }
-        return null; // Return null if the index is out of bounds
+        return null;
     }
 
     @Override
