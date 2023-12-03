@@ -2,14 +2,20 @@ package com.example.integration_project_oop2.Classes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class ManagerList implements Serializable {
+public class ManagerList implements Serializable, Iterable<Manager> {
     private List<Manager> aManagerList;
 
-    public ManagerList() { this.aManagerList = new ArrayList<>(); }
+    // Constructor
+    public ManagerList() {
+        this.aManagerList = new ArrayList<>();
+    }
 
-    public void addManager(Manager manager) { this.aManagerList.add(manager); }
+    public void addManager(Manager manager) {
+        this.aManagerList.add(manager);
+    }
 
     public void removeManager(Manager manager) { this.aManagerList.remove(manager); }
 
@@ -19,5 +25,16 @@ public class ManagerList implements Serializable {
             aManagerList.set(index, newManager);
         }
     }
-    public List<Manager> getAllManagers() { return new ArrayList<>(aManagerList); }
+
+    public Manager getManagerByIndex(int index) {
+        if (index >= 0 && index < aManagerList.size()) {
+            return aManagerList.get(index);
+        }
+        return null; // Return null if the index is out of bounds
+    }
+
+    @Override
+    public Iterator<Manager> iterator() {
+        return aManagerList.iterator();
+    }
 }

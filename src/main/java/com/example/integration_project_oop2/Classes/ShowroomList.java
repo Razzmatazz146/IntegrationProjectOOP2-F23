@@ -21,4 +21,10 @@ public class ShowroomList implements Serializable {
             aShowroomList.set(index, newShowroom);
         }
     }
+    public Showroom getShowroomByIndex(int index) {
+        if (index >= 0 && index < aShowroomList.size()) {
+            return aShowroomList.get(index);
+        }
+        return null; // Return null if the index is out of bounds
+    }
 }

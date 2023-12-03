@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController extends WindowController {
     public PasswordField passwordTextField;
@@ -34,10 +35,13 @@ public class LoginController extends WindowController {
      * Closes the application
      */
     @FXML
-    protected void onExitButtonClick() { System.exit(0); }
+    protected void onExitButtonClick() {
+        Stage stage = (Stage) exitButton.getScene().getWindow();
+        stage.close();
+    }
 
     private Manager validateManager(String username, String password) {
-        for (Manager manager : managerList.getAllManagers()) {
+        for (Manager manager : managerList) {
             if (manager.getUsername().equals(username) && manager.getPassword().equals(password)) {
                 return manager;
             }
@@ -45,7 +49,7 @@ public class LoginController extends WindowController {
         return null;
     }
     private Client validateClient(String username, String password) {
-        for (Client client : clientList.getAllClients()) {
+        for (Client client : clientList) {
             if (client.getUsername().equals(username) && client.getPassword().equals(password)) {
                 return client;
             }
@@ -57,10 +61,11 @@ public class LoginController extends WindowController {
      */
     @FXML
     protected void onLoginButtonClick(ActionEvent event){
-        refreshLists();
+        SingletonLists lists = SingletonLists.getInstance();
 
-        String admin = "admin";
-        String adminPassword = "admin";
+        clientList = lists.getClientList();
+        managerList = lists.getManagerList();
+
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
 
@@ -76,7 +81,6 @@ public class LoginController extends WindowController {
         } else if (username.equals("admin")){
             newWindow(event, "manager-view.fxml", "Manager View");
         } else {
-            // Display error message to the user instead of throwing an exception
             throw new IllegalArgumentException("Username or password is invalid.");
         }
     }

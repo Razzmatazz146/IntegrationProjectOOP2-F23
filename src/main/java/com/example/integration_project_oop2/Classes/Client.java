@@ -10,10 +10,12 @@ import java.time.LocalDate;
  * Extends the User class to get username, password, first name, last name, e-mail address and phone number.
  */
 public class Client extends User implements Serializable {
+    private static final long serialVersionUID = -3705265347831693642L;
+
+
     private LocalDate aSignUpDate;
     private double aPurchaseHistory;
     private String aPaymentInfo;
-    private static final long serialVersionUID = 1L;
 
     /**
      * Client constructor

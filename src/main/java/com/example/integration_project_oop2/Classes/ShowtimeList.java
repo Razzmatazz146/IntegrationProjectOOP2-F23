@@ -21,5 +21,12 @@ public class ShowtimeList implements Serializable {
         }
     }
 
+    public Showtime getShowtimeByIndex(int index) {
+        if (index >= 0 && index < aShowtimeList.size()) {
+            return aShowtimeList.get(index);
+        }
+        return null; // Return null if the index is out of bounds
+    }
+
     public List<Showtime> getAllShowtimes() { return new ArrayList<>(aShowtimeList); }
 }

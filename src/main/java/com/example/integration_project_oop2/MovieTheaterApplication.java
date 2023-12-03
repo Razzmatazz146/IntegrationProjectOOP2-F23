@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class MovieTheaterApplication extends Application {
     @Override
@@ -21,29 +23,11 @@ public class MovieTheaterApplication extends Application {
         lists.setShowroomList(BinReader.deserialize("showroom.bin", ShowroomList.class));
         lists.setShowtimeList(BinReader.deserialize("showtime.bin", ShowtimeList.class));
         lists.setTicketList(BinReader.deserialize("tickets.bin", TicketList.class));
-        System.out.println(lists.getManagerList());
+
         FXMLLoader movieTheaterApplicationLoader = new FXMLLoader(getClass().getResource("user-login.fxml"));
         Scene scene = new Scene(movieTheaterApplicationLoader.load());
         stage.setTitle("Movie Theater Login");
         stage.setScene(scene);
-        System.out.println("Managers:");
-        for (Manager manager : lists.getManagerList().getAllManagers()) {
-            System.out.println("Username: " + manager.getUsername());
-            System.out.println("First Name: " + manager.getFirstName());
-            System.out.println("Last Name: " + manager.getLastName());
-            // Add more fields as needed
-            System.out.println(); // Separate each manager's information
-        }
-
-        // Print the client information
-        System.out.println("Clients:");
-        for (Client client : lists.getClientList().getAllClients()) {
-            System.out.println("Username: " + client.getUsername());
-            System.out.println("First Name: " + client.getFirstName());
-            System.out.println("Last Name: " + client.getLastName());
-            // Add more fields as needed
-            System.out.println(); // Separate each client's information
-        }
 
         stage.show();
     }

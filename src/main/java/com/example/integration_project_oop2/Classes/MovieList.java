@@ -2,9 +2,10 @@ package com.example.integration_project_oop2.Classes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class MovieList implements Serializable {
+public class MovieList implements Serializable, Iterable<Movie>{
     private List<Movie> aMovieList;
 
     public MovieList() { this.aMovieList = new ArrayList<>(); }
@@ -20,5 +21,15 @@ public class MovieList implements Serializable {
         }
     }
 
-    public List<Movie> getAllMovies() { return new ArrayList<>(aMovieList); }
+    public Movie getMovieByIndex(int index) {
+        if (index >= 0 && index < aMovieList.size()) {
+            return aMovieList.get(index);
+        }
+        return null; // Return null if the index is out of bounds
+    }
+
+    @Override
+    public Iterator<Movie> iterator() {
+        return aMovieList.iterator();
+    }
 }

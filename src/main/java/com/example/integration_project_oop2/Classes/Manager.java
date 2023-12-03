@@ -9,6 +9,8 @@ import java.io.Serializable;
  * Extends the User class to get username, password, first name, last name, e-mail address and phone number.
  */
 public class Manager extends User implements Serializable {
+    private static final long serialVersionUID = 1693984660185332327L;
+
 
     /**
      * Manager constructor.
