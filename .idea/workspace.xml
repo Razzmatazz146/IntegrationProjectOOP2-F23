@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9163443b-5bcc-4f25-9af8-f88b42f0b368" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ClientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ClientList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowroomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowroomList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/ShowtimeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Classes/TicketList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/MovieTheaterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/integration_project_oop2/MovieTheaterApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -17,18 +17,6 @@ public class LoginController extends WindowController {
     private ClientList clientList;
     private ManagerList managerList;
 
-
-    public void refreshLists(){
-        SingletonLists lists = SingletonLists.getInstance();
-
-        clientList = lists.getClientList();
-        managerList = lists.getManagerList();
-    }
-    @FXML
-    public void initialize(){
-        refreshLists();
-    }
-
     // Method to set managerList and clientList (called from MovieTheaterApplication)
 
     /**
@@ -40,6 +28,14 @@ public class LoginController extends WindowController {
         stage.close();
     }
 
+    /**
+     * Checks if manager usernames and password are match
+     *
+     * @param username Parsed username from text box
+     * @param password Parsed password from password box
+     * @return manager object or null
+     */
+    //
     private Manager validateManager(String username, String password) {
         for (Manager manager : managerList) {
             if (manager.getUsername().equals(username) && manager.getPassword().equals(password)) {
@@ -48,6 +44,14 @@ public class LoginController extends WindowController {
         }
         return null;
     }
+
+    /**
+     * Checks if client usernames and passwords are match
+     *
+     * @param username Parsed username from text box
+     * @param password Parsed password from password box
+     * @return client object or null
+     */
     private Client validateClient(String username, String password) {
         for (Client client : clientList) {
             if (client.getUsername().equals(username) && client.getPassword().equals(password)) {
@@ -61,17 +65,22 @@ public class LoginController extends WindowController {
      */
     @FXML
     protected void onLoginButtonClick(ActionEvent event){
+        // Creates instance of singleton
         SingletonLists lists = SingletonLists.getInstance();
 
+        // Gets client and Manager lists and assigns them to variables. (ClientList clientList, ManagerList managerList)
         clientList = lists.getClientList();
         managerList = lists.getManagerList();
 
+        // Assigns text in checkboxes variable names to be used in validation.
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
 
+        // Calls validate methods with username and password.
         Manager validManager = validateManager(username, password);
         Client validClient = validateClient(username, password);
 
+        // Checks if manager or client. Returns error if username or password invalid.
         if (validManager != null) {
             // The user is a manager
             newWindow(event, "manager-view.fxml", "Manager View");

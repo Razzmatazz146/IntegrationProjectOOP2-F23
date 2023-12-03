@@ -9,14 +9,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class MovieTheaterApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        // Creates an instance of singleton
         SingletonLists lists = SingletonLists.getInstance();
 
+        // Deserializes the bins to then set them in the singleton. They can then be used throughout the application.
         lists.setClientList(BinReader.deserialize("client.bin", ClientList.class));
         lists.setManagerList(BinReader.deserialize("manager.bin", ManagerList.class));
         lists.setMovieList(BinReader.deserialize("movie.bin", MovieList.class));
@@ -36,6 +36,7 @@ public class MovieTheaterApplication extends Application {
     public void stop() {
         SingletonLists lists = SingletonLists.getInstance();
 
+        // Saves the lists to the bins
         BinWriter.serialize(lists.getClientList(), "client.bin");
         BinWriter.serialize(lists.getManagerList(), "manager.bin");
         BinWriter.serialize(lists.getMovieList(), "movie.bin");
