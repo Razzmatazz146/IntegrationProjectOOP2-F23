@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.integration_project_oop2.AddShowtimeView"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="279.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.AddShowtimeView">
+   <children>
+      <Button fx:id="addButton" layoutX="339.0" layoutY="215.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
+      <Button fx:id="backButton" layoutX="276.0" layoutY="215.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+      <ComboBox fx:id="movieComboBox" layoutX="41.0" layoutY="56.0" prefWidth="150.0" />
+      <TextField fx:id="childPriceTextBox" layoutX="229.0" layoutY="177.0" />
+      <TextField fx:id="adultPriceTextBox" layoutX="41.0" layoutY="177.0" />
+      <Label layoutX="41.0" layoutY="30.0" text="Select a Movie:" />
+      <ComboBox layoutX="229.0" layoutY="56.0" prefWidth="150.0" />
+      <ComboBox fx:id="startTimeComboBox" layoutX="41.0" layoutY="114.0" prefWidth="150.0" />
+      <ComboBox fx:id="endimeComboBox" layoutX="229.0" layoutY="114.0" prefWidth="150.0" />
+      <Label layoutX="229.0" layoutY="30.0" text="Select a Showroom:" />
+      <Label layoutX="41.0" layoutY="90.0" text="Start Time:" />
+      <Label layoutX="229.0" layoutY="90.0" text="End Time:" />
+      <Label layoutX="41.0" layoutY="150.0" text="Adult Ticket Price:" />
+      <Label layoutX="226.0" layoutY="150.0" text="Child Ticket Price:" />
+   </children>
 </AnchorPane>
