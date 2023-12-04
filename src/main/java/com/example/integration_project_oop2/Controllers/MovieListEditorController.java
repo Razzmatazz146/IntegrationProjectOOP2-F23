@@ -64,7 +64,12 @@ public class MovieListEditorController extends WindowController{
             viewAlert.showAndWait();
         } else {
 
-            // TODO Add code to remove item from ListView and database list.
+            Movie selectedMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
+
+            movieListView.getItems().remove(selectedMovie);
+            movieList.removeMovie(selectedMovie);
+
+            initialize();
 
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + " has been removed.");
             viewAlert.showAndWait();

@@ -1,5 +1,8 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.Showtime;
+import com.example.integration_project_oop2.Classes.ShowtimeList;
+import com.example.integration_project_oop2.Classes.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -21,6 +24,7 @@ public class ShowtimesListEditorController {
     public ChoiceBox movieDropdown;
     public ChoiceBox showroomDropdown;
     public ChoiceBox timeDropdown;
+    private ShowtimeList showtimeList;
 
     private String getSelectedMovie() { return  (String) movieDropdown.getSelectionModel().getSelectedItem(); }
     private String getSelectedRoom() { return (String) showroomDropdown.getSelectionModel().getSelectedItem(); }
@@ -31,6 +35,18 @@ public class ShowtimesListEditorController {
             LocalTime.of(18, 0),
             LocalTime.of(21, 0)
     };
+
+    @FXML
+    private void initialize(){
+        SingletonLists lists = SingletonLists.getInstance();
+        showtimeList = lists.getShowtimeList();
+        populateList();
+    }
+    private void populateList(){
+        for(Showtime showtime : showtimeList){
+            showtimesListView.getItems().add(showtime.getMovie().getMovieTitle());
+        }
+    }
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {

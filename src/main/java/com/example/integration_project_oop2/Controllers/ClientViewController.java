@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ClientViewController {
@@ -21,6 +22,7 @@ public class ClientViewController {
     public Button backButton;
     public ListView movieListView;
     public Label ratingLabel;
+    public ListView showtimeListView;
     private MovieList movieList;
 
     @FXML
@@ -39,6 +41,15 @@ public class ClientViewController {
         for(Movie movie : movieList){
             movieListView.getItems().add(movie.getMovieTitle());
         }
+    }
+
+    public void onNewSelection(MouseEvent mouseEvent) {
+        Movie selectedMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
+
+        titleLabel.setText(selectedMovie.getMovieTitle());
+        genreLabel.setText(selectedMovie.getMovieGenre());
+        durationLabel.setText(String.valueOf(selectedMovie.getMovieDuration()));
+        ratingLabel.setText(selectedMovie.getAgeRating());
     }
 }
 
