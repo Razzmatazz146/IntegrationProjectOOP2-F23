@@ -36,23 +36,12 @@ public class LoginController extends WindowController {
      * @return manager object or null
      */
     //
-    private Manager validateManager(String username, String password) {
+    private User validateUser(String username, String password) {
         for (Manager manager : managerList) {
             if (manager.getUsername().equals(username) && manager.getPassword().equals(password)) {
                 return manager;
             }
         }
-        return null;
-    }
-
-    /**
-     * Checks if client usernames and passwords are match
-     *
-     * @param username Parsed username from text box
-     * @param password Parsed password from password box
-     * @return client object or null
-     */
-    private Client validateClient(String username, String password) {
         for (Client client : clientList) {
             if (client.getUsername().equals(username) && client.getPassword().equals(password)) {
                 return client;
@@ -77,14 +66,13 @@ public class LoginController extends WindowController {
         String password = passwordTextField.getText();
 
         // Calls validate methods with username and password.
-        Manager validManager = validateManager(username, password);
-        Client validClient = validateClient(username, password);
+        User validUser = validateUser(username, password);
 
         // Checks if manager or client. Returns error if username or password invalid.
-        if (validManager != null) {
+        if (validUser instanceof Manager) {
             // The user is a manager
             newWindow(event, "manager-view.fxml", "Manager View");
-        } else if (validClient != null) {
+        } else if (validUser instanceof Client) {
             // The user is a client
             newWindow(event, "client-view.fxml", "Available Movies");
         } else if (username.equals("admin")){

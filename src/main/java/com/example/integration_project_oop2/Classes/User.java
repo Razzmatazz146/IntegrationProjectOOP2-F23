@@ -9,7 +9,7 @@ import java.time.LocalDate;
  * Has methods to get and set Username, Password, First Name, Last Name, Email and Phone Number, as
  * well as a @User constructor.
  */
-abstract class User implements Serializable {
+public abstract class User implements Serializable {
     private String aUsername;
     private String aPassword;
     private String aFirstName;
