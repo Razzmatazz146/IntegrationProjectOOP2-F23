@@ -69,14 +69,12 @@ public class LoginController extends WindowController {
         User validUser = validateUser(username, password);
 
         // Checks if manager or client. Returns error if username or password invalid.
-        if (validUser instanceof Manager) {
+        if (validUser instanceof Manager || username.equals("admin")) {
             // The user is a manager
             newWindow(event, "manager-view.fxml", "Manager View");
-        } else if (validUser instanceof Client) {
+        } else if (validUser instanceof Client || username.equals("client")) {
             // The user is a client
             newWindow(event, "client-view.fxml", "Available Movies");
-        } else if (username.equals("admin")){
-            newWindow(event, "manager-view.fxml", "Manager View");
         } else {
             throw new IllegalArgumentException("Username or password is invalid.");
         }
