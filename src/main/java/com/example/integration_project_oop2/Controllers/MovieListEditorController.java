@@ -1,24 +1,26 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.Movie;
+import com.example.integration_project_oop2.Classes.MovieList;
+import com.example.integration_project_oop2.Classes.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-public class MovieListEditorController {
+public class MovieListEditorController extends WindowController{
 
-    public TextField titleTextField;
-    public TextField durationTextField;
-    public TextField genreTextField;
     public Button addButton;
     public Button backButton;
     public Button updateButton;
     public Button removeButton;
     public ListView movieListView;
+    public Label titleLabel;
+    public Label genreLabel;
+    public Label durationLabel;
+    public Label ratingLabel;
+    private MovieList movieList;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
@@ -30,37 +32,32 @@ public class MovieListEditorController {
 
     @FXML
     private void initialize(){
-        movieListView.getItems().add("Test");
+        SingletonLists lists = SingletonLists.getInstance();
+        movieList = lists.getMovieList();
+        populateList();
     }
-    public void onAddButtonClick() {
-        String realMovie = "It";
 
-        //TODO Add code to add new movie using fields.
-
-        if (titleTextField.getText().equals(realMovie)) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Movie already exists.");
-            viewAlert.showAndWait();
-        } else {
-            movieListView.getItems().add(titleTextField.getText());
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + "has been added!");
-            viewAlert.showAndWait();
+    private void populateList(){
+        for(Movie movie : movieList){
+            movieListView.getItems().add(movie.getMovieTitle());
         }
     }
 
-    public void onUpdateButtonClick() {
+    public void onAddButtonClick(ActionEvent event) {
+        newWindow(event, "addNewMovie-view.fxml", "Add New Movie");
+    }
+
+    public void onUpdateButtonClick(ActionEvent event) {
         if(movieListView.getSelectionModel().isEmpty()) {
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a movie to update.");
             viewAlert.showAndWait();
         } else {
-
-            // TODO: Add code to update database List.
-
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + " has been updated.");
-            viewAlert.showAndWait();
+            String title = movieListView.getSelectionModel().getSelectedItem().toString();
+            newWindow(event,"addNewMovie-view.fxml", "Update " + title);
         }
     }
 
-    public void onRemoveButtonClick() {
+    public void onRemoveButtonClick(ActionEvent event) {
 
         if(movieListView.getSelectionModel().isEmpty()){
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a movie to remove.");
