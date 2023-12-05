@@ -3,21 +3,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.Controllers.ShowtimesListEditorController">
+<AnchorPane prefHeight="400.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.Controllers.ShowtimesListEditorController">
    <children>
       <ListView fx:id="showtimesListView" layoutX="35.0" layoutY="34.0" prefHeight="335.0" prefWidth="200.0" />
-      <Label layoutX="249.0" layoutY="85.0" text="Showroom:" />
-      <Label layoutX="249.0" layoutY="166.0" text="Adult Price:" />
-      <Label layoutX="268.0" layoutY="54.0" text="Movie:" />
-      <TextField fx:id="adultPriceTextField" layoutX="323.0" layoutY="162.0" />
-      <TextField fx:id="childPriceTextField" layoutX="323.0" layoutY="193.0" />
-      <Button fx:id="addButton" layoutX="266.0" layoutY="276.0" mnemonicParsing="false" onAction="#onAddButtonClick" prefHeight="25.0" prefWidth="63.0" text="Add" />
-      <Button fx:id="backButton" layoutX="350.0" layoutY="319.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
-      <Button fx:id="updateButton" layoutX="339.0" layoutY="276.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" prefHeight="25.0" prefWidth="63.0" text="Update" />
-      <Button fx:id="removeButton" layoutX="413.0" layoutY="276.0" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Remove" />
-      <Label layoutX="250.0" layoutY="197.0" text="Child Price:" />
-      <ChoiceBox fx:id="showroomDropdown" layoutX="322.0" layoutY="81.0" prefWidth="150.0" />
-      <Label layoutX="272.0" layoutY="118.0" text="Time:" />
-      <ChoiceBox fx:id="timeDropdown" layoutX="323.0" layoutY="114.0" prefWidth="150.0" />
+      <Button fx:id="addButton" layoutX="242.0" layoutY="296.0" mnemonicParsing="false" onAction="#onAddButtonClick" prefHeight="25.0" prefWidth="63.0" text="Add" />
+      <Button fx:id="backButton" layoutX="326.0" layoutY="330.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+      <Button fx:id="updateButton" layoutX="315.0" layoutY="296.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" prefHeight="25.0" prefWidth="63.0" text="Update" />
+      <Button fx:id="removeButton" layoutX="244.0" layoutY="330.0" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Remove" />
+      <Label layoutX="242.0" layoutY="34.0" text="Movie Title" />
+      <Label layoutX="242.0" layoutY="52.0" text="Label" />
+      <Label layoutX="242.0" layoutY="81.0" text="Showroom Number" />
+      <Label layoutX="245.0" layoutY="99.0" text="Label" />
+      <Label layoutX="245.0" layoutY="124.0" text="Duration" />
+      <Label layoutX="244.0" layoutY="142.0" text="From:" />
+      <Label layoutX="318.0" layoutY="142.0" text="To:" />
+      <Label layoutX="281.0" layoutY="142.0" text="Label" />
+      <Label layoutX="346.0" layoutY="142.0" text="Label" />
+      <Label layoutX="241.0" layoutY="173.0" text="Ticket Price" />
+      <Label layoutX="245.0" layoutY="193.0" text="Adult:" />
+      <Label layoutX="245.0" layoutY="211.0" text="Child:" />
+      <Label layoutX="282.0" layoutY="193.0" text="Label" />
+      <Label layoutX="281.0" layoutY="211.0" text="Label" />
    </children>
 </AnchorPane>
