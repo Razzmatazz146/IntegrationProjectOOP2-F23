@@ -31,6 +31,7 @@ public class SignupController extends WindowController {
     private void initialize(){
         SingletonLists lists = SingletonLists.getInstance();
         clientList = lists.getClientList();
+        managerList = lists.getManagerList();
     }
 
     private boolean ifExists(String username, String email) {

@@ -34,18 +34,18 @@ public class UpdateBins {
         movieList.addMovie(new Movie("Shrek 2", "Comedy", 92, 2004, "PG"));
         lists.setMovieList(movieList);
 
-        ShowtimeList showtimeList = new ShowtimeList();
-        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(0), lists.getShowroomList().getShowroomByIndex(0), 10, 5, 14));
-        showtimeList.addShowtime(new Showtime(LocalTime.of(14, 00, 00), LocalTime.of(17, 00, 00), lists.getMovieList().getMovieByIndex(7), lists.getShowroomList().getShowroomByIndex(0), 10, 5, 13));
-        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(3), lists.getShowroomList().getShowroomByIndex(1), 14, 7, 11));
-        showtimeList.addShowtime(new Showtime(LocalTime.of(17, 00, 00), LocalTime.of(20, 00, 00), lists.getMovieList().getMovieByIndex(4), lists.getShowroomList().getShowroomByIndex(3), 10, 5, 5));
-        lists.setShowtimeList(showtimeList);
-
         ShowroomList showroomList = new ShowroomList();
         showroomList.addShowroom(new Showroom(1, 20));
         showroomList.addShowroom(new Showroom(2, 25));
         showroomList.addShowroom(new Showroom(3, 15));
         lists.setShowroomList(showroomList);
+
+        ShowtimeList showtimeList = new ShowtimeList();
+        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(0), lists.getShowroomList().getShowroomByIndex(0), 10, 5, 14));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(14, 00, 00), LocalTime.of(17, 00, 00), lists.getMovieList().getMovieByIndex(3), lists.getShowroomList().getShowroomByIndex(1), 10, 5, 13));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(1), lists.getShowroomList().getShowroomByIndex(2), 14, 7, 11));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(17, 00, 00), LocalTime.of(20, 00, 00), lists.getMovieList().getMovieByIndex(4), lists.getShowroomList().getShowroomByIndex(0), 10, 5, 5));
+        lists.setShowtimeList(showtimeList);
 
         TicketList ticketList = new TicketList();
         ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(0), false, 2, LocalDate.of(2023, 11, 20)));

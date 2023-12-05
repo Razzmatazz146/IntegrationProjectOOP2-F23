@@ -9,7 +9,6 @@ import java.util.List;
 public class ClientList implements Serializable, Iterable<Client> {
     private List<Client> aClientList;
 
-    // Constructor
     public ClientList() {
         this.aClientList = new ArrayList<>();
     }

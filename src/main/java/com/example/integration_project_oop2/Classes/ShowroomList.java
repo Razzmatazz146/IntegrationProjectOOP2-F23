@@ -10,8 +10,6 @@ public class ShowroomList implements Serializable, Iterable<Showroom> {
 
     public ShowroomList() { this.aShowroomList = new ArrayList<>(); }
 
-    public List<Showroom> getShowroomsList() { return new ArrayList<>(aShowroomList); }
-
     public void addShowroom(Showroom showroom) { this.aShowroomList.add(showroom); }
 
     public void removeShowroom(Showroom showroom) { this.aShowroomList.remove(showroom); }

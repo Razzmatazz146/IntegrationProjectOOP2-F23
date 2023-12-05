@@ -3,15 +3,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.Controllers.ManagerViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.Controllers.ManagerViewController">
    <children>
       <Button fx:id="editMovieButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onEditMoviesButtonClick" prefHeight="25.0" prefWidth="97.0" text="Edit Movies" />
       <Button fx:id="clientListButton" layoutX="158.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClientListButtonClick" prefHeight="25.0" prefWidth="78.0" text="Client List" />
-      <Button fx:id="clientViewButton" layoutX="158.0" layoutY="92.0" mnemonicParsing="false" onAction="#onClientViewButtonClick" prefHeight="25.0" prefWidth="78.0" text="Client View" />
+      <Button fx:id="clientViewButton" layoutX="290.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClientViewButtonClick" prefHeight="25.0" prefWidth="78.0" text="Client View" />
       <Button fx:id="editShowtimesButton" layoutX="14.0" layoutY="53.0" mnemonicParsing="false" onAction="#onEditShowtimesButtonClick" text="Edit Showtimes" />
-      <Button fx:id="salesMovieButton" layoutX="266.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSalesMovieButton" prefHeight="25.0" prefWidth="125.0" text="Sales per Movie" />
+      <Button fx:id="salesMovieButton" layoutX="266.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSalesMovieButtonClick" prefHeight="25.0" prefWidth="125.0" text="Sales per Movie" />
       <Button fx:id="staffListButton" layoutX="158.0" layoutY="53.0" mnemonicParsing="false" onAction="#onStaffListButtonClick" prefHeight="25.0" prefWidth="78.0" text="Staff List" />
-      <Button fx:id="logoutButton" layoutX="158.0" layoutY="157.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" prefHeight="25.0" prefWidth="78.0" text="Log Out" />
-      <Button fx:id="salesShowtimeButton" layoutX="266.0" layoutY="53.0" mnemonicParsing="false" onAction="#onShowtimesSalesButton" prefHeight="25.0" prefWidth="125.0" text="Sales per Showtime" />
+      <Button fx:id="logoutButton" layoutX="158.0" layoutY="116.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" prefHeight="25.0" prefWidth="78.0" text="Log Out" />
    </children>
 </AnchorPane>

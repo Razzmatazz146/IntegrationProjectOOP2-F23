@@ -28,7 +28,7 @@ public class ManagerViewController extends WindowController {
     }
 
     public void onClientListButtonClick(ActionEvent event) {
-        newWindow(event, "managerLists-view.fxml", "Client List");
+        newWindow(event, "managerClientList.fxml", "Client List");
     }
 
     public void onClientViewButtonClick(ActionEvent event) {
@@ -40,14 +40,10 @@ public class ManagerViewController extends WindowController {
     }
 
     public void onStaffListButtonClick(ActionEvent event) {
-        newWindow(event, "managerLists-view.fxml", "Staff List");
+        newWindow(event, "managerStaffList.fxml", "Staff List");
     }
 
-    public void onShowtimesSalesButton(ActionEvent event) {
-        newWindow(event, "managerLists-view.fxml", "Ticket Sales");
-    }
-
-    public void onSalesMovieButton(ActionEvent event) {
-        newWindow(event, "managerLists-view.fxml", "Ticket Sales");
+    public void onSalesMovieButtonClick(ActionEvent event) {
+        newWindow(event, "managerTicketPerMovieList.fxml", "Sales");
     }
 }

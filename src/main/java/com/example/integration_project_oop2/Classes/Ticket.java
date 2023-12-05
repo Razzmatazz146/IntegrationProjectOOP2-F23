@@ -62,6 +62,7 @@ public class Ticket implements Serializable {
      */
     public LocalDate getPurchaseDate(){ return aPurchaseDate; }
 
+
     /**
      * Sets the showtime associated with the ticket.
      *
