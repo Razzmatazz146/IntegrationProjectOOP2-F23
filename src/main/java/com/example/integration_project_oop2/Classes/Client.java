@@ -69,6 +69,7 @@ public class Client extends User implements Serializable {
      * @param pSignUpDate The new sign-up date.
      */
     public void setSignUpDate(LocalDate pSignUpDate) {
+
         this.aSignUpDate = pSignUpDate;
     }
 

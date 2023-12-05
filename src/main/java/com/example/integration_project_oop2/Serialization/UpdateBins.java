@@ -1,6 +1,7 @@
 package com.example.integration_project_oop2.Serialization;
 
 import com.example.integration_project_oop2.Classes.*;
+import com.example.integration_project_oop2.Lists.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

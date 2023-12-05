@@ -1,8 +1,8 @@
 package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.Movie;
-import com.example.integration_project_oop2.Classes.MovieList;
-import com.example.integration_project_oop2.Classes.SingletonLists;
+import com.example.integration_project_oop2.Lists.MovieList;
+import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

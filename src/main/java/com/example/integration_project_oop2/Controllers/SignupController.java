@@ -1,6 +1,9 @@
 package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.*;
+import com.example.integration_project_oop2.Lists.ClientList;
+import com.example.integration_project_oop2.Lists.ManagerList;
+import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

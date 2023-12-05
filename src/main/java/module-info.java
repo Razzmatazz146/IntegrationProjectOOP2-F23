@@ -16,4 +16,6 @@ module com.example.integration_project_oop2 {
     opens com.example.integration_project_oop2.Controllers to javafx.fxml;
     exports com.example.integration_project_oop2.Classes;
     opens com.example.integration_project_oop2.Classes to javafx.fxml;
+    exports com.example.integration_project_oop2.Lists;
+    opens com.example.integration_project_oop2.Lists to javafx.fxml;
 }

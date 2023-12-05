@@ -1,4 +1,6 @@
-package com.example.integration_project_oop2.Classes;
+package com.example.integration_project_oop2.Lists;
+
+import com.example.integration_project_oop2.Classes.Ticket;
 
 import java.io.Serializable;
 import java.util.ArrayList;

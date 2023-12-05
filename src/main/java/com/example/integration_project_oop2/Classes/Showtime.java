@@ -42,6 +42,8 @@ public class Showtime implements Serializable {
     }
 
     private void setShowroom(Showroom pShowroom) {
+        if (pShowroom == null)
+            throw new IllegalArgumentException("Showroom cannot be null");
         this.aShowroom = pShowroom;
     }
     public Showroom getShowroom(){

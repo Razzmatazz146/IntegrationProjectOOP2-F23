@@ -1,6 +1,4 @@
-package com.example.integration_project_oop2.Classes;
-
-import java.util.ArrayList;
+package com.example.integration_project_oop2.Lists;
 
 public class SingletonLists {
     private static SingletonLists instance;

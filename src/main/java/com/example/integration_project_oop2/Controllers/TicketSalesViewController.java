@@ -1,8 +1,8 @@
 //package com.example.integration_project_oop2.Controllers;
 //
 //import com.example.integration_project_oop2.Classes.Client;
-//import com.example.integration_project_oop2.Classes.ClientList;
-//import com.example.integration_project_oop2.Classes.SingletonLists;
+//import com.example.integration_project_oop2.Lists.ClientList;
+//import com.example.integration_project_oop2.Lists.SingletonLists;
 //import javafx.beans.property.ReadOnlyStringWrapper;
 //import javafx.event.ActionEvent;
 //import javafx.fxml.FXML;

@@ -1,6 +1,6 @@
 package com.example.integration_project_oop2;
 
-import com.example.integration_project_oop2.Classes.*;
+import com.example.integration_project_oop2.Lists.*;
 import com.example.integration_project_oop2.Serialization.BinReader;
 import com.example.integration_project_oop2.Serialization.BinWriter;
 import javafx.application.Application;
@@ -9,8 +9,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class MovieTheaterApplication extends Application {
     @Override

@@ -1,9 +1,8 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showtime;
-import com.example.integration_project_oop2.Classes.ShowtimeList;
-import com.example.integration_project_oop2.Classes.SingletonLists;
+import com.example.integration_project_oop2.Lists.ShowtimeList;
+import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -11,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 
 import static com.example.integration_project_oop2.Controllers.WindowController.newWindow;
 
