@@ -40,13 +40,21 @@ public class Showroom implements Serializable {
      *
      * @param pRoomNumber The new room number.
      */
-    public void setRoomNumber(int pRoomNumber) { this.aRoomNumber = pRoomNumber; }
+    public void setRoomNumber(int pRoomNumber) {
+        if (pRoomNumber == 0){
+            throw new IllegalArgumentException("Room Number cannot be 0");
+        }
+        this.aRoomNumber = pRoomNumber; }
 
     /**
      * Sets the capacity of the room.
      *
      * @param pRoomCapacity The new room capacity.
      */
-    public void setRoomCapacity(int pRoomCapacity) { this.aRoomCapacity = pRoomCapacity; }
+    public void setRoomCapacity(int pRoomCapacity) {
+        if (pRoomCapacity == 0){
+            throw new IllegalArgumentException("Room capacity cannot be 0");
+        }
+        this.aRoomCapacity = pRoomCapacity; }
 
 }

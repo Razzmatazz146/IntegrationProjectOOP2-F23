@@ -145,6 +145,9 @@ public abstract class User implements Serializable {
     public void setEmail(String pEmail) {
         if (pEmail == null)
             throw new IllegalArgumentException("Email cannot be null");
+        if (!pEmail.matches(".+@.+\\..+"))
+            throw new IllegalArgumentException("Invalid email.");
+
         this.aEmail = pEmail;
     }
 

@@ -1,7 +1,9 @@
 package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.Movie;
+import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.MovieList;
+import com.example.integration_project_oop2.Lists.ShowtimeList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +15,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClientViewController {
 
     public Label titleLabel;
@@ -23,7 +30,7 @@ public class ClientViewController {
     public ListView movieListView;
     public Label ratingLabel;
     public ListView showtimeListView;
-    private MovieList movieList;
+    private ShowtimeList showtimeList;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
@@ -33,23 +40,27 @@ public class ClientViewController {
     @FXML
     private void initialize(){
         SingletonLists lists = SingletonLists.getInstance();
-        movieList = lists.getMovieList();
+        showtimeList = lists.getShowtimeList();
         populateList();
     }
 
     private void populateList(){
-        for(Movie movie : movieList){
-            movieListView.getItems().add(movie.getMovieTitle());
+        for(Showtime showtime : showtimeList){
+            movieListView.getItems().add(showtime.getMovie().getMovieTitle());
         }
     }
 
     public void onNewSelection(MouseEvent mouseEvent) {
-        Movie selectedMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
+        showtimeListView.getItems().clear();
 
-        titleLabel.setText(selectedMovie.getMovieTitle());
-        genreLabel.setText(selectedMovie.getMovieGenre());
-        durationLabel.setText(String.valueOf(selectedMovie.getMovieDuration()));
-        ratingLabel.setText(selectedMovie.getAgeRating());
+        Showtime selectedMovie = showtimeList.getShowtimeByIndex(movieListView.getSelectionModel().getSelectedIndex());
+
+        titleLabel.setText(selectedMovie.getMovie().getMovieTitle());
+        genreLabel.setText(selectedMovie.getMovie().getMovieGenre());
+        durationLabel.setText(String.valueOf(selectedMovie.getMovie().getMovieDuration()));
+        ratingLabel.setText(selectedMovie.getMovie().getAgeRating());
+
+        showtimeListView.getItems().addAll(selectedMovie.getStartTime());
     }
 }
 

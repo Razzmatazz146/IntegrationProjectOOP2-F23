@@ -28,6 +28,14 @@ public class ManagerList implements Serializable, Iterable<Manager> {
         }
     }
 
+    public List<String> getManagerUsernames(){
+        List<String> managerUsernames = new ArrayList<>();
+        for (Manager manager : aManagerList){
+            managerUsernames.add(manager.getUsername());
+        }
+        return managerUsernames;
+    }
+
     public Manager getManagerByIndex(int index) {
         if (index >= 0 && index < aManagerList.size()) {
             return aManagerList.get(index);

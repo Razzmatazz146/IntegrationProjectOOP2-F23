@@ -12,8 +12,8 @@ public class UpdateBins {
 
 
         ClientList clientList = new ClientList();
-        clientList.addClient(new Client("jdoe", "johndoe@example.com", "John", "Doe", "johndoe@exmaple.com", "555-5555",LocalDate.now(), 120, "123123", false));
-        clientList.addClient(new Client("jsmith", "janesmith@example.com", "Jane", "Smith", "janesmith@exmaple.com", "555-5445", LocalDate.now(), 85, "4561651", false));
+        clientList.addClient(new Client("jdoe", "1234", "John", "Doe", "johndoe@exmaple.com", "555-5555",LocalDate.now(), 120, "123123", false));
+        clientList.addClient(new Client("jsmith", "1234", "Jane", "Smith", "janesmith@exmaple.com", "555-5445", LocalDate.now(), 85, "4561651", false));
         lists.setClientList(clientList);
 
 

@@ -13,10 +13,10 @@
       <Label layoutX="314.0" layoutY="114.0" text="Genre:" />
       <Label layoutX="288.0" layoutY="80.0" text="Movie Title:" />
       <Label layoutX="288.0" layoutY="131.0" text="Age Rating:" />
-      <Label fx:id="titleLabel" layoutX="356.0" layoutY="80.0" text="Label" />
-      <Label fx:id="genreLabel" layoutX="356.0" layoutY="114.0" text="Label" />
-      <Label fx:id="durationLabel" layoutX="355.0" layoutY="97.0" text="Label" />
-      <Label fx:id="ratingLabel" layoutX="356.0" layoutY="131.0" text="Label" />
+      <Label fx:id="titleLabel" layoutX="356.0" layoutY="80.0" />
+      <Label fx:id="genreLabel" layoutX="356.0" layoutY="114.0" />
+      <Label fx:id="durationLabel" layoutX="355.0" layoutY="97.0" />
+      <Label fx:id="ratingLabel" layoutX="356.0" layoutY="131.0" />
       <Label layoutX="245.0" layoutY="178.0" text="Available Showtimes:" />
       <ListView fx:id="showtimeListView" layoutX="245.0" layoutY="205.0" prefHeight="105.0" prefWidth="200.0" />
    </children>

@@ -2,6 +2,8 @@ package com.example.integration_project_oop2.Lists;
 
 
 import com.example.integration_project_oop2.Classes.Client;
+import com.example.integration_project_oop2.Classes.Client;
+import com.example.integration_project_oop2.Classes.Movie;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,6 +28,14 @@ public class ClientList implements Serializable, Iterable<Client> {
             int index = aClientList.indexOf(oldClient);
             aClientList.set(index, newClient);
         }
+    }
+
+    public List<String> geClientUsernames(){
+        List<String> clientUsernames = new ArrayList<>();
+        for (Client client : aClientList){
+            clientUsernames.add(client.getUsername());
+        }
+        return clientUsernames;
     }
 
     public Client getClientByIndex(int index) {

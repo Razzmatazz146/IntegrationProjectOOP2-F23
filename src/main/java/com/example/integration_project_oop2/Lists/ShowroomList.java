@@ -22,6 +22,7 @@ public class ShowroomList implements Serializable, Iterable<Showroom> {
             aShowroomList.set(index, newShowroom);
         }
     }
+
     public Showroom getShowroomByIndex(int index) {
         if (index >= 0 && index < aShowroomList.size()) {
             return aShowroomList.get(index);

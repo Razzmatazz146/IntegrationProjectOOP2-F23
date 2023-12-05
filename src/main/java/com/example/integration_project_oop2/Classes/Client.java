@@ -88,6 +88,8 @@ public class Client extends User implements Serializable {
      * @param pPaymentInfo The new payment information.
      */
     public void setPaymentInfo(String pPaymentInfo) {
+        if (pPaymentInfo == null)
+            throw new IllegalArgumentException("Payment info cannot be empty.");
         this.aPaymentInfo = pPaymentInfo;
     }
 }

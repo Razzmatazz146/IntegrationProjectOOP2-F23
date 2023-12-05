@@ -1,12 +1,15 @@
 package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.*;
+import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
@@ -18,6 +21,7 @@ import java.util.List;
 public class ViewTicketByMovieController {
     public TableView<Ticket> ticketTableView;
     public Button backButton;
+    public ComboBox movieComboBox;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
@@ -28,7 +32,10 @@ public class ViewTicketByMovieController {
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
+        MovieList movieList = lists.getMovieList();
 
+
+        movieComboBox.getItems().setAll(movieList.getMovieTitleList());
 
         TableColumn<Ticket, String> ticketNumberColumn = new TableColumn<>("Ticket Number");
         ticketNumberColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Integer.toString(cellData.getValue().getTicketNumber())));
@@ -52,5 +59,9 @@ public class ViewTicketByMovieController {
         }
 
         ticketTableView.getItems().addAll(displayTickets);
+    }
+
+    public void onComboBoxChange(ActionEvent actionEvent) {
+
     }
 }
