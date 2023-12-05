@@ -11,18 +11,18 @@
       <Button fx:id="updateButton" layoutX="315.0" layoutY="296.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" prefHeight="25.0" prefWidth="63.0" text="Update" />
       <Button fx:id="removeButton" layoutX="244.0" layoutY="330.0" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Remove" />
       <Label layoutX="242.0" layoutY="34.0" text="Movie Title" />
-      <Label layoutX="242.0" layoutY="52.0" text="Label" />
+      <Label fx:id="movieTitleLabel" layoutX="242.0" layoutY="52.0" text="Label" />
       <Label layoutX="242.0" layoutY="81.0" text="Showroom Number" />
-      <Label layoutX="245.0" layoutY="99.0" text="Label" />
+      <Label fx:id="showroomLabel" layoutX="245.0" layoutY="99.0" text="Label" />
       <Label layoutX="245.0" layoutY="124.0" text="Duration" />
       <Label layoutX="244.0" layoutY="142.0" text="From:" />
       <Label layoutX="318.0" layoutY="142.0" text="To:" />
-      <Label layoutX="281.0" layoutY="142.0" text="Label" />
-      <Label layoutX="346.0" layoutY="142.0" text="Label" />
+      <Label fx:id="startTimeLabel" layoutX="281.0" layoutY="142.0" text="Label" />
+      <Label fx:id="endTimeLabel" layoutX="346.0" layoutY="142.0" text="Label" />
       <Label layoutX="241.0" layoutY="173.0" text="Ticket Price" />
       <Label layoutX="245.0" layoutY="193.0" text="Adult:" />
       <Label layoutX="245.0" layoutY="211.0" text="Child:" />
-      <Label layoutX="282.0" layoutY="193.0" text="Label" />
-      <Label layoutX="281.0" layoutY="211.0" text="Label" />
+      <Label fx:id="adultPriceLabel" layoutX="282.0" layoutY="193.0" text="Label" />
+      <Label fx:id="childPriceLabel" layoutX="281.0" layoutY="211.0" text="Label" />
    </children>
 </AnchorPane>

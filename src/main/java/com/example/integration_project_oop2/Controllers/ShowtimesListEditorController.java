@@ -73,6 +73,7 @@ public class ShowtimesListEditorController {
 
             // TODO: Add code to add movie to database and ListView
 
+
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for "+ selectedMovie + "and " + selectedRoom +" has been successfully added!");
             viewAlert.showAndWait();
         }
