@@ -1,5 +1,10 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.Movie;
+import com.example.integration_project_oop2.Classes.Showroom;
+import com.example.integration_project_oop2.Lists.MovieList;
+import com.example.integration_project_oop2.Lists.ShowroomList;
+import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -7,6 +12,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddShowtimeViewController {
 
@@ -24,11 +32,23 @@ public class AddShowtimeViewController {
     @FXML
     private TextField childPriceTextField;
 
+    MovieList movieList;
+
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
+    @FXML
+    private void initialize(){
+        SingletonLists lists = SingletonLists.getInstance();
+        movieList = lists.getMovieList();
+        populateList();
+    }
+    private void populateList(){
+        movieDropdown.getItems().addAll(movieList.getMovieTitleList());
+    }
+
 
     public void onAddButtonClick(ActionEvent event) {
     String realMovie = "It";
