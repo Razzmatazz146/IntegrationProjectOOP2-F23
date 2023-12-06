@@ -29,8 +29,6 @@ public class ClientViewController {
     @FXML
     private Label genreLabel;
     @FXML
-    private ChoiceBox showtimeDropdown;
-    @FXML
     private Button backButton;
     @FXML
     private ListView movieListView;

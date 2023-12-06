@@ -58,6 +58,7 @@ public class MovieListEditorController extends WindowController{
     }
 
     private void populateList(){
+        movieListView.getItems().clear();
         for(Movie movie : movieList){
             movieListView.getItems().add(movie.getMovieTitle());
         }
