@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Lists;
 
+import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showroom;
 
 import java.io.Serializable;
@@ -28,6 +29,14 @@ public class ShowroomList implements Serializable, Iterable<Showroom> {
             return aShowroomList.get(index);
         }
         return null;
+    }
+
+    public List<Integer> getShowroomNumberList(){
+        List<Integer> showroomList = new ArrayList<>();
+        for (Showroom showroom : aShowroomList){
+            showroomList.add(showroom.getRoomNumber());
+        }
+        return showroomList;
     }
 
     @Override

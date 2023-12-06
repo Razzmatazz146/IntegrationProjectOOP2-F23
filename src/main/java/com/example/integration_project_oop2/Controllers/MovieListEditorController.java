@@ -110,7 +110,7 @@ public class MovieListEditorController extends WindowController{
             initialize();
 
             movieListView.getItems().remove(getSelectedMovie());
-            
+
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + " has been removed.");
             viewAlert.showAndWait();
 
