@@ -12,12 +12,19 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController extends WindowController {
-    public PasswordField passwordTextField;
-    public Button loginButton;
-    public Button signupButton;
-    public TextField usernameTextField;
-    public Button exitButton;
+    @FXML
+    private PasswordField passwordTextField;
+    @FXML
+    private Button loginButton;
+    @FXML
+    private Button signupButton;
+    @FXML
+    private TextField usernameTextField;
+    @FXML
+    private Button exitButton;
+    @FXML
     private ClientList clientList;
+    @FXML
     private ManagerList managerList;
 
     // Method to set managerList and clientList (called from MovieTheaterApplication)

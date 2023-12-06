@@ -9,14 +9,22 @@ import javafx.stage.Stage;
 public class ManagerViewController extends WindowController {
 
 
-    public Button editMovieButton;
-    public Button clientListButton;
-    public Button clientViewButton;
-    public Button editShowtimesButton;
-    public Button staffListButton;
-    public Button logoutButton;
-    public Button salesMovieButton;
-    public Button salesShowtimeButton;
+    @FXML
+    private Button editMovieButton;
+    @FXML
+    private Button clientListButton;
+    @FXML
+    private Button clientViewButton;
+    @FXML
+    private Button editShowtimesButton;
+    @FXML
+    private Button staffListButton;
+    @FXML
+    private Button logoutButton;
+    @FXML
+    private Button salesMovieButton;
+    @FXML
+    private Button salesShowtimeButton;
 
     @FXML
     protected void onLogOutButtonClick(ActionEvent actionEvent) {

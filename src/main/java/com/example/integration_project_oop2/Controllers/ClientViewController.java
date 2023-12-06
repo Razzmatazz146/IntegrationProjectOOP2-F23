@@ -22,14 +22,23 @@ import java.util.List;
 
 public class ClientViewController {
 
-    public Label titleLabel;
-    public Label durationLabel;
-    public Label genreLabel;
-    public ChoiceBox showtimeDropdown;
-    public Button backButton;
-    public ListView movieListView;
-    public Label ratingLabel;
-    public ListView showtimeListView;
+    @FXML
+    private Label titleLabel;
+    @FXML
+    private Label durationLabel;
+    @FXML
+    private Label genreLabel;
+    @FXML
+    private ChoiceBox showtimeDropdown;
+    @FXML
+    private Button backButton;
+    @FXML
+    private ListView movieListView;
+    @FXML
+    private Label ratingLabel;
+    @FXML
+    private ListView showtimeListView;
+    @FXML
     private ShowtimeList showtimeList;
 
     @FXML

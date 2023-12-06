@@ -1,6 +1,7 @@
 package com.example.integration_project_oop2.Controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -8,13 +9,20 @@ import javafx.stage.Stage;
 
 
 public class MovieDetailsController {
-    public TextField titleTextField;
-    public TextField genreTextField;
-    public TextField yearTextField;
-    public TextField durationTextField;
-    public TextField ratingTextField;
-    public Button addMovieButton;
-    public Button cancelMovieButton;
+    @FXML
+    private TextField titleTextField;
+    @FXML
+    private TextField genreTextField;
+    @FXML
+    private TextField yearTextField;
+    @FXML
+    private TextField durationTextField;
+    @FXML
+    private TextField ratingTextField;
+    @FXML
+    private Button addMovieButton;
+    @FXML
+    private Button cancelMovieButton;
 
 
     public void onCancelButtonClick(ActionEvent actionEvent) {

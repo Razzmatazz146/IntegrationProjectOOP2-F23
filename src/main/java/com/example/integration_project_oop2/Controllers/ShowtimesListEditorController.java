@@ -15,17 +15,31 @@ import static com.example.integration_project_oop2.Controllers.WindowController.
 
 public class ShowtimesListEditorController {
 
-    public ListView showtimesListView;
-    public TextField adultPriceTextField;
-    public TextField childPriceTextField;
-    public Button addButton;
-    public Button backButton;
-    public Button updateButton;
-    public Button removeButton;
-    public ChoiceBox movieDropdown;
-    public ChoiceBox showroomDropdown;
-    public ChoiceBox timeDropdown;
-
+    @FXML
+    private Label movieTitleLabel;
+    @FXML
+    private ListView showtimesListView;
+    @FXML
+    private TextField adultPriceTextField;
+    @FXML
+    private TextField childPriceTextField;
+    @FXML
+    private Button addButton;
+    @FXML
+    private Button backButton;
+    @FXML
+    private Button updateButton;
+    @FXML
+    private Button removeButton;
+    @FXML
+   private ComboBox movieDropdown;
+    @FXML
+    private ComboBox showroomDropdown;
+    @FXML
+    private ComboBox startTimeComboBox;
+    @FXML
+    private ComboBox endTimeComboBox;
+    @FXML
     private ShowtimeList showtimeList;
 
     private String getSelectedMovie() { return  (String) movieDropdown.getSelectionModel().getSelectedItem(); }
@@ -72,7 +86,7 @@ public class ShowtimesListEditorController {
         } else {
 
             // TODO: Add code to add movie to database and ListView
-
+            //showtimeList.addShowtime(new Showtime());
 
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for "+ selectedMovie + "and " + selectedRoom +" has been successfully added!");
             viewAlert.showAndWait();

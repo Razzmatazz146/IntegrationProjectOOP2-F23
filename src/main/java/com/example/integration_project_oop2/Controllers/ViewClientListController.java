@@ -16,8 +16,10 @@ import java.util.List;
 
 public class ViewClientListController {
 
-    public TableView<Client> ticketTableView;
-    public Button backButton;
+    @FXML
+    private TableView<Client> ticketTableView;
+    @FXML
+    private Button backButton;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {

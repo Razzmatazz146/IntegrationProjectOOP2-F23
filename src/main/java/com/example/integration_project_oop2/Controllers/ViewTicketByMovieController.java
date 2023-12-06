@@ -19,9 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewTicketByMovieController {
-    public TableView<Ticket> ticketTableView;
-    public Button backButton;
-    public ComboBox movieComboBox;
+    @FXML
+    private TableView<Ticket> ticketTableView;
+    @FXML
+    private Button backButton;
+    @FXML
+    private ComboBox movieComboBox;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
