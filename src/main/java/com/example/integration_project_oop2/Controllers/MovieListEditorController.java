@@ -1,6 +1,7 @@
 package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.Movie;
+import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import com.example.integration_project_oop2.MovieTheaterApplication;
@@ -11,6 +12,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -97,5 +100,15 @@ public class MovieListEditorController extends WindowController{
             viewAlert.showAndWait();
             movieListView.getItems().remove(getSelectedMovie());
         }
+    }
+
+    public void onNewSelection(MouseEvent mouseEvent) {
+
+        Movie selectedMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
+
+        titleLabel.setText(selectedMovie.getMovieTitle());
+        genreLabel.setText(selectedMovie.getMovieGenre());
+        durationLabel.setText(String.valueOf(selectedMovie.getMovieDuration()));
+        ratingLabel.setText(selectedMovie.getAgeRating());
     }
 }
