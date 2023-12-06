@@ -42,10 +42,17 @@ public class UpdateBins {
         lists.setShowroomList(showroomList);
 
         ShowtimeList showtimeList = new ShowtimeList();
-        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(0), lists.getShowroomList().getShowroomByIndex(0), 10, 5, 14));
-        showtimeList.addShowtime(new Showtime(LocalTime.of(14, 00, 00), LocalTime.of(17, 00, 00), lists.getMovieList().getMovieByIndex(3), lists.getShowroomList().getShowroomByIndex(1), 10, 5, 13));
-        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(1), lists.getShowroomList().getShowroomByIndex(2), 14, 7, 11));
-        showtimeList.addShowtime(new Showtime(LocalTime.of(17, 00, 00), LocalTime.of(20, 00, 00), lists.getMovieList().getMovieByIndex(4), lists.getShowroomList().getShowroomByIndex(0), 10, 5, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(0), lists.getShowroomList().getShowroomByIndex(0), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(14, 00, 00), LocalTime.of(17, 00, 00), lists.getMovieList().getMovieByIndex(1), lists.getShowroomList().getShowroomByIndex(0), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(17, 00, 00), LocalTime.of(20, 00, 00), lists.getMovieList().getMovieByIndex(2), lists.getShowroomList().getShowroomByIndex(0), 14, 7));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(20, 00, 00), LocalTime.of(23, 00, 00), lists.getMovieList().getMovieByIndex(3), lists.getShowroomList().getShowroomByIndex(0), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(4), lists.getShowroomList().getShowroomByIndex(1), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(14, 00, 00), LocalTime.of(17, 00, 00), lists.getMovieList().getMovieByIndex(5), lists.getShowroomList().getShowroomByIndex(1), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(17, 00, 00), LocalTime.of(20, 00, 00), lists.getMovieList().getMovieByIndex(6), lists.getShowroomList().getShowroomByIndex(1), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(20, 00, 00), LocalTime.of(23, 00, 00), lists.getMovieList().getMovieByIndex(7), lists.getShowroomList().getShowroomByIndex(1), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(11, 00, 00), LocalTime.of(14, 00, 00), lists.getMovieList().getMovieByIndex(8), lists.getShowroomList().getShowroomByIndex(2), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(14, 00, 00), LocalTime.of(17, 00, 00), lists.getMovieList().getMovieByIndex(9), lists.getShowroomList().getShowroomByIndex(2), 10, 5));
+        showtimeList.addShowtime(new Showtime(LocalTime.of(17, 00, 00), LocalTime.of(20, 00, 00), lists.getMovieList().getMovieByIndex(10), lists.getShowroomList().getShowroomByIndex(2), 10, 5));
         lists.setShowtimeList(showtimeList);
 
         TicketList ticketList = new TicketList();
@@ -53,8 +60,49 @@ public class UpdateBins {
         ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), false, 2, LocalDate.of(2023, 11, 20)));
         ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(2), true, 13, LocalDate.of(2023, 11, 24)));
         ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(0), true, 28, LocalDate.of(2023, 11, 29)));
-        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), false, 37, LocalDate.of(2023, 12, 02)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), false, 37, LocalDate.of(2023, 12, 2)));
         ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(2), true, 8, LocalDate.of(2023, 11, 22)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(5), true, 7, LocalDate.of(2023, 11, 15)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(8), false, 4, LocalDate.of(2023, 11, 10)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(2), true, 0, LocalDate.of(2023, 11, 5)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), false, 3, LocalDate.of(2023, 11, 8)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(7), true, 9, LocalDate.of(2023, 11, 3)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(10), false, 6, LocalDate.of(2023, 11, 12)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(4), true, 1, LocalDate.of(2023, 11, 19)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(0), false, 8, LocalDate.of(2023, 11, 9)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(9), true, 5, LocalDate.of(2023, 11, 17)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(3), false, 2, LocalDate.of(2023, 11, 6)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(6), true, 10, LocalDate.of(2023, 11, 1)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(5), false, 4, LocalDate.of(2023, 11, 7)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(8), true, 1, LocalDate.of(2023, 11, 2)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(2), false, 6, LocalDate.of(2023, 11, 14)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), true, 3, LocalDate.of(2023, 11, 13)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(7), false, 8, LocalDate.of(2023, 11, 11)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(10), true, 0, LocalDate.of(2023, 11, 18)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(4), false, 5, LocalDate.of(2023, 11, 4)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(0), true, 7, LocalDate.of(2023, 11, 16)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(9), false, 2, LocalDate.of(2023, 11, 6)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(3), true, 9, LocalDate.of(2023, 11, 9)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(6), false, 1, LocalDate.of(2023, 11, 20)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(5), true, 8, LocalDate.of(2023, 11, 10)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(8), false, 3, LocalDate.of(2023, 11, 1)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(2), true, 4, LocalDate.of(2023, 11, 19)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), false, 0, LocalDate.of(2023, 11, 17)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(7), true, 10, LocalDate.of(2023, 11, 12)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(10), false, 6, LocalDate.of(2023, 11, 14)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(4), true, 5, LocalDate.of(2023, 11, 2)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(0), false, 1, LocalDate.of(2023, 11, 3)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(9), true, 4, LocalDate.of(2023, 11, 8)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(3), false, 7, LocalDate.of(2023, 11, 5)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(6), true, 2, LocalDate.of(2023, 11, 15)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(5), false, 10, LocalDate.of(2023, 11, 7)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(8), true, 9, LocalDate.of(2023, 11, 4)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(2), false, 8, LocalDate.of(2023, 11, 18)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(1), true, 3, LocalDate.of(2023, 11, 16)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(7), false, 5, LocalDate.of(2023, 11, 11)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(10), true, 6, LocalDate.of(2023, 11, 13)));
+        ticketList.addTicket(new Ticket(lists.getShowtimeList().getShowtimeByIndex(4), false, 4, LocalDate.of(2023, 11, 6)));
+
         lists.setTicketList(ticketList);
 
 

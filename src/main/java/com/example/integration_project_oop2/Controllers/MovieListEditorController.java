@@ -3,11 +3,18 @@ package com.example.integration_project_oop2.Controllers;
 import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
+import com.example.integration_project_oop2.MovieTheaterApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MovieListEditorController extends WindowController{
 
@@ -53,7 +60,22 @@ public class MovieListEditorController extends WindowController{
             viewAlert.showAndWait();
         } else {
             String title = movieListView.getSelectionModel().getSelectedItem().toString();
-            newWindow(event,"addNewMovie-view.fxml", "Update " + title);
+            Movie pMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource("updateMovie-view.fxml"));
+                Parent view = fxmlLoader.load();
+                MovieDetailsController updateMovieController = fxmlLoader.getController();
+                Scene nextScene = new Scene(view);
+                Stage nextStage = new Stage();
+                nextStage.setScene(nextScene);
+                nextStage.setTitle("Update " + title);
+                nextStage.initModality(Modality.WINDOW_MODAL);
+                updateMovieController.setUpdateMovie(pMovie);
+                nextStage.initOwner(((Node) event.getSource()).getScene().getWindow());
+                nextStage.showAndWait();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 

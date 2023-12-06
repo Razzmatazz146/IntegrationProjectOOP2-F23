@@ -13,14 +13,19 @@ public class MovieList implements Serializable, Iterable<Movie>{
 
     public MovieList() { this.aMovieList = new ArrayList<>(); }
 
-    public void addMovie(Movie movie) { this.aMovieList.add(movie); }
+    public void addMovie(Movie pMovie) {
+        for (Movie aMovie : aMovieList)
+            if (aMovie.getMovieTitle().equals(pMovie.getMovieTitle()))
+                throw new IllegalArgumentException("This movie already exists.");
+        this.aMovieList.add(pMovie);
+    }
 
-    public void removeMovie(Movie movie) { this.aMovieList.remove(movie); }
+    public void removeMovie(Movie pMovie) { this.aMovieList.remove(pMovie); }
 
-    public void editMovie(Movie oldMovie, Movie newMovie) {
-        if (aMovieList.contains(oldMovie)) {
-            int index = aMovieList.indexOf(oldMovie);
-            aMovieList.set(index, newMovie);
+    public void editMovie(Movie pMovie, Movie aMovie) {
+        if (aMovieList.contains(pMovie)) {
+            int index = aMovieList.indexOf(pMovie);
+            aMovieList.set(index, aMovie);
         }
     }
 

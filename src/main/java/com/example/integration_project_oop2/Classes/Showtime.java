@@ -2,6 +2,7 @@ package com.example.integration_project_oop2.Classes;
 
 import java.io.Serializable;
 import java.time.LocalTime;
+import java.util.UUID;
 
 /**
  * Represents theater showtimes' assigned movie, start time, end time, price per adult and price per child.
@@ -21,7 +22,7 @@ public class Showtime implements Serializable {
     private double aShowtimeAdultPrice;
     private double aShowtimeChildPrice;
     private Showroom aShowroom;
-    private int aDaySales;
+    private UUID aShowtimeID;
 
     /**
      * Showtime constructor
@@ -31,14 +32,18 @@ public class Showtime implements Serializable {
      * @param pShowtimeAdultPrice Showtime price per adult.
      * @param pShowtimeChildPrice Showtime price per child.
      */
-    public Showtime(LocalTime pStartTime, LocalTime pEndTime, Movie pMovie, Showroom pShowroom, double pShowtimeAdultPrice, double pShowtimeChildPrice, int pDaySales){
+    public Showtime(LocalTime pStartTime, LocalTime pEndTime, Movie pMovie, Showroom pShowroom, double pShowtimeAdultPrice, double pShowtimeChildPrice){
+        this.aShowtimeID = UUID.randomUUID();
         this.setMovie(pMovie);
         this.setShowroom(pShowroom);
         this.setStartTime(pStartTime);
         this.setEndTime(pEndTime);
         this.setShowtimeAdultPrice(pShowtimeAdultPrice);
         this.setShowtimeChildPrice(pShowtimeChildPrice);
-        this.setDaySales(pDaySales);
+    }
+
+    public UUID getShowtimeID() {
+        return aShowtimeID;
     }
 
     private void setShowroom(Showroom pShowroom) {
@@ -134,13 +139,5 @@ public class Showtime implements Serializable {
      */
     public void setShowtimeChildPrice(double pShowtimeChildPrice) {
         this.aShowtimeChildPrice = pShowtimeChildPrice;
-    }
-
-    public int getDaySales() {
-        return aDaySales;
-    }
-
-    public void setDaySales(int pDaySales) {
-        this.aDaySales = pDaySales;
     }
 }
