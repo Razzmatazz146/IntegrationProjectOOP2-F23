@@ -19,30 +19,6 @@ public class ManagerList implements Serializable, Iterable<Manager> {
         this.aManagerList.add(manager);
     }
 
-    public void removeManager(Manager manager) { this.aManagerList.remove(manager); }
-
-    public void editManager(Manager oldManager, Manager newManager) {
-        if (aManagerList.contains(oldManager)) {
-            int index = aManagerList.indexOf(oldManager);
-            aManagerList.set(index, newManager);
-        }
-    }
-
-    public List<String> getManagerUsernames(){
-        List<String> managerUsernames = new ArrayList<>();
-        for (Manager manager : aManagerList){
-            managerUsernames.add(manager.getUsername());
-        }
-        return managerUsernames;
-    }
-
-    public Manager getManagerByIndex(int index) {
-        if (index >= 0 && index < aManagerList.size()) {
-            return aManagerList.get(index);
-        }
-        return null; // Return null if the index is out of bounds
-    }
-
     @Override
     public Iterator<Manager> iterator() {
         return aManagerList.iterator();

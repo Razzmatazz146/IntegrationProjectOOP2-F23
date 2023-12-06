@@ -4,6 +4,7 @@ package com.example.integration_project_oop2.Lists;
 import com.example.integration_project_oop2.Classes.Client;
 import com.example.integration_project_oop2.Classes.Client;
 import com.example.integration_project_oop2.Classes.Movie;
+import javafx.scene.control.Alert;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,23 +18,28 @@ public class ClientList implements Serializable, Iterable<Client> {
         this.aClientList = new ArrayList<>();
     }
 
-    public void addClient(Client client) {
-        this.aClientList.add(client);
+    public void addClient(Client pClient) {
+        for (Client aClient : aClientList)
+            if (aClient.getUsername().equals(pClient.getUsername()))
+                throw new IllegalArgumentException("Username already exists.");
+            else if (aClient.getEmail().equals((pClient.getEmail())))
+                throw new IllegalArgumentException("E-mail is already in use.");
+        this.aClientList.add(pClient);
     }
 
-    public void removeClient(Client client) { this.aClientList.remove(client); }
+    public void removeClient(Client pClient) { this.aClientList.remove(pClient); }
 
-    public void editClient(Client oldClient, Client newClient) {
-        if (aClientList.contains(oldClient)) {
-            int index = aClientList.indexOf(oldClient);
-            aClientList.set(index, newClient);
+    public void editClient(Client pClient, Client aClient) {
+        if (aClientList.contains(pClient)) {
+            int index = aClientList.indexOf(pClient);
+            aClientList.set(index, aClient);
         }
     }
 
     public List<String> geClientUsernames(){
         List<String> clientUsernames = new ArrayList<>();
-        for (Client client : aClientList){
-            clientUsernames.add(client.getUsername());
+        for (Client pClient : aClientList){
+            clientUsernames.add(pClient.getUsername());
         }
         return clientUsernames;
     }

@@ -3,6 +3,7 @@ package com.example.integration_project_oop2.Controllers;
 import com.example.integration_project_oop2.Classes.*;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
+import com.example.integration_project_oop2.Lists.TicketList;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,12 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewTicketByMovieController {
-    @FXML
-    private TableView<Ticket> ticketTableView;
-    @FXML
-    private Button backButton;
-    @FXML
-    private ComboBox movieComboBox;
+    public TableView<Ticket> ticketTableView;
+    public Button backButton;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
@@ -35,36 +32,47 @@ public class ViewTicketByMovieController {
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
-        MovieList movieList = lists.getMovieList();
+        TicketList ticketList = lists.getTicketList();
 
-
-        movieComboBox.getItems().setAll(movieList.getMovieTitleList());
-
-        TableColumn<Ticket, String> ticketNumberColumn = new TableColumn<>("Ticket Number");
-        ticketNumberColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Integer.toString(cellData.getValue().getTicketNumber())));
         TableColumn<Ticket, String> ticketMovieColumn = new TableColumn<>("Movie");
         ticketMovieColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getShowtime().getMovie().getMovieTitle()));
-        TableColumn<Ticket, String> ticketShowroomColumn = new TableColumn<>("Showroom Number");
-        ticketShowroomColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Integer.toString(cellData.getValue().getShowtime().getShowroom().getRoomNumber())));
-        TableColumn<Ticket, String> ticketShowtimeColumn = new TableColumn<>("Start Time");
-        ticketShowtimeColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper((cellData.getValue().getShowtime().getStartTime().format(DateTimeFormatter.ofPattern("HH:mm")))));
 
-        ticketTableView.getColumns().add(ticketNumberColumn);
+        TableColumn<Ticket, String> ticketSalesColumn = new TableColumn<>("Total Sales");
+        ticketSalesColumn.setCellValueFactory(cellData -> {
+            Movie movie = cellData.getValue().getShowtime().getMovie();
+            int totalSales = calculateTotalSales(lists.getTicketList(), movie);
+            return new ReadOnlyStringWrapper(Integer.toString(totalSales));
+        });
+
         ticketTableView.getColumns().add(ticketMovieColumn);
-        ticketTableView.getColumns().add(ticketShowroomColumn);
-        ticketTableView.getColumns().add(ticketShowtimeColumn);
+        ticketTableView.getColumns().add(ticketSalesColumn);
 
-        List<Ticket> displayTickets = new ArrayList<>();
+        List<Ticket> uniqueMovieTickets = new ArrayList<>();
 
-
-        for (Ticket ticket : lists.getTicketList()) {
-            displayTickets.add(ticket);
+        for (Ticket ticket : ticketList) {
+            boolean isUnique = true;
+            for (Ticket uniqueTicket : uniqueMovieTickets) {
+                if (uniqueTicket.getShowtime().getMovie().getMovieTitle().equals(ticket.getShowtime().getMovie().getMovieTitle())) {
+                    isUnique = false;
+                    break;
+                }
+            }
+            if (isUnique) {
+                uniqueMovieTickets.add(ticket);
+            }
         }
 
-        ticketTableView.getItems().addAll(displayTickets);
+        ticketTableView.getItems().addAll(uniqueMovieTickets);
     }
 
-    public void onComboBoxChange(ActionEvent actionEvent) {
+    private int calculateTotalSales(TicketList ticketList, Movie movie) {
+        int totalSales = 0;
 
+        for (Ticket ticket : ticketList) {
+            if (ticket.getShowtime().getMovie().equals(movie)) {
+                totalSales++;
+            }
+        }
+        return totalSales;
     }
 }

@@ -12,14 +12,14 @@ public class ShowroomList implements Serializable, Iterable<Showroom> {
 
     public ShowroomList() { this.aShowroomList = new ArrayList<>(); }
 
-    public void addShowroom(Showroom showroom) { this.aShowroomList.add(showroom); }
+    public void addShowroom(Showroom pShowroom) { this.aShowroomList.add(pShowroom); }
 
-    public void removeShowroom(Showroom showroom) { this.aShowroomList.remove(showroom); }
+    public void removeShowroom(Showroom pShowroom) { this.aShowroomList.remove(pShowroom); }
 
-    public void editShowroom(Showroom oldShowroom, Showroom newShowroom) {
-        if (aShowroomList.contains(oldShowroom)) {
-            int index = aShowroomList.indexOf(oldShowroom);
-            aShowroomList.set(index, newShowroom);
+    public void editShowroom(Showroom pShowroom, Showroom aShowroom) {
+        if (aShowroomList.contains(pShowroom)) {
+            int index = aShowroomList.indexOf(pShowroom);
+            aShowroomList.set(index, aShowroom);
         }
     }
 

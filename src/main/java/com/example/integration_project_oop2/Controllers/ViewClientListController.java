@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,12 +42,15 @@ public class ViewClientListController {
         clientEmailColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getEmail()));
         TableColumn<Client, String> clientHistoryColumn = new TableColumn<>("Purchase History");
         clientHistoryColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Double.toString(cellData.getValue().getPurchaseHistory())));
+        TableColumn<Client, String> clientSignupDateColumn = new TableColumn<>("Signup Date");
+        clientSignupDateColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getSignUpDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))));
 
         ticketTableView.getColumns().add(clientUsernameColumn);
         ticketTableView.getColumns().add(clientFirstNameColumn);
         ticketTableView.getColumns().add(clientLastNameColumn);
         ticketTableView.getColumns().add(clientEmailColumn);
         ticketTableView.getColumns().add(clientHistoryColumn);
+        ticketTableView.getColumns().add(clientSignupDateColumn);
 
         List<Client> displayClients = new ArrayList<>();
 

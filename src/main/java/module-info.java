@@ -9,6 +9,7 @@ module com.example.integration_project_oop2 {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires java.desktop;
 
     exports com.example.integration_project_oop2;
     opens com.example.integration_project_oop2 to javafx.fxml;

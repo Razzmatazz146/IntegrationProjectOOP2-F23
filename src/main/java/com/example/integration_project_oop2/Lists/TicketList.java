@@ -12,14 +12,14 @@ public class TicketList implements Serializable, Iterable<Ticket> {
 
     public TicketList() { this.aTicketList = new ArrayList<>(); }
 
-    public void addTicket(Ticket ticket) { this.aTicketList.add(ticket); }
+    public void addTicket(Ticket pTicket) { this.aTicketList.add(pTicket); }
 
-    public void removeTicket(Ticket ticket) { this.aTicketList.remove(ticket); }
+    public void removeTicket(Ticket pTicket) { this.aTicketList.remove(pTicket); }
 
-    public void editTicket(Ticket oldTicket, Ticket newTicket) {
-        if (aTicketList.contains(oldTicket)) {
-            int index = aTicketList.indexOf(oldTicket);
-            aTicketList.set(index, newTicket);
+    public void editTicket(Ticket pTicket, Ticket aTicket) {
+        if (aTicketList.contains(pTicket)) {
+            int index = aTicketList.indexOf(pTicket);
+            aTicketList.set(index, aTicket);
         }
     }
 

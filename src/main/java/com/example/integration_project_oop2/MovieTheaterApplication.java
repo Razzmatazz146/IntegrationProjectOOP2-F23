@@ -10,7 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MovieTheaterApplication extends Application {
+public class MovieTheaterApplication extends Application{
+
     @Override
     public void start(Stage stage) throws IOException {
         // Creates an instance of singleton

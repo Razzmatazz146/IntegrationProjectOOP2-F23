@@ -52,6 +52,10 @@ public class ManagerViewController extends WindowController {
     }
 
     public void onSalesMovieButtonClick(ActionEvent event) {
-        newWindow(event, "managerTicketPerMovieList.fxml", "Sales");
+        newWindow(event, "managerTicketPerMovieList.fxml", "Sales per Movie");
+    }
+
+    public void onSalesShowtimeButtonClick(ActionEvent event) {
+        newWindow(event, "managerTicketPerShowtimeList.fxml", "Sales per Showtime");
     }
 }

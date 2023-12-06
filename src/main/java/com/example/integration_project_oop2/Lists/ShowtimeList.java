@@ -15,18 +15,18 @@ public class ShowtimeList implements Serializable, Iterable<Showtime> {
         this.aShowtimeList = new ArrayList<>();
     }
 
-    public void addShowtime(Showtime showtime) {
-        this.aShowtimeList.add(showtime);
+    public void addShowtime(Showtime pShowtime) {
+        this.aShowtimeList.add(pShowtime);
     }
 
-    public void removeShowtime(Showtime showtime) {
-        this.aShowtimeList.remove(showtime);
+    public void removeShowtime(Showtime pShowtime) {
+        this.aShowtimeList.remove(pShowtime);
     }
 
-    public void editShowtime(Showtime oldShowtime, Showtime newShowtime) {
-        if (aShowtimeList.contains(oldShowtime)) {
-            int index = aShowtimeList.indexOf(oldShowtime);
-            aShowtimeList.set(index, newShowtime);
+    public void editShowtime(Showtime pShowtime, Showtime aShowtime) {
+        if (aShowtimeList.contains(pShowtime)) {
+            int index = aShowtimeList.indexOf(pShowtime);
+            aShowtimeList.set(index, aShowtime);
         }
     }
 
