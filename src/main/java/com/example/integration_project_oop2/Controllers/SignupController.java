@@ -18,16 +18,27 @@ import java.time.LocalDate;
 public class SignupController extends WindowController {
 
 
-    public Button signupButton;
-    public TextField usernameTextField;
-    public TextField firstNameTextField;
-    public TextField lastNameTextField;
-    public TextField emailTextField;
-    public PasswordField passwordTextField;
-    public Button backButton;
-    public TextField phoneNumberTextField;
-    public TextField paymentInfoTextField;
+    @FXML
+    private Button signupButton;
+    @FXML
+    private TextField usernameTextField;
+    @FXML
+    private TextField firstNameTextField;
+    @FXML
+    private TextField lastNameTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private PasswordField passwordTextField;
+    @FXML
+    private Button backButton;
+    @FXML
+    private TextField phoneNumberTextField;
+    @FXML
+    private TextField paymentInfoTextField;
+    @FXML
     private ClientList clientList;
+    @FXML
     private ManagerList managerList;
 
     @FXML

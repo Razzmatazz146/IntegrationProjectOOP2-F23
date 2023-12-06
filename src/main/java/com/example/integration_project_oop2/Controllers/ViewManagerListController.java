@@ -15,8 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewManagerListController {
-    public TableView<Client> ticketTableView;
-    public Button backButton;
+    @FXML
+    private TableView<Client> ticketTableView;
+    @FXML
+    private Button backButton;
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {

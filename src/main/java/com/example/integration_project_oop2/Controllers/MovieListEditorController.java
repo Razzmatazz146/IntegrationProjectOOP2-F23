@@ -21,15 +21,25 @@ import java.io.IOException;
 
 public class MovieListEditorController extends WindowController{
 
-    public Button addButton;
-    public Button backButton;
-    public Button updateButton;
-    public Button removeButton;
-    public ListView movieListView;
-    public Label titleLabel;
-    public Label genreLabel;
-    public Label durationLabel;
-    public Label ratingLabel;
+    @FXML
+    private Button addButton;
+    @FXML
+    private Button backButton;
+    @FXML
+    private Button updateButton;
+    @FXML
+    private Button removeButton;
+    @FXML
+    private ListView movieListView;
+    @FXML
+    private Label titleLabel;
+    @FXML
+    private Label genreLabel;
+    @FXML
+    private Label durationLabel;
+    @FXML
+    private Label ratingLabel;
+    @FXML
     private MovieList movieList;
 
     @FXML

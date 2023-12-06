@@ -15,17 +15,31 @@ import static com.example.integration_project_oop2.Controllers.WindowController.
 
 public class ShowtimesListEditorController {
 
-    public ListView showtimesListView;
-    public TextField adultPriceTextField;
-    public TextField childPriceTextField;
-    public Button addButton;
-    public Button backButton;
-    public Button updateButton;
-    public Button removeButton;
-    public ChoiceBox movieDropdown;
-    public ChoiceBox showroomDropdown;
-    public ChoiceBox timeDropdown;
-
+    @FXML
+    private Label movieTitleLabel;
+    @FXML
+    private ListView showtimesListView;
+    @FXML
+    private TextField adultPriceTextField;
+    @FXML
+    private TextField childPriceTextField;
+    @FXML
+    private Button addButton;
+    @FXML
+    private Button backButton;
+    @FXML
+    private Button updateButton;
+    @FXML
+    private Button removeButton;
+    @FXML
+   private ComboBox movieDropdown;
+    @FXML
+    private ComboBox showroomDropdown;
+    @FXML
+    private ComboBox startTimeComboBox;
+    @FXML
+    private ComboBox endTimeComboBox;
+    @FXML
     private ShowtimeList showtimeList;
 
     private String getSelectedMovie() { return  (String) movieDropdown.getSelectionModel().getSelectedItem(); }
@@ -57,26 +71,7 @@ public class ShowtimesListEditorController {
     }
 
     public void onAddButtonClick(ActionEvent event) {
-        String realMovie = "It";
-        int realRoom = 1;
-
-        String selectedMovie = (String) movieDropdown.getSelectionModel().getSelectedItem();
-        int selectedRoom = (int) showroomDropdown.getSelectionModel().getSelectedItem();
-
-
         newWindow(event, "addShowtime-view.fxml", "Add Showtime");
-
-        if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)){
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "This showtime already exists.");
-            viewAlert.showAndWait();
-        } else {
-
-            // TODO: Add code to add movie to database and ListView
-
-
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for "+ selectedMovie + "and " + selectedRoom +" has been successfully added!");
-            viewAlert.showAndWait();
-        }
     }
 
     public void onUpdateButtonClick(ActionEvent event) {
@@ -102,8 +97,6 @@ public class ShowtimesListEditorController {
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a showtime.");
             viewAlert.showAndWait();
         } else {
-
-            // TODO Add code to remove item from ListView and database list.
             Showtime selectedShowtime = showtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
 
             showtimesListView.getItems().remove(selectedShowtime);
