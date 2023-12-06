@@ -58,7 +58,8 @@ public class MovieDetailsController {
 
         alert.setTitle("Success");
         alert.setHeaderText(null);
-        alert.setContentText(title + " has successfully been added!");
+        ExceptionAlert.alertConfirmation(title + "successfully added.");
+
 
         titleTextField.clear();
         genreTextField.clear();

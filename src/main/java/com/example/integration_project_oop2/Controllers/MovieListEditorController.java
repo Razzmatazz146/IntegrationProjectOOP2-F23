@@ -66,6 +66,7 @@ public class MovieListEditorController extends WindowController{
 
     public void onAddButtonClick(ActionEvent event) {
         newWindow(event, "addNewMovie-view.fxml", "Add New Movie");
+        populateList();
     }
 
     public void onUpdateButtonClick(ActionEvent event) {
@@ -87,6 +88,7 @@ public class MovieListEditorController extends WindowController{
                 updateMovieController.setUpdateMovie(pMovie);
                 nextStage.initOwner(((Node) event.getSource()).getScene().getWindow());
                 nextStage.showAndWait();
+                populateList();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -107,9 +109,11 @@ public class MovieListEditorController extends WindowController{
 
             initialize();
 
+            movieListView.getItems().remove(getSelectedMovie());
+            
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + " has been removed.");
             viewAlert.showAndWait();
-            movieListView.getItems().remove(getSelectedMovie());
+
         }
     }
 
