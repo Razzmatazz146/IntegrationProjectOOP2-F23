@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.ExceptionAlert;
 import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
@@ -13,15 +14,24 @@ import javafx.stage.Stage;
 
 
 public class MovieDetailsController {
-    public TextField titleTextField;
-    public TextField genreTextField;
-    public TextField yearTextField;
-    public TextField durationTextField;
-    public TextField ratingTextField;
+    @FXML
+    private TextField titleTextField;
+    @FXML
+    private TextField genreTextField;
+    @FXML
+    private TextField yearTextField;
+    @FXML
+    private TextField durationTextField;
+    @FXML
+    private TextField ratingTextField;
+    @FXML
     public Button addMovieButton;
+    @FXML
     public Button cancelMovieButton;
+    @FXML
     private MovieList movieList;
     private Movie aMovie;
+
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
 
@@ -82,9 +92,7 @@ public class MovieDetailsController {
 
         lists.setMovieList(movieList);
 
-        alert.setTitle("Success");
-        alert.setHeaderText(null);
-        alert.setContentText(title + " has successfully been updated!");
+        ExceptionAlert.alertConfirmation(title + "successfully updated.");
 
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();

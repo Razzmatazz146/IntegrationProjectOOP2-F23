@@ -70,7 +70,7 @@ public class Ticket implements Serializable {
      */
     public void setShowtime(Showtime pShowtime){
         if (pShowtime == null)
-            throw new IllegalArgumentException("Showtime cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Ticket must have a showtime.");
         this.aShowtime = pShowtime; }
 
     /**
@@ -88,7 +88,7 @@ public class Ticket implements Serializable {
      */
     public void setTicketNumber(int pTicketNumber){
         if (pTicketNumber < 0)
-            throw new IllegalArgumentException("Ticket number cannot be less than 0");
+            ExceptionAlert.alertIllegalArgumentException("Ticket must have a number.");
         this.aTicketNumber = pTicketNumber; }
 
     /**
@@ -98,8 +98,8 @@ public class Ticket implements Serializable {
      */
     public void setPurchaseDate(LocalDate pPurchaseDate){
         if (pPurchaseDate == null)
-            throw new IllegalArgumentException("Purchase date cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Purchase date cannot be null.");
         if (pPurchaseDate.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("Purchase dat cannot be in the future");
+            ExceptionAlert.alertIllegalArgumentException("Purchase date cannot be in the future.");
         this.aPurchaseDate = pPurchaseDate; }
 }

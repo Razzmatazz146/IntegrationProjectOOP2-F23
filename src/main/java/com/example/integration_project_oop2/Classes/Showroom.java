@@ -41,8 +41,8 @@ public class Showroom implements Serializable {
      * @param pRoomNumber The new room number.
      */
     public void setRoomNumber(int pRoomNumber) {
-        if (pRoomNumber == 0){
-            throw new IllegalArgumentException("Room Number cannot be 0");
+        if (pRoomNumber <= 0){
+            ExceptionAlert.alertIllegalArgumentException("Showroom must have a number greater than 0.");
         }
         this.aRoomNumber = pRoomNumber; }
 
@@ -52,8 +52,9 @@ public class Showroom implements Serializable {
      * @param pRoomCapacity The new room capacity.
      */
     public void setRoomCapacity(int pRoomCapacity) {
-        if (pRoomCapacity == 0){
-            throw new IllegalArgumentException("Room capacity cannot be 0");
+        if (pRoomCapacity <= 0){
+            ExceptionAlert.alertIllegalArgumentException("Capacity must be greater than 0.");
+
         }
         this.aRoomCapacity = pRoomCapacity; }
 

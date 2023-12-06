@@ -100,7 +100,7 @@ public abstract class User implements Serializable {
      */
     public void setUsername(String pUsername) {
         if (pUsername == null)
-            throw new IllegalArgumentException("Username cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Username cannot be empty.");
         this.aUsername = pUsername;
     }
 
@@ -111,7 +111,8 @@ public abstract class User implements Serializable {
      */
     public void setPassword(String pPassword) {
         if (pPassword == null)
-            throw new IllegalArgumentException("Password cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Password cannot be empty.");
+
         this.aPassword = pPassword;
     }
 
@@ -122,7 +123,7 @@ public abstract class User implements Serializable {
      */
     public void setFirstName(String pFirstName) {
         if (pFirstName == null)
-            throw new IllegalArgumentException("Username cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("First name cannot be empty.");
         this.aFirstName = pFirstName;
     }
 
@@ -133,7 +134,7 @@ public abstract class User implements Serializable {
      */
     public void setLastName(String pLastName) {
         if (pLastName == null)
-            throw new IllegalArgumentException("Username cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Last name cannot be empty.");
         this.aLastName = pLastName;
     }
 
@@ -144,9 +145,9 @@ public abstract class User implements Serializable {
      */
     public void setEmail(String pEmail) {
         if (pEmail == null)
-            throw new IllegalArgumentException("Email cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("E-mail cannot be empty.");
         if (!pEmail.matches(".+@.+\\..+"))
-            throw new IllegalArgumentException("Invalid email.");
+            ExceptionAlert.alertIllegalArgumentException("E-mail is invalid.");
 
         this.aEmail = pEmail;
     }
@@ -158,7 +159,7 @@ public abstract class User implements Serializable {
      */
     public void setPhoneNumber(String pPhoneNumber) {
         if (pPhoneNumber == null)
-            throw new IllegalArgumentException("Phone number cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Phone number cannot be empty.");
         this.aPhoneNumber = pPhoneNumber;
     }
 

@@ -34,7 +34,7 @@ public class Movie implements Serializable {
      */
     public void setMovieTitle(String pMovieTitle) {
         if (pMovieTitle == null)
-            throw new IllegalArgumentException("Movie title cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Movie must have a title.");
         this.aMovieTitle = pMovieTitle;
     }
 
@@ -44,8 +44,8 @@ public class Movie implements Serializable {
      * @param pMovieDuration The new movie duration.
      */
     public void setMovieDuration(int pMovieDuration) {
-        if (pMovieDuration < 0)
-            throw new IllegalArgumentException("Movie duration cannot be less than 0");
+        if (pMovieDuration <= 0)
+            ExceptionAlert.alertIllegalArgumentException("Movie duration must be longer than 0.");
         this.aMovieDuration = pMovieDuration;
     }
 
@@ -56,7 +56,7 @@ public class Movie implements Serializable {
      */
     public void setMovieGenre(String pMovieGenre) {
         if (pMovieGenre == null)
-            throw new IllegalArgumentException("Movie genre cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Movie must have a genre.");
         this.aMovieGenre = pMovieGenre;
     }
 
@@ -93,7 +93,7 @@ public class Movie implements Serializable {
 
     public void setAgeRating(String pAgeRating) {
         if (pAgeRating == null)
-            throw new IllegalArgumentException("Movie must have an age rating.");
+            ExceptionAlert.alertIllegalArgumentException("Movie must have an age rating.");
         this.aAgeRating = pAgeRating;
     }
 
@@ -103,7 +103,7 @@ public class Movie implements Serializable {
 
     public void setReleaseYear(int pReleaseYear) {
         if (pReleaseYear == 0)
-            throw new IllegalArgumentException("Movie must have a release year.");
+            ExceptionAlert.alertIllegalArgumentException("Movie must have a release year.");
         this.aReleaseYear = pReleaseYear;
     }
 }

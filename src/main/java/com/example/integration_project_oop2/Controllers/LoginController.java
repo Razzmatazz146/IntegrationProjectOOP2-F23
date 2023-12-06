@@ -78,8 +78,13 @@ public class LoginController extends WindowController {
         } else if (validUser instanceof Client || username.equals("client")) {
             // The user is a client
             newWindow(event, "client-view.fxml", "Available Movies");
-        } else {
-            throw new IllegalArgumentException("Username or password is invalid.");
+        } else if (username.isEmpty()){
+            ExceptionAlert.alertIllegalArgumentException("Please enter a username.");
+        } else if (password.isEmpty()){
+            ExceptionAlert.alertIllegalArgumentException("Please enter a password.");
+        }
+        else {
+            ExceptionAlert.alertIllegalArgumentException("Username or password is invalid.");
         }
     }
 

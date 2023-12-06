@@ -48,7 +48,7 @@ public class Showtime implements Serializable {
 
     private void setShowroom(Showroom pShowroom) {
         if (pShowroom == null)
-            throw new IllegalArgumentException("Showroom cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Showtime must have a showroom.");
         this.aShowroom = pShowroom;
     }
     public Showroom getShowroom(){
@@ -97,7 +97,7 @@ public class Showtime implements Serializable {
      */
     public void setStartTime(LocalTime pStartTime){
         if (pStartTime == null)
-            throw new IllegalArgumentException("Start time cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Start time cannot be null.");
         this.aStartTime = pStartTime; }
 
     /**
@@ -107,7 +107,7 @@ public class Showtime implements Serializable {
      */
     public void setEndTime(LocalTime pEndTime){
         if (pEndTime == null)
-            throw new IllegalArgumentException("End time cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("End time cannot be null.");
         this.aEndTime = pEndTime;
     }
 
@@ -118,7 +118,7 @@ public class Showtime implements Serializable {
      */
     public void setMovie(Movie pMovie) {
         if (pMovie == null)
-            throw new IllegalArgumentException("Movie cannot be null");
+            ExceptionAlert.alertIllegalArgumentException("Showtime must have a movie.");
         this.aMovie = pMovie;
     }
 
@@ -129,7 +129,7 @@ public class Showtime implements Serializable {
      */
     public void setShowtimeAdultPrice(double pShowtimeAdultPrice) {
         if (pShowtimeAdultPrice < 0)
-            throw new IllegalArgumentException("Price cannot be 0");
+            ExceptionAlert.alertIllegalArgumentException("Showtime must be at least 0.");
         this.aShowtimeAdultPrice = pShowtimeAdultPrice; }
 
     /**
