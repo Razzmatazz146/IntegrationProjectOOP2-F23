@@ -34,12 +34,12 @@ public class AddShowtimeViewController {
     private TextField childPriceTextField;
 
     MovieList movieList;
-    private Showtime aShowtime;
+    private Showroom aShowroom;
+    private ShowroomList aShowroomList;
 
-    public void setUpdateShowtime(Showtime pShowtime){
-        this.aShowtime = pShowtime;
-        movieDropdown.setValue(pShowtime.getMovie());
-        showroomDropdown.setValue(pShowtime.getShowroom());
+    public void setUpdateShowtime(Showtime pShowtime) {
+        movieDropdown.setValue(pShowtime.getMovie().getMovieTitle());
+        showroomDropdown.setValue(pShowtime.getShowroom().getRoomNumber());
         startTimeComboBox.setValue(pShowtime.getStartTime());
         endTimeComboBox.setValue(pShowtime.getEndTime());
         adultPriceTextField.setText(String.valueOf(pShowtime.getShowtimePrice()));
@@ -51,34 +51,42 @@ public class AddShowtimeViewController {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
+
     @FXML
-    private void initialize(){
+    private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
         movieList = lists.getMovieList();
+        aShowroomList = lists.getShowroomList();
         populateList();
     }
-    private void populateList(){
-        movieDropdown.getItems().addAll(movieList.getMovieTitleList());
+
+
+    private void populateList() {
+        for (Showroom aShowroom : aShowroomList) {
+            showroomDropdown.getItems().add(aShowroom.getRoomNumber());
+        }
     }
 
 
-    public void onAddButtonClick(ActionEvent event) {
-    String realMovie = "It";
-    int realRoom = 1;
 
-    String selectedMovie = (String) movieDropdown.getSelectionModel().getSelectedItem();
-    int selectedRoom = (int) showroomDropdown.getSelectionModel().getSelectedItem();
-       if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)){
-        Alert viewAlert = new Alert(Alert.AlertType.ERROR, "This showtime already exists.");
-        viewAlert.showAndWait();
-    } else {
+        public void onAddButtonClick (ActionEvent event){
+            String realMovie = "It";
+            int realRoom = 1;
 
-        // TODO: Add code to add movie to database and ListView
+            String selectedMovie = (String) movieDropdown.getSelectionModel().getSelectedItem();
+            int selectedRoom = (int) showroomDropdown.getSelectionModel().getSelectedItem();
+            if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)) {
+                Alert viewAlert = new Alert(Alert.AlertType.ERROR, "This showtime already exists.");
+                viewAlert.showAndWait();
+            } else {
+
+                // TODO: Add code to add movie to database and ListView
 
 
-        Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for "+ selectedMovie + "and " + selectedRoom +" has been successfully added!");
-        viewAlert.showAndWait();
+                Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for " + selectedMovie + "and " + selectedRoom + " has been successfully added!");
+                viewAlert.showAndWait();
+            }
+        }
+
     }
-}
 
-}

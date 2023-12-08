@@ -5,8 +5,8 @@
 
 <AnchorPane prefHeight="279.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.Controllers.AddShowtimeViewController">
    <children>
-      <Button fx:id="addButton" layoutX="291.0" layoutY="215.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add / Update" />
-      <Button fx:id="backButton" layoutX="229.0" layoutY="215.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+      <Button fx:id="addButton" layoutX="313.0" layoutY="215.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Save" />
+      <Button fx:id="backButton" layoutX="252.0" layoutY="215.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
       <ComboBox fx:id="movieDropdown" layoutX="41.0" layoutY="56.0" prefWidth="150.0" />
       <TextField fx:id="childPriceTextField" layoutX="229.0" layoutY="177.0" />
       <TextField fx:id="adultPriceTextField" layoutX="41.0" layoutY="177.0" />
