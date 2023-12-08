@@ -2,6 +2,7 @@ package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showroom;
+import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.ShowroomList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
@@ -33,6 +34,17 @@ public class AddShowtimeViewController {
     private TextField childPriceTextField;
 
     MovieList movieList;
+    private Showtime aShowtime;
+
+    public void setUpdateShowtime(Showtime pShowtime){
+        this.aShowtime = pShowtime;
+        movieDropdown.setValue(pShowtime.getMovie());
+        showroomDropdown.setValue(pShowtime.getShowroom());
+        startTimeComboBox.setValue(pShowtime.getStartTime());
+        endTimeComboBox.setValue(pShowtime.getEndTime());
+        adultPriceTextField.setText(String.valueOf(pShowtime.getShowtimePrice()));
+        childPriceTextField.setText(String.valueOf(pShowtime.getShowtimeChildPrice()));
+    }
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
@@ -62,7 +74,7 @@ public class AddShowtimeViewController {
     } else {
 
         // TODO: Add code to add movie to database and ListView
-        //showtimeList.addShowtime(new Showtime());
+
 
         Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for "+ selectedMovie + "and " + selectedRoom +" has been successfully added!");
         viewAlert.showAndWait();

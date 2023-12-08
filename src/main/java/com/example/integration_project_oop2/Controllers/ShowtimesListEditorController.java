@@ -1,14 +1,21 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.ShowtimeList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
+import com.example.integration_project_oop2.MovieTheaterApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalTime;
 
 import static com.example.integration_project_oop2.Controllers.WindowController.newWindow;
@@ -80,15 +87,31 @@ public class ShowtimesListEditorController {
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a showtime.");
             viewAlert.showAndWait();
         } else {
-
-            // TODO: Add code to update database List.
+            String title = showtimesListView.getSelectionModel().getSelectedItem().toString();
+            Showtime pShowtime = showtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource("addShowtime-view.fxml"));
+                Parent view = fxmlLoader.load();
+                AddShowtimeViewController updateShowtimeController = fxmlLoader.getController();
+                Scene nextScene = new Scene(view);
+                Stage nextStage = new Stage();
+                nextStage.setScene(nextScene);
+                nextStage.setTitle("Update " + title);
+                nextStage.initModality(Modality.WINDOW_MODAL);
+                updateShowtimeController.setUpdateShowtime(pShowtime);
+                nextStage.initOwner(((Node) event.getSource()).getScene().getWindow());
+                nextStage.showAndWait();
+                populateList();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
             String title = showtimesListView.getSelectionModel().getSelectedItem().toString();
             newWindow(event,"addShowtime-view.fxml", "Update " + title);
 
 
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "Showtime for "+ getSelectedMovie() + "and " + getSelectedRoom() +" has been updated.");
             viewAlert.showAndWait();
-        }
     }
 
     public void onRemoveButtonClick() {

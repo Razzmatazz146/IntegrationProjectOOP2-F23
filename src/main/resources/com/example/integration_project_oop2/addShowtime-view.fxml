@@ -5,13 +5,13 @@
 
 <AnchorPane prefHeight="279.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.integration_project_oop2.Controllers.AddShowtimeViewController">
    <children>
-      <Button fx:id="addButton" layoutX="339.0" layoutY="215.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
-      <Button fx:id="backButton" layoutX="276.0" layoutY="215.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
-      <ComboBox fx:id="movieComboBox" layoutX="41.0" layoutY="56.0" prefWidth="150.0" />
-      <TextField fx:id="childPriceTextBox" layoutX="229.0" layoutY="177.0" />
-      <TextField fx:id="adultPriceTextBox" layoutX="41.0" layoutY="177.0" />
+      <Button fx:id="addButton" layoutX="291.0" layoutY="215.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add / Update" />
+      <Button fx:id="backButton" layoutX="229.0" layoutY="215.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+      <ComboBox fx:id="movieDropdown" layoutX="41.0" layoutY="56.0" prefWidth="150.0" />
+      <TextField fx:id="childPriceTextField" layoutX="229.0" layoutY="177.0" />
+      <TextField fx:id="adultPriceTextField" layoutX="41.0" layoutY="177.0" />
       <Label layoutX="41.0" layoutY="30.0" text="Select a Movie:" />
-      <ComboBox fx:id="showroomComboBox" layoutX="229.0" layoutY="56.0" prefWidth="150.0" />
+      <ComboBox fx:id="showroomDropdown" layoutX="229.0" layoutY="56.0" prefWidth="150.0" />
       <ComboBox fx:id="startTimeComboBox" layoutX="41.0" layoutY="114.0" prefWidth="150.0" />
       <ComboBox fx:id="endTimeComboBox" layoutX="229.0" layoutY="114.0" prefWidth="150.0" />
       <Label layoutX="229.0" layoutY="30.0" text="Select a Showroom:" />
