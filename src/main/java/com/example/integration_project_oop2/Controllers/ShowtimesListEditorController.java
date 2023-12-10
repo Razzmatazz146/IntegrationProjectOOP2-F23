@@ -72,6 +72,7 @@ public class ShowtimesListEditorController {
         populateList();
     }
     private void populateList(){
+        showtimesListView.getItems().clear();
         for(Showtime showtime : showtimeList){
             showtimesListView.getItems().add(showtime.getMovie().getMovieTitle());
         }
