@@ -54,7 +54,6 @@ public class Showroom implements Serializable {
     public void setRoomCapacity(int pRoomCapacity) {
         if (pRoomCapacity <= 0){
             ExceptionAlert.alertIllegalArgumentException("Capacity must be greater than 0.");
-
         }
         this.aRoomCapacity = pRoomCapacity; }
 

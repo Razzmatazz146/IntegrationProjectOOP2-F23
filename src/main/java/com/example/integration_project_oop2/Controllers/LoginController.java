@@ -11,13 +11,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * This controller is used with the login window. Checks if user is in system before logging in.
+ */
 public class LoginController extends WindowController {
     @FXML
     private PasswordField passwordTextField;
-    @FXML
-    private Button loginButton;
-    @FXML
-    private Button signupButton;
     @FXML
     private TextField usernameTextField;
     @FXML

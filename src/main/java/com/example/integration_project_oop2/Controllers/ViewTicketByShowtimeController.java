@@ -1,6 +1,5 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Classes.Ticket;
 import com.example.integration_project_oop2.Lists.TicketList;
@@ -18,6 +17,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This controller is used with the ticket view window to show ticket sales by showtime from the manager's view.
+ */
 public class ViewTicketByShowtimeController {
 
     public TableView<Ticket> ticketTableView;

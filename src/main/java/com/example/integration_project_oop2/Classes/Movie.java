@@ -87,20 +87,36 @@ public class Movie implements Serializable {
         return aMovieGenre;
     }
 
+    /**
+     * Gets the age rating of the movie.
+     * @return age rating
+     */
     public String getAgeRating() {
         return aAgeRating;
     }
 
+    /**
+     * Set age rating of the movie.
+     * @param pAgeRating
+     */
     public void setAgeRating(String pAgeRating) {
         if (pAgeRating == null)
             ExceptionAlert.alertIllegalArgumentException("Movie must have an age rating.");
         this.aAgeRating = pAgeRating;
     }
 
+    /**
+     * Get the release year of the movie.
+     * @return release year.
+     */
     public int getReleaseYear() {
         return aReleaseYear;
     }
 
+    /**
+     * Set release year of the movie.
+     * @param pReleaseYear
+     */
     public void setReleaseYear(int pReleaseYear) {
         if (pReleaseYear == 0)
             ExceptionAlert.alertIllegalArgumentException("Movie must have a release year.");

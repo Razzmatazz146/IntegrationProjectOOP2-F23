@@ -1,6 +1,5 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.ShowtimeList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
@@ -12,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -20,26 +20,23 @@ import java.time.LocalTime;
 
 import static com.example.integration_project_oop2.Controllers.WindowController.newWindow;
 
+/**
+ * Controller used for CRUD purposes for the showtimes list. Can Add, Update or Remove showtimes, as well as see the
+ * relevant information about each showtime when selected.
+ */
 public class ShowtimesListEditorController {
 
+    public Label showroomLabel;
+    public Label startTimeLabel;
+    public Label endTimeLabel;
+    public Label adultPriceLabel;
+    public Label childPriceLabel;
     @FXML
     private Label movieTitleLabel;
     @FXML
     private ListView showtimesListView;
     @FXML
-    private TextField adultPriceTextField;
-    @FXML
-    private TextField childPriceTextField;
-    @FXML
-    private Button addButton;
-    @FXML
-    private Button backButton;
-    @FXML
-    private Button updateButton;
-    @FXML
-    private Button removeButton;
-    @FXML
-   private ComboBox movieDropdown;
+    private ComboBox movieDropdown;
     @FXML
     private ComboBox showroomDropdown;
     @FXML
@@ -47,7 +44,7 @@ public class ShowtimesListEditorController {
     @FXML
     private ComboBox endTimeComboBox;
     @FXML
-    private ShowtimeList showtimeList;
+    private ShowtimeList aShowtimeList;
 
     private String getSelectedMovie() { return  (String) movieDropdown.getSelectionModel().getSelectedItem(); }
     private String getSelectedRoom() { return (String) showroomDropdown.getSelectionModel().getSelectedItem(); }
@@ -68,12 +65,12 @@ public class ShowtimesListEditorController {
     @FXML
     private void initialize(){
         SingletonLists lists = SingletonLists.getInstance();
-        showtimeList = lists.getShowtimeList();
+        aShowtimeList = lists.getShowtimeList();
         populateList();
     }
     private void populateList(){
         showtimesListView.getItems().clear();
-        for(Showtime showtime : showtimeList){
+        for(Showtime showtime : aShowtimeList){
             showtimesListView.getItems().add(showtime.getMovie().getMovieTitle());
         }
     }
@@ -89,7 +86,7 @@ public class ShowtimesListEditorController {
             viewAlert.showAndWait();
         } else {
             String title = showtimesListView.getSelectionModel().getSelectedItem().toString();
-            Showtime pShowtime = showtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
+            Showtime pShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource("addShowtime-view.fxml"));
                 Parent view = fxmlLoader.load();
@@ -121,10 +118,10 @@ public class ShowtimesListEditorController {
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a showtime.");
             viewAlert.showAndWait();
         } else {
-            Showtime selectedShowtime = showtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
+            Showtime selectedShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
 
             showtimesListView.getItems().remove(selectedShowtime);
-            showtimeList.removeShowtime(selectedShowtime);
+            aShowtimeList.removeShowtime(selectedShowtime);
 
             initialize();
 
@@ -132,5 +129,15 @@ public class ShowtimesListEditorController {
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + "'s showtime in " + getSelectedRoom() + " has been removed.");
             viewAlert.showAndWait();
         }
+    }
+    public void onNewSelection(MouseEvent mouseEvent) {
+        Showtime selectedShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
+
+        movieTitleLabel.setText(selectedShowtime.getMovie().getMovieTitle());
+        showroomLabel.setText(String.valueOf(selectedShowtime.getShowroom().getRoomNumber()));
+        startTimeLabel.setText(String.valueOf(selectedShowtime.getStartTime()));
+        endTimeLabel.setText(String.valueOf(selectedShowtime.getEndTime()));
+        adultPriceLabel.setText(String.format("$%.2f", (selectedShowtime.getShowtimePrice())));
+        childPriceLabel.setText(String.format("$%.2f", (selectedShowtime.getShowtimeChildPrice())));
     }
 }

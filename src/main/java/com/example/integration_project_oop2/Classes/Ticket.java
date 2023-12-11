@@ -37,7 +37,7 @@ public class Ticket implements Serializable {
     /**
      * Gets the showtime associated with the ticket.
      *
-     * @return The associated showtime.
+     * @return aShowtime.
      */
     public Showtime getShowtime(){ return aShowtime; }
 
@@ -61,7 +61,6 @@ public class Ticket implements Serializable {
      * @return The purchase date.
      */
     public LocalDate getPurchaseDate(){ return aPurchaseDate; }
-
 
     /**
      * Sets the showtime associated with the ticket.

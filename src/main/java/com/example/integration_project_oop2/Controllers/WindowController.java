@@ -1,7 +1,5 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.Movie;
-import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.MovieTheaterApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -9,12 +7,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-import javafx.scene.control.ListView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This abstract class is used by other classes when opening a new window. Expects an event, the window's associated
+ * FXML and the window title.
+ */
 abstract class WindowController {
     protected static void newWindow(ActionEvent pEvent, String windowName, String windowTitle){
         try {

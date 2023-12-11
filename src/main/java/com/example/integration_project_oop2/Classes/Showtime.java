@@ -25,7 +25,7 @@ public class Showtime implements Serializable {
     private UUID aShowtimeID;
 
     /**
-     * Showtime constructor
+     * Showtime constructor. Has a showtime ID automatically set for each.
      * @param pStartTime Showtime start time.
      * @param pEndTime Showtime end time.
      * @param pMovie Assigned movie.
@@ -42,15 +42,28 @@ public class Showtime implements Serializable {
         this.setShowtimeChildPrice(pShowtimeChildPrice);
     }
 
+    /**
+     * Gets the showtime's ID.
+     * @return aShowtimeID.
+     */
     public UUID getShowtimeID() {
         return aShowtimeID;
     }
 
+    /**
+     * Set the showtime's Showroom.
+     * @param pShowroom
+     */
     private void setShowroom(Showroom pShowroom) {
         if (pShowroom == null)
             ExceptionAlert.alertIllegalArgumentException("Showtime must have a showroom.");
         this.aShowroom = pShowroom;
     }
+
+    /**
+     * Gets the showtime's Showroom.
+     * @return aShowroom.
+     */
     public Showroom getShowroom(){
         return aShowroom;
     }
@@ -58,35 +71,35 @@ public class Showtime implements Serializable {
     /**
      * Gets the start time of the showtime.
      *
-     * @return The start time.
+     * @return aStartTime.
      */
     public LocalTime getStartTime(){ return aStartTime; }
 
     /**
      * Gets the end time of the showtime.
      *
-     * @return The end time.
+     * @return aEndTime.
      */
     public LocalTime getEndTime(){ return aEndTime; }
 
     /**
      * Gets the associated movie for the showtime.
      *
-     * @return The associated movie.
+     * @return aMovie.
      */
     public Movie getMovie() { return aMovie; }
 
     /**
      * Gets the adult ticket price for the showtime.
      *
-     * @return The adult ticket price.
+     * @return aShowtimeAdultPrice.
      */
     public double getShowtimePrice(){ return aShowtimeAdultPrice; }
 
     /**
      * Gets the child ticket price for the showtime.
      *
-     * @return The child ticket price.
+     * @return aShowtimeChildPrice.
      */
     public double getShowtimeChildPrice() { return aShowtimeChildPrice; }
 

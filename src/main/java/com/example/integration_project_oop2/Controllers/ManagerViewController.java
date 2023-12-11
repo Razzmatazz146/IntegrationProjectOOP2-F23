@@ -3,28 +3,13 @@ package com.example.integration_project_oop2.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * This controller is associated with the manager's view. Has all the necessary buttons to open the needed views to
+ * manage and get information about the theater.
+ */
 public class ManagerViewController extends WindowController {
-
-
-    @FXML
-    private Button editMovieButton;
-    @FXML
-    private Button clientListButton;
-    @FXML
-    private Button clientViewButton;
-    @FXML
-    private Button editShowtimesButton;
-    @FXML
-    private Button staffListButton;
-    @FXML
-    private Button logoutButton;
-    @FXML
-    private Button salesMovieButton;
-    @FXML
-    private Button salesShowtimeButton;
 
     @FXML
     protected void onLogOutButtonClick(ActionEvent actionEvent) {

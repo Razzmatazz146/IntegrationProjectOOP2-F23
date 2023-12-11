@@ -7,12 +7,14 @@ import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-
+/**
+ * This controller is associated with the movie details view. It is used to add or edit movies from
+ * the movie list.
+ */
 public class MovieDetailsController {
     @FXML
     private TextField titleTextField;
@@ -32,15 +34,12 @@ public class MovieDetailsController {
     private MovieList movieList;
     private Movie aMovie;
 
-    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-
-
     public void onCancelButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
-    public void onAddMovieButtonClick(ActionEvent actionEvent) {
+    public void onAddMovieButtonClick() {
 
         String title = titleTextField.getText();
         String genre = genreTextField.getText();
@@ -56,10 +55,7 @@ public class MovieDetailsController {
 
         lists.setMovieList(movieList);
 
-        alert.setTitle("Success");
-        alert.setHeaderText(null);
-        ExceptionAlert.alertConfirmation(title + "successfully added.");
-
+        ExceptionAlert.alertConfirmation(title + " successfully added!");
 
         titleTextField.clear();
         genreTextField.clear();
@@ -93,7 +89,7 @@ public class MovieDetailsController {
 
         lists.setMovieList(movieList);
 
-        ExceptionAlert.alertConfirmation(title + "successfully updated.");
+        ExceptionAlert.alertConfirmation(title + " successfully updated!");
 
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();

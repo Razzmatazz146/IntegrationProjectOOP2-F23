@@ -2,6 +2,9 @@ package com.example.integration_project_oop2.Serialization;
 
 import java.io.*;
 
+/**
+ * Reads bins and returns them as objects.
+ */
 public class BinReader {
 
     public static <T> T deserialize(String filePath, Class<T> clazz) {

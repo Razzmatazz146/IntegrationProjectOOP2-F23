@@ -91,6 +91,10 @@ public abstract class User implements Serializable {
         return aPhoneNumber;
     }
 
+    /**
+     * Gets boolean for if Is Manager.
+     * @return aIsManager
+     */
     public boolean getIsManager() { return aIsManager; }
 
     /**
@@ -163,6 +167,10 @@ public abstract class User implements Serializable {
         this.aPhoneNumber = pPhoneNumber;
     }
 
+    /**
+     * Set boolean for manager. True means is manager.
+     * @param pIsManager
+     */
     public void setIsManager(boolean pIsManager) {
         this.aIsManager = pIsManager;
     }

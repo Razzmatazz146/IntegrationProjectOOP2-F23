@@ -1,6 +1,5 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showroom;
 import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.MovieList;
@@ -14,9 +13,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * This controller is used with the associated window to add or update showtimes from the showtimes list.
+ */
 public class AddShowtimeViewController {
 
     @FXML
@@ -34,9 +33,12 @@ public class AddShowtimeViewController {
     private TextField childPriceTextField;
 
     MovieList movieList;
-    private Showroom aShowroom;
     private ShowroomList aShowroomList;
 
+    /**
+     * Setter for the showtime to be updated. Used in the new opened window to update showtimes.
+     * @param pShowtime
+     */
     public void setUpdateShowtime(Showtime pShowtime) {
         movieDropdown.setValue(pShowtime.getMovie().getMovieTitle());
         showroomDropdown.setValue(pShowtime.getShowroom().getRoomNumber());
@@ -46,12 +48,19 @@ public class AddShowtimeViewController {
         childPriceTextField.setText(String.valueOf(pShowtime.getShowtimeChildPrice()));
     }
 
+    /**
+     * Back button. Closes the current window.
+     * @param actionEvent
+     */
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Contains methods and attributes to be executed and set when the window is initialized.
+     */
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
@@ -60,7 +69,9 @@ public class AddShowtimeViewController {
         populateList();
     }
 
-
+    /**
+     * Populates the listview with
+     */
     private void populateList() {
         for (Showroom aShowroom : aShowroomList) {
             showroomDropdown.getItems().add(aShowroom.getRoomNumber());

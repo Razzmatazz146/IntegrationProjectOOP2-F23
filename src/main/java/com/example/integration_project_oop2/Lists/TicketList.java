@@ -7,15 +7,44 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * A class representing a list of tickets in the Movie Theater application.
+ * This list allows adding, removing, editing, and retrieving ticket information.
+ */
 public class TicketList implements Serializable, Iterable<Ticket> {
     private List<Ticket> aTicketList;
 
-    public TicketList() { this.aTicketList = new ArrayList<>(); }
+    /**
+     * Constructs a new TicketList.
+     */
+    public TicketList() {
+        this.aTicketList = new ArrayList<>();
+    }
 
-    public void addTicket(Ticket pTicket) { this.aTicketList.add(pTicket); }
+    /**
+     * Adds a ticket to the list.
+     *
+     * @param pTicket The ticket to add.
+     */
+    public void addTicket(Ticket pTicket) {
+        this.aTicketList.add(pTicket);
+    }
 
-    public void removeTicket(Ticket pTicket) { this.aTicketList.remove(pTicket); }
+    /**
+     * Removes a ticket from the list.
+     *
+     * @param pTicket The ticket to remove.
+     */
+    public void removeTicket(Ticket pTicket) {
+        this.aTicketList.remove(pTicket);
+    }
 
+    /**
+     * Edits an existing ticket in the list.
+     *
+     * @param pTicket The ticket to be edited.
+     * @param aTicket The new ticket details.
+     */
     public void editTicket(Ticket pTicket, Ticket aTicket) {
         if (aTicketList.contains(pTicket)) {
             int index = aTicketList.indexOf(pTicket);
@@ -23,6 +52,12 @@ public class TicketList implements Serializable, Iterable<Ticket> {
         }
     }
 
+    /**
+     * Retrieves a ticket from the list by its index.
+     *
+     * @param index The index of the ticket to retrieve.
+     * @return The ticket at the specified index, or null if the index is out of bounds.
+     */
     public Ticket getTicketByIndex(int index) {
         if (index >= 0 && index < aTicketList.size()) {
             return aTicketList.get(index);
@@ -30,6 +65,11 @@ public class TicketList implements Serializable, Iterable<Ticket> {
         return null;
     }
 
+    /**
+     * Returns an iterator over the tickets in the list.
+     *
+     * @return An iterator over the tickets.
+     */
     @Override
     public Iterator<Ticket> iterator() {
         return aTicketList.iterator();

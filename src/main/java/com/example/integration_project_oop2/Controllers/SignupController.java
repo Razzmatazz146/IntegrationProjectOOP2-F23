@@ -8,18 +8,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
+/**
+ * This controller is used with the Signup window. Uses the User and Client classes to create a new client
+ * using the given information.
+ */
 public class SignupController extends WindowController {
-
-
-    @FXML
-    private Button signupButton;
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -30,8 +29,6 @@ public class SignupController extends WindowController {
     private TextField emailTextField;
     @FXML
     private PasswordField passwordTextField;
-    @FXML
-    private Button backButton;
     @FXML
     private TextField phoneNumberTextField;
     @FXML

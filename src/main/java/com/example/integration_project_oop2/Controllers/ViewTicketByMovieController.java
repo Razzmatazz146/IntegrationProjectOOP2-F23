@@ -1,24 +1,23 @@
 package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.*;
-import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import com.example.integration_project_oop2.Lists.TicketList;
 import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This controller is used with the ticket view window to show ticket sales by movie title from the manager view.
+ */
 public class ViewTicketByMovieController {
     public TableView<Ticket> ticketTableView;
     public Button backButton;

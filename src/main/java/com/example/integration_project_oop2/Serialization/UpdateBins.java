@@ -6,6 +6,9 @@ import com.example.integration_project_oop2.Lists.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+/**
+ * Used to recreate bins if any errors occur or bins become unusable for any reason.
+ */
 public class UpdateBins {
     public static void main(String[] args) {
         SingletonLists lists = SingletonLists.getInstance();

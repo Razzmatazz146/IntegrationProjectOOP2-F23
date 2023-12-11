@@ -1,7 +1,6 @@
 package com.example.integration_project_oop2.Controllers;
 
 import com.example.integration_project_oop2.Classes.Movie;
-import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import com.example.integration_project_oop2.MovieTheaterApplication;
@@ -12,24 +11,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This controller is used for CRUD purposes with the Movie List. It is used to add, remove or edit movies.
+ */
 public class MovieListEditorController extends WindowController{
-
-    @FXML
-    private Button addButton;
-    @FXML
-    private Button backButton;
-    @FXML
-    private Button updateButton;
-    @FXML
-    private Button removeButton;
-    @FXML
     private ListView movieListView;
     @FXML
     private Label titleLabel;

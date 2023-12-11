@@ -1,25 +1,19 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showtime;
-import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.ShowtimeList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ *
+ */
 public class ClientViewController {
 
     @FXML
@@ -28,8 +22,6 @@ public class ClientViewController {
     private Label durationLabel;
     @FXML
     private Label genreLabel;
-    @FXML
-    private Button backButton;
     @FXML
     private ListView movieListView;
     @FXML
