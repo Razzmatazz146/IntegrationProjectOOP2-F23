@@ -69,7 +69,10 @@ public class ShowtimesListEditorController {
         populateList();
     }
     private void populateList(){
-        showtimesListView.getItems().clear();
+        if (!showtimesListView.getItems().isEmpty()){
+            showtimesListView.getItems().clear();
+        }
+        
         for(Showtime showtime : aShowtimeList){
             showtimesListView.getItems().add(showtime.getMovie().getMovieTitle());
         }
@@ -120,14 +123,14 @@ public class ShowtimesListEditorController {
         } else {
             Showtime selectedShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
 
-            showtimesListView.getItems().remove(selectedShowtime);
-            aShowtimeList.removeShowtime(selectedShowtime);
-
-            initialize();
-
-            showtimesListView.getItems().remove(getSelectedMovie());
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + "'s showtime in " + getSelectedRoom() + " has been removed.");
             viewAlert.showAndWait();
+
+            aShowtimeList.removeShowtime(selectedShowtime);
+
+            showtimesListView.getItems().remove(showtimesListView.getSelectionModel().getSelectedIndex());
+
+            initialize();
         }
     }
     public void onNewSelection(MouseEvent mouseEvent) {

@@ -21,6 +21,7 @@ import java.io.IOException;
  * This controller is used for CRUD purposes with the Movie List. It is used to add, remove or edit movies.
  */
 public class MovieListEditorController extends WindowController{
+    @FXML
     private ListView movieListView;
     @FXML
     private Label titleLabel;
@@ -44,12 +45,15 @@ public class MovieListEditorController extends WindowController{
     @FXML
     private void initialize(){
         SingletonLists lists = SingletonLists.getInstance();
-        movieList = lists.getMovieList();
+        this.movieList = lists.getMovieList();
         populateList();
     }
 
     private void populateList(){
-        movieListView.getItems().clear();
+        if (!movieListView.getItems().isEmpty()){
+            movieListView.getItems().clear();
+        }
+
         for(Movie movie : movieList){
             movieListView.getItems().add(movie.getMovieTitle());
         }
@@ -95,16 +99,14 @@ public class MovieListEditorController extends WindowController{
 
             Movie selectedMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
 
-            movieListView.getItems().remove(selectedMovie);
-            movieList.removeMovie(selectedMovie);
-
-            initialize();
-
-            movieListView.getItems().remove(getSelectedMovie());
-
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + " has been removed.");
             viewAlert.showAndWait();
 
+            movieList.removeMovie(selectedMovie);
+
+            movieListView.getItems().remove(movieListView.getSelectionModel().getSelectedIndex());
+
+            initialize();
         }
     }
 
