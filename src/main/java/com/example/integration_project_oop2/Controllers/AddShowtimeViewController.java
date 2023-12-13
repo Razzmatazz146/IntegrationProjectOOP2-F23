@@ -90,26 +90,25 @@ public class AddShowtimeViewController {
         }
     }
 
+    public void onAddButtonClick (ActionEvent event){
+        String realMovie = "It";
+        int realRoom = 1;
+
+        String selectedMovie = (String) movieDropdown.getSelectionModel().getSelectedItem();
+        int selectedRoom = (int) showroomDropdown.getSelectionModel().getSelectedItem();
+        if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)) {
+            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "This showtime already exists.");
+            viewAlert.showAndWait();
+        } else {
+
+            // TODO: Add code to add new showtime and maybe input validation for time. (Like make sure end time isn't
+            // before start time)
 
 
-        public void onAddButtonClick (ActionEvent event){
-            String realMovie = "It";
-            int realRoom = 1;
-
-            String selectedMovie = (String) movieDropdown.getSelectionModel().getSelectedItem();
-            int selectedRoom = (int) showroomDropdown.getSelectionModel().getSelectedItem();
-            if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)) {
-                Alert viewAlert = new Alert(Alert.AlertType.ERROR, "This showtime already exists.");
-                viewAlert.showAndWait();
-            } else {
-
-                // TODO: Add code to add movie to database and ListView
-
-
-                Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for " + selectedMovie + "and " + selectedRoom + " has been successfully added!");
-                viewAlert.showAndWait();
-            }
+            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for " + selectedMovie + "and " + selectedRoom + " has been successfully added!");
+            viewAlert.showAndWait();
         }
+    }
 
     }
 
