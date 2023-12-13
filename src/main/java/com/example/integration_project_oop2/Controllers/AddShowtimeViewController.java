@@ -13,6 +13,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.time.LocalTime;
+
 /**
  * This controller is used with the associated window to add or update showtimes from the showtimes list.
  */
@@ -34,6 +36,12 @@ public class AddShowtimeViewController {
 
     MovieList movieList;
     private ShowroomList aShowroomList;
+    private LocalTime[] validTimes = {
+            LocalTime.of(11,0),
+            LocalTime.of(14, 0),
+            LocalTime.of(17, 0),
+            LocalTime.of(20, 0),
+    };
 
     /**
      * Setter for the showtime to be updated. Used in the new opened window to update showtimes.
@@ -66,6 +74,10 @@ public class AddShowtimeViewController {
         SingletonLists lists = SingletonLists.getInstance();
         movieList = lists.getMovieList();
         aShowroomList = lists.getShowroomList();
+        for (LocalTime time : validTimes){
+            startTimeComboBox.getItems().add(time);
+            endTimeComboBox.getItems().add(time);
+        }
         populateList();
     }
 

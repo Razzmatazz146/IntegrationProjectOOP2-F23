@@ -40,22 +40,10 @@ public class ShowtimesListEditorController {
     @FXML
     private ComboBox showroomDropdown;
     @FXML
-    private ComboBox startTimeComboBox;
-    @FXML
-    private ComboBox endTimeComboBox;
-    @FXML
     private ShowtimeList aShowtimeList;
 
     private String getSelectedMovie() { return  (String) movieDropdown.getSelectionModel().getSelectedItem(); }
     private String getSelectedRoom() { return (String) showroomDropdown.getSelectionModel().getSelectedItem(); }
-
-    private LocalTime[] validTimes = {
-            LocalTime.of(11,0),
-            LocalTime.of(15, 0),
-            LocalTime.of(18, 0),
-            LocalTime.of(21, 0)
-    };
-
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
