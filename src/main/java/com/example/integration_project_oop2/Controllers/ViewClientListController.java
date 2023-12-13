@@ -38,6 +38,8 @@ public class ViewClientListController {
         clientLastNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getLastName()));
         TableColumn<Client, String> clientEmailColumn = new TableColumn<>("E-mail");
         clientEmailColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getEmail()));
+        TableColumn<Client, String> clientPhoneColumn = new TableColumn<>("Phone Number");
+        clientPhoneColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getPhoneNumber()));
         TableColumn<Client, String> clientHistoryColumn = new TableColumn<>("Purchase History");
         clientHistoryColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Double.toString(cellData.getValue().getPurchaseHistory())));
         TableColumn<Client, String> clientSignupDateColumn = new TableColumn<>("Signup Date");
@@ -47,6 +49,7 @@ public class ViewClientListController {
         ticketTableView.getColumns().add(clientFirstNameColumn);
         ticketTableView.getColumns().add(clientLastNameColumn);
         ticketTableView.getColumns().add(clientEmailColumn);
+        ticketTableView.getColumns().add(clientPhoneColumn);
         ticketTableView.getColumns().add(clientHistoryColumn);
         ticketTableView.getColumns().add(clientSignupDateColumn);
 

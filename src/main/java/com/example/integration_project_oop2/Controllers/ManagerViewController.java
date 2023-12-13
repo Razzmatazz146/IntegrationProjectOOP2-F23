@@ -3,6 +3,7 @@ package com.example.integration_project_oop2.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -42,5 +43,9 @@ public class ManagerViewController extends WindowController {
 
     public void onSalesShowtimeButtonClick(ActionEvent event) {
         newWindow(event, "managerTicketPerShowtimeList.fxml", "Sales per Showtime");
+    }
+
+    public void onViewShowroomsButtonClick(ActionEvent event) {
+        newWindow(event, "managerShowrooms-view.fxml", "Showrooms");
     }
 }
