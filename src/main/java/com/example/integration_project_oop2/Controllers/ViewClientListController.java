@@ -15,17 +15,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This controller is used with the associated window to view client information from the manager's view.
+ * This controller is used with the associated "managerClientList.fxml" to view client information from the manager's view.
  */
 public class ViewClientListController {
     @FXML
     private TableView<Client> ticketTableView;
+
+    /**
+     * Button to close the window.
+     * @param actionEvent
+     */
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Actions when window is opened. Populates the list with client information. (legal?)
+     */
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();

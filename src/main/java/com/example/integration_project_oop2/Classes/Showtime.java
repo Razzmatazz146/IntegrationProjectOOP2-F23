@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.util.UUID;
 
 /**
- * Represents theater showtimes' assigned movie, start time, end time, price per adult and price per child.
+ * Represents theater showtimes' ID, assigned movie, room number, start time, end time, price per adult and price per child.
  *
  * Has methods to get and set the showtime Start Time, End Time, Adult Price and Child price as well as
  * a @Showtimes constructor. The instance of Movies has attributes for the assigned movie's title, genre

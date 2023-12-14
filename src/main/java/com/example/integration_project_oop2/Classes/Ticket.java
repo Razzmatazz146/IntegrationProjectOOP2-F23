@@ -8,7 +8,7 @@ import java.time.LocalDate;
  * ticket owner is an adult, and the ticket purchase date.
  *
  * Has methods to get and set the ticket's Showtime, Ticket Number and Purchase Date, as well as
- * a @Ticket constructor. The instance of showtime has attributes for the movie's information,
+ * a @Ticket constructor. The instance of Showtime has attributes for the movie's information,
  * room number and start/end time for the assigned movie.
  */
 public class Ticket implements Serializable {

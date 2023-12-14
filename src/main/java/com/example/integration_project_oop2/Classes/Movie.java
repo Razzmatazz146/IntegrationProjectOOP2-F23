@@ -3,9 +3,9 @@ package com.example.integration_project_oop2.Classes;
 import java.io.Serializable;
 
 /**
- * Represents the theater's available Movies' Title, Genre, and Duration.
+ * Represents the theater's available Movies' Title, Genre, Duration, Rating and Release Year.
  *
- * Has methods to get and set Title, Genre and Duration, as well as a @Movies constructor.
+ * Has methods to get and set attributes as well as a @Movies constructor.
  */
 public class Movie implements Serializable {
     private String aMovieTitle;

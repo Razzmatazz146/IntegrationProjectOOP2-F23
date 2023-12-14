@@ -16,18 +16,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This controller is used with the ticket view window to show ticket sales by movie title from the manager view.
+ * This controller is used with the "managerTicketPerMovie.fxml" window to show ticket sales by movie title from the manager view.
  */
 public class ViewTicketByMovieController {
     public TableView<Ticket> ticketTableView;
-    public Button backButton;
 
+    /**
+     * Button to close the window
+     */
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Populates the list when window is opened.
+     */
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
@@ -64,6 +69,12 @@ public class ViewTicketByMovieController {
         ticketTableView.getItems().addAll(uniqueMovieTickets);
     }
 
+    /**
+     * Method to calculate total sales per movie
+     * @param ticketList Instance of TicketList
+     * @param movie Instance of Movie
+     * @return totalSales
+     */
     private int calculateTotalSales(TicketList ticketList, Movie movie) {
         int totalSales = 0;
 

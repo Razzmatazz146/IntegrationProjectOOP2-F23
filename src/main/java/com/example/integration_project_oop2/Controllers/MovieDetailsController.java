@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * This controller is associated with the movie details view. It is used to add or edit movies from
+ * This controller is associated with the "addNewMovie-view.fxml". It is used to add or edit movies from
  * the movie list.
  */
 public class MovieDetailsController {
@@ -34,11 +34,17 @@ public class MovieDetailsController {
     private MovieList movieList;
     private Movie aMovie;
 
+    /**
+     * Closes the window without saving
+     */
     public void onCancelButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Button to add new movie to the move list.
+     */
     public void onAddMovieButtonClick() {
 
         String title = titleTextField.getText();
@@ -64,6 +70,10 @@ public class MovieDetailsController {
         ratingTextField.clear();
     }
 
+    /**
+     * Method to set the selected movie from the previous window to the relevant information.
+     * @param pMovie selected movie
+     */
     public void setUpdateMovie(Movie pMovie){
         this.aMovie = pMovie;
         titleTextField.setText(pMovie.getMovieTitle());
@@ -73,6 +83,9 @@ public class MovieDetailsController {
         ratingTextField.setText(pMovie.getAgeRating());
     }
 
+    /**
+     * Button to update the movie on the move list.
+     */
     public void onUpdateMovieButtonClick(ActionEvent actionEvent) {
 
         String title = titleTextField.getText();
@@ -85,7 +98,7 @@ public class MovieDetailsController {
 
         movieList = lists.getMovieList();
 
-        movieList.editMovie(new Movie(title, genre, duration, year, rating), aMovie);
+        movieList.editMovie(aMovie, new Movie(title, genre, duration, year, rating));
 
         lists.setMovieList(movieList);
 

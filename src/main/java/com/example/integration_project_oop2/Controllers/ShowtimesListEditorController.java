@@ -72,7 +72,7 @@ public class ShowtimesListEditorController {
             String title = showtimesListView.getSelectionModel().getSelectedItem().toString();
             Showtime pShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource("addShowtime-view.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource("updateShowtime-view.fxml"));
                 Parent view = fxmlLoader.load();
                 AddShowtimeViewController updateShowtimeController = fxmlLoader.getController();
                 Scene nextScene = new Scene(view);

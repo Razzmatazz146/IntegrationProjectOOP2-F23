@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import java.time.LocalDate;
 
 /**
- * This controller is used with the Signup window. Uses the User and Client classes to create a new client
+ * This controller is used with the "user-signup.fxml" window. Uses the User and Client classes to create a new client
  * using the given information.
  */
 public class SignupController extends WindowController {
@@ -38,6 +38,9 @@ public class SignupController extends WindowController {
     @FXML
     private ManagerList managerList;
 
+    /**
+     * Initializes instances of lists when window opens.
+     */
     @FXML
     private void initialize(){
         SingletonLists lists = SingletonLists.getInstance();
@@ -45,23 +48,32 @@ public class SignupController extends WindowController {
         managerList = lists.getManagerList();
     }
 
+    /**
+     * Boolean to check if user or email already exists.
+     * @param username
+     * @param email
+     * @return true if exists, else false
+     */
     private boolean ifExists(String username, String email) {
         for (Manager manager : managerList) {
-            if (manager.getUsername().equals(username) && manager.getEmail().equals(email)) {
+            if (manager.getUsername().equalsIgnoreCase(username) && manager.getEmail().equalsIgnoreCase(email)) {
                 return true;
             }
         }
         for (Client client : clientList) {
-            if (client.getUsername().equals(username) && client.getEmail().equals(email)) {
+            if (client.getUsername().equalsIgnoreCase(username) && client.getEmail().equalsIgnoreCase(email)) {
                 return true;
             }
         }
         return false;
     }
 
+    /**
+     * Button to add new client to database. Shows confirmation message then closes if successful.
+     */
     @FXML
     protected void onSignUpButtonClick(ActionEvent pEvent) {
-
+        SingletonLists lists = SingletonLists.getInstance();
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
         String email = emailTextField.getText();
@@ -71,26 +83,24 @@ public class SignupController extends WindowController {
         String paymentInfo = paymentInfoTextField.getText();
 
         if (ifExists(username, email)){
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Username already exists or email is already in use.");
-            viewAlert.showAndWait();
+            ExceptionAlert.alertIllegalArgumentException("Username already exists or email is already in use.");
         } else if(username.isEmpty() || password.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty() || paymentInfo.isEmpty()) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Please fill out all fields.");
-            viewAlert.showAndWait();
+            ExceptionAlert.alertIllegalArgumentException("Please fill out all fields.");
         } else {
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "Welcome " + usernameTextField.getText() + "!");
-            viewAlert.showAndWait();
-
             clientList.addClient(new Client(username, password, firstName, lastName, email, phoneNumber, LocalDate.now(), 0, paymentInfo, false));
 
-            SingletonLists lists = SingletonLists.getInstance();
-
             lists.setClientList(clientList);
+
+            ExceptionAlert.alertConfirmation("Welcome " + usernameTextField.getText() + "!");
 
             Stage stage = (Stage) ((Node) pEvent.getSource()).getScene().getWindow();
             stage.close();
         }
     }
 
+    /**
+     * Button to close the window
+     */
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

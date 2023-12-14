@@ -17,6 +17,12 @@ import java.io.IOException;
  * FXML and the window title.
  */
 abstract class WindowController {
+    /**
+     * Method to open a window using given fxml and title name
+     * @param pEvent
+     * @param windowName Name of the fxml file
+     * @param windowTitle Title for the window
+     */
     protected static void newWindow(ActionEvent pEvent, String windowName, String windowTitle){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MovieTheaterApplication.class.getResource(windowName));

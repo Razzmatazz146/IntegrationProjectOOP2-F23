@@ -18,19 +18,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This controller is used with the ticket view window to show ticket sales by showtime from the manager's view.
+ * This controller is used with the "managerTicketPerShowtime.fxml" window to show ticket sales by showtime from the manager's view.
  */
 public class ViewTicketByShowtimeController {
-
     public TableView<Ticket> ticketTableView;
-    public Button backButton;
 
+    /**
+     * Button to close the window
+     */
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Populates the list when window is opened.
+     */
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
@@ -70,6 +74,13 @@ public class ViewTicketByShowtimeController {
 
         ticketTableView.getItems().addAll(displayTickets);
     }
+
+    /**
+     * Calculates ticket sales per showtime
+     * @param ticketList Instance of TicketList
+     * @param showtime Instance of Showtime
+     * @return totalSales
+     */
     private int calculateTotalSales(TicketList ticketList, Showtime showtime) {
         int totalSales = 0;
 

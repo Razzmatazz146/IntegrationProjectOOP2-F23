@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * This controller is used for CRUD purposes with the Movie List. It is used to add, remove or edit movies.
+ * This controller is used for CRUD purposes with the "managerMovie-view.fxml". It is used to add, remove or edit movies.
  */
 @SuppressWarnings("ALL")
 public class MovieListEditorController extends WindowController{
@@ -36,14 +36,24 @@ public class MovieListEditorController extends WindowController{
     @FXML
     private MovieList movieList;
 
+    /**
+     * Gets the selected movie
+     * @return selected movie
+     */
+    private String getSelectedMovie(){ return (String) movieListView.getSelectionModel().getSelectedItem(); }
+    /**
+     * Button to close the window
+     * @param actionEvent
+     */
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
-    private String getSelectedMovie(){ return (String) movieListView.getSelectionModel().getSelectedItem(); }
-
+    /**
+     * Methods and instances initialized when window is opened or when the method is called.
+     */
     @FXML
     private void initialize(){
         SingletonLists lists = SingletonLists.getInstance();
@@ -51,6 +61,9 @@ public class MovieListEditorController extends WindowController{
         populateList();
     }
 
+    /**
+     * Method used to populate the movie list view.
+     */
     private void populateList(){
         if (!movieListView.getItems().isEmpty()){
             movieListView.getItems().clear();
@@ -61,11 +74,17 @@ public class MovieListEditorController extends WindowController{
         }
     }
 
+    /**
+     * Button to open window to add a new movie to the movie list.
+     */
     public void onAddButtonClick(ActionEvent event) {
         newWindow(event, "addNewMovie-view.fxml", "Add New Movie");
         initialize();
     }
 
+    /**
+     * Button to update a movie from the movie list.
+     */
     public void onUpdateButtonClick(ActionEvent event) {
         if(movieListView.getSelectionModel().isEmpty()) {
             ExceptionAlert.alertIllegalArgumentException("Select a movie to update.");
@@ -91,6 +110,10 @@ public class MovieListEditorController extends WindowController{
         }
     }
 
+    /**
+     * Button to remove the selected movie from the movie list.
+     * @param event
+     */
     public void onRemoveButtonClick(ActionEvent event) {
 
         if(movieListView.getSelectionModel().isEmpty()){
@@ -110,6 +133,10 @@ public class MovieListEditorController extends WindowController{
         }
     }
 
+    /**
+     * Updates the related labels when a new item is selected from the list view.
+     * @param mouseEvent when new item is selected.
+     */
     public void onNewSelection(MouseEvent mouseEvent) {
 
         Movie selectedMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());

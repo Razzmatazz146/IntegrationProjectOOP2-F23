@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * This controller is used with the login window. Checks if user is in system before logging in.
+ * This controller is associated with the "user-login.fxml" window. Used for logging in or signing up as a new user.
  */
 public class LoginController extends WindowController {
     @FXML
@@ -25,8 +25,6 @@ public class LoginController extends WindowController {
     private ClientList clientList;
     @FXML
     private ManagerList managerList;
-
-    // Method to set managerList and clientList (called from MovieTheaterApplication)
 
     /**
      * Closes the application
@@ -47,17 +45,18 @@ public class LoginController extends WindowController {
     //
     private User validateUser(String username, String password) {
         for (Manager manager : managerList) {
-            if (manager.getUsername().equals(username) && manager.getPassword().equals(password)) {
+            if (manager.getUsername().equalsIgnoreCase(username) && manager.getPassword().equals(password)) {
                 return manager;
             }
         }
         for (Client client : clientList) {
-            if (client.getUsername().equals(username) && client.getPassword().equals(password)) {
+            if (client.getUsername().equalsIgnoreCase(username) && client.getPassword().equals(password)) {
                 return client;
             }
         }
         return null;
     }
+
     /**
      * Checks if user is Manager or Client and opens the appropriate window when Log In is clicked.
      */
@@ -80,9 +79,13 @@ public class LoginController extends WindowController {
         // Checks if manager or client. Returns error if username or password invalid.
         if (validUser instanceof Manager || username.equals("admin")) {
             // The user is a manager
+            usernameTextField.clear();
+            passwordTextField.clear();
             newWindow(event, "manager-view.fxml", "Manager View");
         } else if (validUser instanceof Client || username.equals("client")) {
             // The user is a client
+            usernameTextField.clear();
+            passwordTextField.clear();
             newWindow(event, "client-view.fxml", "Available Movies");
         } else if (username.isEmpty()){
             ExceptionAlert.alertIllegalArgumentException("Please enter a username.");
@@ -99,6 +102,8 @@ public class LoginController extends WindowController {
      */
     @FXML
     protected void onSignUpButtonClick(ActionEvent event) {
+        usernameTextField.clear();
+        passwordTextField.clear();
         newWindow(event, "user-signup.fxml", "Sign Up");
     }
 }

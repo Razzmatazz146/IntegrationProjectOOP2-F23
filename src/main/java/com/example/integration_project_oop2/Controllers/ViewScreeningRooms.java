@@ -1,6 +1,5 @@
 package com.example.integration_project_oop2.Controllers;
 
-import com.example.integration_project_oop2.Classes.Client;
 import com.example.integration_project_oop2.Classes.Showroom;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -14,15 +13,26 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This controller is used with the associated "managerShowroomsList.fxml" to view showrooms.
+ */
 public class ViewScreeningRooms {
     @FXML
     private TableView<Showroom> showroomTableView;
+
+    /**
+     * Button to close the window
+     * @param actionEvent
+     */
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Populates the list when window is opened.
+     */
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
