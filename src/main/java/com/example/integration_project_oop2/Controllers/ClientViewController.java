@@ -16,6 +16,7 @@ import javafx.stage.Stage;
  * Controller associated with "client-vew.fxml". This is the client's view. Shows a list of movies, and when selected, shows
  * their duration, genre, rating and start time.
  */
+@SuppressWarnings("unchecked")
 public class ClientViewController {
 
     @FXML
