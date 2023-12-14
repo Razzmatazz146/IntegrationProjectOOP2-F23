@@ -73,6 +73,9 @@ public class SignupController extends WindowController {
         if (ifExists(username, email)){
             Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Username already exists or email is already in use.");
             viewAlert.showAndWait();
+        } else if(username.isEmpty() || password.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty() || paymentInfo.isEmpty()) {
+            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Please fill out all fields.");
+            viewAlert.showAndWait();
         } else {
             Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "Welcome " + usernameTextField.getText() + "!");
             viewAlert.showAndWait();
