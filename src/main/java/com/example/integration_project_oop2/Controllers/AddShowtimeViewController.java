@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showroom;
 import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.MovieList;
@@ -34,7 +35,7 @@ public class AddShowtimeViewController {
     @FXML
     private TextField childPriceTextField;
 
-    MovieList movieList;
+    private MovieList aMovieList;
     private ShowroomList aShowroomList;
     private LocalTime[] validTimes = {
             LocalTime.of(11,0),
@@ -72,7 +73,7 @@ public class AddShowtimeViewController {
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
-        movieList = lists.getMovieList();
+        aMovieList = lists.getMovieList();
         aShowroomList = lists.getShowroomList();
         for (LocalTime time : validTimes){
             startTimeComboBox.getItems().add(time);
@@ -88,6 +89,10 @@ public class AddShowtimeViewController {
         for (Showroom aShowroom : aShowroomList) {
             showroomDropdown.getItems().add(aShowroom.getRoomNumber());
         }
+        for (Movie aMovie : aMovieList) {
+            movieDropdown.getItems().add((aMovie.getMovieTitle()));
+        }
+
     }
 
     public void onAddButtonClick (ActionEvent event){
