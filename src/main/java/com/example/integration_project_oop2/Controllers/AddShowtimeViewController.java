@@ -1,14 +1,16 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.ExceptionAlert;
+import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Classes.Showroom;
 import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.ShowroomList;
+import com.example.integration_project_oop2.Lists.ShowtimeList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,6 +20,7 @@ import java.time.LocalTime;
 /**
  * This controller is used with the associated window to add or update showtimes from the showtimes list.
  */
+@SuppressWarnings("ALL")
 public class AddShowtimeViewController {
 
     @FXML
@@ -33,8 +36,7 @@ public class AddShowtimeViewController {
     private TextField adultPriceTextField;
     @FXML
     private TextField childPriceTextField;
-
-    MovieList movieList;
+    private MovieList aMovieList;
     private ShowroomList aShowroomList;
     private LocalTime[] validTimes = {
             LocalTime.of(11,0),
@@ -72,12 +74,9 @@ public class AddShowtimeViewController {
     @FXML
     private void initialize() {
         SingletonLists lists = SingletonLists.getInstance();
-        movieList = lists.getMovieList();
+        aMovieList = lists.getMovieList();
         aShowroomList = lists.getShowroomList();
-        for (LocalTime time : validTimes){
-            startTimeComboBox.getItems().add(time);
-            endTimeComboBox.getItems().add(time);
-        }
+
         populateList();
     }
 
@@ -88,27 +87,48 @@ public class AddShowtimeViewController {
         for (Showroom aShowroom : aShowroomList) {
             showroomDropdown.getItems().add(aShowroom.getRoomNumber());
         }
+        for (LocalTime time : validTimes){
+            startTimeComboBox.getItems().add(time);
+            endTimeComboBox.getItems().add(time);
+        }
+        movieDropdown.getItems().addAll(aMovieList.getMovieTitleList());
     }
 
-    public void onAddButtonClick (ActionEvent event){
-        String realMovie = "It";
-        int realRoom = 1;
+    public void onAddButtonClick(ActionEvent event) {
+        SingletonLists lists = SingletonLists.getInstance();
+        ShowtimeList aShowtimeList = lists.getShowtimeList();
 
-        String selectedMovie = (String) movieDropdown.getSelectionModel().getSelectedItem();
-        int selectedRoom = (int) showroomDropdown.getSelectionModel().getSelectedItem();
-        if (movieDropdown.getSelectionModel().getSelectedItem().equals(realMovie) && showroomDropdown.getSelectionModel().getSelectedItem().equals(realRoom)) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "This showtime already exists.");
-            viewAlert.showAndWait();
-        } else {
+        LocalTime selectedStartTime = (LocalTime) startTimeComboBox.getSelectionModel().getSelectedItem();
+        LocalTime selectedEndTime = (LocalTime) endTimeComboBox.getSelectionModel().getSelectedItem();
 
-            // TODO: Add code to add new showtime and maybe input validation for time. (Like make sure end time isn't
-            // before start time)
+        Movie selectedMovie = aMovieList.getMovieByIndex(movieDropdown.getSelectionModel().getSelectedIndex());
+        Showroom selectedRoom = aShowroomList.getShowroomByIndex(showroomDropdown.getSelectionModel().getSelectedIndex());
 
+        try {
+            double adultPrice = Double.parseDouble(adultPriceTextField.getText());
+            double childPrice = Double.parseDouble(childPriceTextField.getText());
 
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "A new showtime for " + selectedMovie + "and " + selectedRoom + " has been successfully added!");
-            viewAlert.showAndWait();
+            if (selectedStartTime.isAfter(selectedEndTime)) {
+                ExceptionAlert.alertIllegalArgumentException("Showtime cannot start after it ends.");
+            } else if (checkDuplicate(aShowtimeList, selectedRoom, selectedStartTime)) {
+                ExceptionAlert.alertIllegalArgumentException("A movie is already playing in this room at this time.");
+            } else {
+                aShowtimeList.addShowtime(new Showtime(selectedStartTime, selectedEndTime, selectedMovie, selectedRoom, adultPrice, childPrice));
+                ExceptionAlert.alertConfirmation("New showtime has been added for " + selectedMovie.getMovieTitle() + " in room " + selectedRoom.getRoomNumber() + "!");
+            }
+        } catch (NumberFormatException e) {
+            ExceptionAlert.alertIllegalArgumentException("Invalid number format for prices.");
         }
     }
 
+    private boolean checkDuplicate(ShowtimeList aShowtimeList, Showroom selectedRoom, LocalTime selectedStartTime) {
+        for (Showtime showtime : aShowtimeList) {
+            if (selectedStartTime.equals(showtime.getStartTime()) && selectedRoom.getRoomNumber() == showtime.getShowroom().getRoomNumber()) {
+                return true;
+            }
+        }
+        return false;
     }
+}
+
 

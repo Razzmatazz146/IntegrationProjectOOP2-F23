@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.ExceptionAlert;
 import com.example.integration_project_oop2.Classes.Movie;
 import com.example.integration_project_oop2.Lists.MovieList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
@@ -20,6 +21,7 @@ import java.io.IOException;
 /**
  * This controller is used for CRUD purposes with the Movie List. It is used to add, remove or edit movies.
  */
+@SuppressWarnings("ALL")
 public class MovieListEditorController extends WindowController{
     @FXML
     private ListView movieListView;
@@ -61,13 +63,12 @@ public class MovieListEditorController extends WindowController{
 
     public void onAddButtonClick(ActionEvent event) {
         newWindow(event, "addNewMovie-view.fxml", "Add New Movie");
-        populateList();
+        initialize();
     }
 
     public void onUpdateButtonClick(ActionEvent event) {
         if(movieListView.getSelectionModel().isEmpty()) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a movie to update.");
-            viewAlert.showAndWait();
+            ExceptionAlert.alertIllegalArgumentException("Select a movie to update.");
         } else {
             String title = movieListView.getSelectionModel().getSelectedItem().toString();
             Movie pMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
@@ -83,7 +84,7 @@ public class MovieListEditorController extends WindowController{
                 updateMovieController.setUpdateMovie(pMovie);
                 nextStage.initOwner(((Node) event.getSource()).getScene().getWindow());
                 nextStage.showAndWait();
-                populateList();
+                initialize();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -93,8 +94,7 @@ public class MovieListEditorController extends WindowController{
     public void onRemoveButtonClick(ActionEvent event) {
 
         if(movieListView.getSelectionModel().isEmpty()){
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a movie to remove.");
-            viewAlert.showAndWait();
+            ExceptionAlert.alertIllegalArgumentException("Select a movie to remove.");
         } else {
 
             Movie selectedMovie = movieList.getMovieByIndex(movieListView.getSelectionModel().getSelectedIndex());
@@ -104,7 +104,7 @@ public class MovieListEditorController extends WindowController{
 
             movieList.removeMovie(selectedMovie);
 
-            movieListView.getItems().remove(movieListView.getSelectionModel().getSelectedIndex());
+            movieListView.getItems().clear();
 
             initialize();
         }

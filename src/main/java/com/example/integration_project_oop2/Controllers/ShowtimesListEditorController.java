@@ -1,5 +1,6 @@
 package com.example.integration_project_oop2.Controllers;
 
+import com.example.integration_project_oop2.Classes.ExceptionAlert;
 import com.example.integration_project_oop2.Classes.Showtime;
 import com.example.integration_project_oop2.Lists.ShowtimeList;
 import com.example.integration_project_oop2.Lists.SingletonLists;
@@ -36,14 +37,7 @@ public class ShowtimesListEditorController {
     @FXML
     private ListView showtimesListView;
     @FXML
-    private ComboBox movieDropdown;
-    @FXML
-    private ComboBox showroomDropdown;
-    @FXML
     private ShowtimeList aShowtimeList;
-
-    private String getSelectedMovie() { return  (String) movieDropdown.getSelectionModel().getSelectedItem(); }
-    private String getSelectedRoom() { return (String) showroomDropdown.getSelectionModel().getSelectedItem(); }
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -68,13 +62,12 @@ public class ShowtimesListEditorController {
 
     public void onAddButtonClick(ActionEvent event) {
         newWindow(event, "addShowtime-view.fxml", "Add Showtime");
+        initialize();
     }
 
     public void onUpdateButtonClick(ActionEvent event) {
-
         if(showtimesListView.getSelectionModel().isEmpty()) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a showtime.");
-            viewAlert.showAndWait();
+            ExceptionAlert.alertIllegalArgumentException("Select a showtime to update.");
         } else {
             String title = showtimesListView.getSelectionModel().getSelectedItem().toString();
             Showtime pShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
@@ -90,37 +83,30 @@ public class ShowtimesListEditorController {
                 updateShowtimeController.setUpdateShowtime(pShowtime);
                 nextStage.initOwner(((Node) event.getSource()).getScene().getWindow());
                 nextStage.showAndWait();
-                populateList();
+                initialize();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-            String title = showtimesListView.getSelectionModel().getSelectedItem().toString();
-            newWindow(event,"addShowtime-view.fxml", "Update " + title);
-
-
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, "Showtime for "+ getSelectedMovie() + "and " + getSelectedRoom() +" has been updated.");
-            viewAlert.showAndWait();
     }
 
     public void onRemoveButtonClick() {
 
         if(showtimesListView.getSelectionModel().isEmpty()) {
-            Alert viewAlert = new Alert(Alert.AlertType.ERROR, "Select a showtime.");
-            viewAlert.showAndWait();
+            ExceptionAlert.alertIllegalArgumentException("Select a showtime to remove.");
         } else {
             Showtime selectedShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
 
-            Alert viewAlert = new Alert(Alert.AlertType.CONFIRMATION, getSelectedMovie() + "'s showtime in " + getSelectedRoom() + " has been removed.");
-            viewAlert.showAndWait();
+            ExceptionAlert.alertConfirmation("Showtime for " + selectedShowtime.getMovie().getMovieTitle() + " in room " + selectedShowtime.getShowroom().getRoomNumber() + " has been removed.");
 
             aShowtimeList.removeShowtime(selectedShowtime);
 
-            showtimesListView.getItems().remove(showtimesListView.getSelectionModel().getSelectedIndex());
+            showtimesListView.getItems().clear();
 
             initialize();
         }
     }
+
     public void onNewSelection(MouseEvent mouseEvent) {
         Showtime selectedShowtime = aShowtimeList.getShowtimeByIndex(showtimesListView.getSelectionModel().getSelectedIndex());
 
